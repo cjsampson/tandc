@@ -166,12 +166,13 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
         //
 
         /*
          * Application Service Providers...
          */
+        App\Providers\RepositoriesServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
