@@ -4,15 +4,15 @@ namespace App\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use App\Repositories\VideoRepositoryRepository;
-use App\Entities\VideoRepository;
-use App\Validators\VideoRepositoryValidator;
+use App\Repositories\VideoRepository;
+use App\Entities\Video;
+use App\Validators\VideoValidator;
 
 /**
- * Class VideoRepositoryRepositoryEloquent
+ * Class VideoRepositoryEloquent
  * @package namespace App\Repositories;
  */
-class VideoRepositoryRepositoryEloquent extends BaseRepository implements VideoRepositoryRepository
+class VideoRepositoryEloquent extends BaseRepository implements VideoRepository
 {
     /**
      * Specify Model class name
@@ -21,7 +21,7 @@ class VideoRepositoryRepositoryEloquent extends BaseRepository implements VideoR
      */
     public function model()
     {
-        return VideoRepository::class;
+        return Video::class;
     }
 
     
