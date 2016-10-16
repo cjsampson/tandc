@@ -1,6 +1,9 @@
 @extends('welcome')
 
-@content('content')
+@section('content')
+
 
 
 <h1>Video Index</h1>
+
+@stop
