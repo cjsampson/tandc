@@ -48,5 +48,8 @@
                 </nav>
             </header>
         </div>
+
+        @yield('content')
+        
     </body>
 </html>

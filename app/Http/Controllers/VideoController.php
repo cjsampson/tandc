@@ -8,5 +8,17 @@ use App\Http\Requests;
 
 class VideoController extends Controller
 {
-    //
+    protected $videoRepository;
+
+    protected $videoService;
+
+    public function __construct(){
+        $this->videoRepository = App::make(\App\Repositories\VideoRepository::class);
+        $this->videoService = App::make(\App\Services\VideoService::class);
+    }
+
+    public function index() 
+    {
+        return view('sections.videos.index');
+    }
 }
