@@ -20,6 +20,8 @@ class VideoController extends Controller
 
     public function index() 
     {
-        return view('sections.videos.index');
+        return view('sections.videos.index', [
+            'videos' => $this->videoRepository->all(),
+        ]);
     }
 }

@@ -15,4 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('videos', 'VideoController@index');
+Route::get('videos', [
+    'uses' => 'VideoController@index',
+    'as' => 'videos_index'
+]);
