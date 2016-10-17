@@ -15,7 +15,6 @@ class ArticlesController extends Controller
 
     public function index()
     {
-        return 'test';
-        return view('');
+        return view('sections.articles.index');
     }
 }
