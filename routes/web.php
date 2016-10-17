@@ -21,3 +21,7 @@ Route::group(['prefix' => 'articles'], function () {
         'uses' => 'ArticlesController@index',
     ]);
 });
+Route::get('videos', [
+    'uses' => 'VideoController@index',
+    'as' => 'videos_index'
+]);
