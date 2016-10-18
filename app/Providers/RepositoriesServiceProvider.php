@@ -15,5 +15,6 @@ class RepositoriesServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('App\Repositories\VideoRepository', 'App\Repositories\VideoRepositoryEloquent');
+        $this->app->bind('App\Repositories\ContactRepository', 'App\Repositories\ContactRepositoryEloquent');
     }
 }

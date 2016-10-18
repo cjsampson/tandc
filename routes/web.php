@@ -21,11 +21,19 @@ Route::group(['prefix' => 'articles'], function () {
         'uses' => 'ArticlesController@index',
     ]);
 });
+Route::group(['prefix' => 'contact'], function () {
+    Route::match(['get', 'post'], '/', [
+        'uses' => 'ContactController@index',
+        'as'   => 'contact_index',
+    ]);
 
-Route::get('contact', [
-    'uses' => 'ContactController@index',
-    'as'   => 'contact_index',
-]);
+    Route::post('store', [
+        'uses' => 'ContactController@store',
+        'as' => 'contact_store',
+    ]);
+});
+
+
 
 Route::get('videos', [
     'uses' => 'VideoController@index',
