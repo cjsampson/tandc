@@ -24,12 +24,7 @@ class ContactService
 
     public function create(array $attributes)
     {
-        try{
             $this->contactRepository->create($attributes);
-        }
-        catch (Exception $e){
-
-        }
     }
 
     public function sendEmail(array $attributes)

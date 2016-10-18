@@ -6,25 +6,30 @@ use App\Services\ContactService;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use League\Flysystem\Exception;
 
 class ContactController extends Controller
 {
 
     protected $contactService;
 
-    public function __construct( ContactService $contactService)
+    public function __construct( ContactService $contactService )
     {
         $this->contactService = $contactService;
     }
 
-    public function index(Request $request)
+    public function index( Request $request )
     {
         return view('sections.contact.index');
     }
 
-    public function store(Request $request)
+    public function store( Request $request )
     {
-        $this->contactService->create($request->all());
-        $this->contactService->sendEmail($request->all());
+        try {
+            $this->contactService->create($request->all());
+            $this->contactService->sendEmail($request->all());
+        } catch ( Exception $e ) {
+
+        }
     }
 }
