@@ -2,7 +2,8 @@
 
 namespace App\Services;
 
-use App;
+use Auth;
+use Mail;
 use App\Repositories\ContactRepository;
 use League\Flysystem\Exception;
 
@@ -31,8 +32,13 @@ class ContactService
         }
     }
 
-    public function sendEmail()
+    public function sendEmail(array $attributes)
     {
+        Mail::send('sections.contact.email', ['body' => $attributes['message']], function ( $message ) use ($attributes){
+            $message->from($attributes['email'])
+                ->subject($attributes['title'])
+                ->to('tleffew1994@gmail.com', 'test@test.com');
+        });
 
     }
 }

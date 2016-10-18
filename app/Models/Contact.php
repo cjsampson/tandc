@@ -10,6 +10,6 @@ class Contact extends Model implements Transformable
 {
     use TransformableTrait;
 
-    protected $fillable = ['name', 'email', 'message'];
+    protected $fillable = ['name', 'email', 'message', 'title'];
 
 }

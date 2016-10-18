@@ -25,6 +25,6 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $this->contactService->create($request->all());
-        $this->contactService->sendEmail();
+        $this->contactService->sendEmail($request->all());
     }
 }

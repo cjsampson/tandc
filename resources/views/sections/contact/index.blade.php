@@ -11,6 +11,10 @@
             Email
             <input type="text" name="email">
         </label>
+        <label for="title">
+            Title
+            <input type="text" name="title">
+        </label>
         <label for="message">
             Message
             <textarea name="message" id="" cols="30" rows="10"></textarea>
