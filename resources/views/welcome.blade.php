@@ -35,6 +35,7 @@
                 font-size: 2em;
             }
         </style>
+        @yield('styles')
     </head>
     <body>
         <div class="container">

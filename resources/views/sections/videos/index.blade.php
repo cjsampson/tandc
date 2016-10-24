@@ -1,18 +1,32 @@
 @extends('welcome')
 
+@section('styles')
+
+<style>
+    .video-box { 
+        border: 1px solid black;
+        margin-bottom: 20px;
+    }
+</style>
+
+@stop
+
+
 @section('content')
 
-
-<h1>Video Index</h1>
+<div class="video-grid">
+    <h1>Video Index</h1>
 
     @foreach($videos as $video)
         <div class="video-box">
             <h4>{{ $video->title}}</h4>
             <p>{{ $video->category }}</p>
-            <video width="320" height="240">
-                <source src="youtube.com/{{$video->url}} type="video/mp4"></source>
-            </video>
+            <div class="im-a-video-box">
+                Video goes here
+            </div>
         </div>
     @endforeach
+</div>
+
 
 @stop
