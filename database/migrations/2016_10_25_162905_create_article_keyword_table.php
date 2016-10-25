@@ -17,12 +17,14 @@ class CreateArticleKeywordTable extends Migration
             $table->integer('article_id')->unsigned();
             $table->foreign('article_id')
                 ->references('id')
-                ->on('articles');
+                ->on('articles')
+                ->onDelete('cascade');
 
             $table->integer('keyword_id')->unsigned();
             $table->foreign('keyword_id')
                 ->references('id')
-                ->on('keywords');
+                ->on('keywords')
+                ->onDelete('cascade');
 
             $table->primary(['article_id', 'keyword_id']);
         });

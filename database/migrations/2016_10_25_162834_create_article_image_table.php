@@ -17,12 +17,14 @@ class CreateArticleImageTable extends Migration
             $table->integer('article_id')->unsigned();
             $table->foreign('article_id')
                 ->references('id')
-                ->on('articles');
+                ->on('articles')
+                ->onDelete('cascade');
 
             $table->integer('image_id')->unsigned();
             $table->foreign('image_id')
                 ->references('id')
-                ->on('images');
+                ->on('images')
+                ->onDelete('cascade');
 
             $table->primary(['article_id', 'image_id']);
         });
