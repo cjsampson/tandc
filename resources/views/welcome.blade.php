@@ -38,7 +38,9 @@
         @yield('styles')
     </head>
     <body>
-        <div class="container">
+
+        <div class="wrapper">
+
             <header>
                 <nav>
                     <a href="#" class="header-li"><li>Home</li></a>
@@ -48,11 +50,19 @@
                     <a href="#" class="header-li"><li>About</li></a>
                 </nav>
             </header>
-        </div>
+    
+        
+            <aside>
+                <div class="sidebar">
+                    
+                </div>    
+            </aside>
 
-        <div class="container">
-            @yield('content')
-        </div>
+            <main class="main-content">
+                @yield('content')
+            </main>
+    
+    </div> {{-- .wrapper --}}
 
     </body>
 </html>

@@ -3,9 +3,15 @@
 @section('styles')
 
 <style>
+
+    .video-grid {
+        
+    }
     .video-box { 
         border: 1px solid black;
         margin-bottom: 20px;
+        max-width: 300px;
+        min-height: 400px;
     }
 </style>
 
@@ -24,6 +30,9 @@
             <div class="im-a-video-box">
                 Video goes here
             </div>
+            <iframe 
+                title="youtube video player" src="youtube.com/{{ $video->url }}" frameborder="0" allowfullscreen>
+            </iframe>
         </div>
     @endforeach
 </div>
