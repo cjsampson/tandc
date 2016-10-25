@@ -53,16 +53,6 @@
         <div class="container">
             @yield('content')
         </div>
-        <div class="container">
-            <div class="footer">
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                    Contact
-                </button>
-            </div>
-        </div>
-
-        @include('sections.contact.contact_modal')
 
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </body>
