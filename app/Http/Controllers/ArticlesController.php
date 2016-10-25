@@ -16,7 +16,8 @@ class ArticlesController extends Controller
 
     public function index(Article $article)
     {
-        $keywords = $article->keywords()->first();
+        $article = $article->find(1);
+        $keywords = $article->keywords()->get();
         dd($keywords);
         return view('sections.articles.index');
     }
