@@ -9,7 +9,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <!-- Styles -->
         <style>
             html, body {
@@ -43,7 +43,7 @@
                 <nav>
                     <a href="#" class="header-li"><li>Home</li></a>
                     <a href="#" class="header-li"><li>Terminology</li></a>
-                    <a href="#" class="header-li"><li>Articles</li></a>
+                    <a href="{{ route('articles_index') }}" class="header-li"><li>Articles</li></a>
                     <a href="{{ route('videos_index') }}" class="header-li"><li>Videos</li></a>
                     <a href="#" class="header-li"><li>About</li></a>
                 </nav>
@@ -53,6 +53,17 @@
         <div class="container">
             @yield('content')
         </div>
+        <div class="container">
+            <div class="footer">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                    Contact
+                </button>
+            </div>
+        </div>
 
+        @include('sections.contact.contact_modal')
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </body>
 </html>
