@@ -34,6 +34,10 @@
             .header-li {
                 font-size: 2em;
             }
+            header { 
+                background-color: orange; 
+                height: 200px;
+            }
         </style>
         @yield('styles')
     </head>
@@ -55,7 +59,7 @@
         
             <aside>
                 <div class="sidebar">
-                    
+                    Sidebar
                 </div>    
             </aside>
 
