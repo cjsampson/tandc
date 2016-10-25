@@ -15,7 +15,28 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::group(['prefix' => 'articles'], function () {
+    Route::match(['get', 'post'], '/', [
+        'as'   => 'articles_index',
+        'uses' => 'ArticlesController@index',
+    ]);
+});
+Route::group(['prefix' => 'contact'], function () {
+    Route::match(['get', 'post'], '/', [
+        'uses' => 'ContactController@index',
+        'as'   => 'contact_index',
+    ]);
+
+    Route::post('store', [
+        'uses' => 'ContactController@store',
+        'as' => 'contact_store',
+    ]);
+});
+
+
+
 Route::get('videos', [
     'uses' => 'VideoController@index',
-    'as' => 'videos_index'
+    'as'   => 'videos_index',
 ]);
+
