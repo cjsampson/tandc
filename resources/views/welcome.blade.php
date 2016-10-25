@@ -46,6 +46,7 @@
                     <a href="{{ route('articles_index') }}" class="header-li"><li>Articles</li></a>
                     <a href="{{ route('videos_index') }}" class="header-li"><li>Videos</li></a>
                     <a href="#" class="header-li"><li>About</li></a>
+                    <a href="{{ route('contact_index') }}" class="header-li">Contact</a>
                 </nav>
             </header>
         </div>
