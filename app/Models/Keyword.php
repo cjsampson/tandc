@@ -12,6 +12,11 @@ class Keyword extends Model implements Transformable
 
     protected $fillable = ['name'];
 
+    /**
+     * get all articles related to a keyword
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function articles()
     {
         return $this->belongsToMany('App\Models\Article');
