@@ -26,10 +26,9 @@ class ContactController extends Controller
     public function store( Request $request )
     {
         try {
-            $this->contactService->create($request->all());
-            $this->contactService->sendEmail($request->all());
+            $this->contactService->createAndSend($request->all());
         } catch ( Exception $e ) {
-
+            dd($e);
         }
     }
 }
