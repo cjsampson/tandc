@@ -1,42 +1,58 @@
 <?php
+use Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException;
 
 /*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| This file is where you may define all of the routes that are handled
-| by your application. Just tell Laravel the URIs it should respond
-| to using a Closure or controller method. Build something great!
-|
-*/
+ * creates a function called _include if one doesn't exist to include our given route.
+ */
+if ( ! function_exists('_include') ) {
+    function _include( $partial )
+    {
+        $file = __DIR__ . "/route/{$partial}.php";
+        /*
+         * file = "/home/vagrant/projects/tandc.dev/routes/route/{$partial}.php"
+         */
+        if ( ! file_exists($file) ) {
+            throw new FileNotFoundException("Route partial [{$partial}] not found.");
+        }
+        require_once $file;
+    }
+}
 
+/*
+ * define all route folder names here
+ */
+$routes = [
+    'articles',
+    'contact',
+    'videos',
+];
+
+/*
+ * does a foreach though our routes and calls the method _include with the route name
+ */
+foreach ($routes as $route){
+    _include($route);
+}
+
+/*
+ * generates the route
+ */
+function _include($partial){
+    $file = __DIR__ . "/route/{$partial}.php";
+    if (!file_exists($file)){
+        throw new FileNotFoundException("Route partial [{$partial}] not found.");
+    }
+    require_once $file;
+}
+
+/*
+ * homepage
+ */
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'articles'], function () {
-    Route::match(['get', 'post'], '/', [
-        'as'   => 'articles_index',
-        'uses' => 'ArticlesController@index',
-    ]);
-});
-Route::group(['prefix' => 'contact'], function () {
-    Route::match(['get', 'post'], '/', [
-        'uses' => 'ContactController@index',
-        'as'   => 'contact_index',
-    ]);
-
-    Route::post('store', [
-        'uses' => 'ContactController@store',
-        'as' => 'contact_store',
-    ]);
-});
 
 
 
-Route::get('videos', [
-    'uses' => 'VideoController@index',
-    'as'   => 'videos_index',
-]);
 
