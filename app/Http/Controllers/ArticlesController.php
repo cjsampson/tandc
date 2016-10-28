@@ -32,10 +32,10 @@ class ArticlesController extends Controller
      * @param Article $article
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index( Article $article )
+    public function index()
     {
         $newKeyword = Keyword::create(['name' => 'keyword 3']);
-        $article = $article->find(1);
+        $article = Article::find(1);
         $article->keywords()->attach($newKeyword->id);
         $article->keywords()->detach(1);
         $keywords = $article->keywords;
