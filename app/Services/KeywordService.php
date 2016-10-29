@@ -13,7 +13,6 @@ class KeywordService
     /**
      * @var KeywordRepository
      */
-
     protected $keywordRepository;
 
     /**
@@ -42,7 +41,7 @@ class KeywordService
     public function update( Array $attributes, $id)
     {
         DB::transaction(function () use ($attributes, $id){
-            $this->keywordRepository->create($attributes, $id);
+            $this->keywordRepository->update($attributes, $id);
         });
     }
 }
