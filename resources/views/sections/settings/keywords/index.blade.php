@@ -11,10 +11,10 @@
     <section class="content-header clearfix">
         <h1 class="pull-left">
             <i class="livicon" data-name="medkit" data-size="16" data-loop="true" data-c="#000" data-hc="#000"></i>
-            Clinics
+            Keywords
         </h1>
         <div class="pull-right">
-            <a href="#" class="btn btn-default">
+            <a href="{{ route('settings_keywords_create') }}" class="btn btn-default">
                 <span class="fa fa-plus"></span> New
             </a>
         </div>

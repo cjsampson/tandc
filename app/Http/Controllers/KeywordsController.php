@@ -54,6 +54,7 @@ class KeywordsController extends Controller
     {
         try {
             $this->keywordsService->create($request->all());
+            return redirect()->route('settings_keywords_index');
         } catch ( QueryException $e ) {
             dd($e);
         } catch ( Exception $e ) {
@@ -80,6 +81,7 @@ class KeywordsController extends Controller
     {
         try {
             $this->keywordsService->update($request->all(), $id);
+            return redirect()->route('settings_keywords_index');
         } catch ( QueryException $e ) {
             dd($e);
         } catch ( Exception $e ) {
