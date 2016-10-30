@@ -1,6 +1,6 @@
 <?php
 Route::group(['prefix' => 'keywords'], function () {
-    Route::get('/', [
+    Route::match(['get','post'],'/', [
         'uses' => 'KeywordsController@index',
         'as'   => 'settings_keywords_index',
     ]);
@@ -12,13 +12,13 @@ Route::group(['prefix' => 'keywords'], function () {
         'uses' => 'KeywordsController@store',
         'as'   => 'settings_keywords_store',
     ]);
-    Route::post('/update/{id}', [
-        'uses' => 'KeywordsController@update',
-        'as'   => 'settings_keywords_update',
-    ]);
     Route::get('/edit/{id}', [
         'uses' => 'KeywordsController@edit',
         'as'   => 'settings_keywords_edit',
+    ]);
+    Route::post('/update/{id}', [
+        'uses' => 'KeywordsController@update',
+        'as'   => 'settings_keywords_update',
     ]);
     Route::delete('/destroy/{id}', [
         'uses' => 'KeywordsController@destroy',

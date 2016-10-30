@@ -21,15 +21,24 @@ class KeywordService
      */
     public function __construct( KeywordRepository $keywordRepository )
     {
+//        $this->keywordRepository = App::make(\App\Repositories\KeywordRepositoryEloquent::class);
         $this->keywordRepository = $keywordRepository;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function dataTables()
+    {
+        return $this->keywordRepository->dataTables();
     }
 
     /**
      * @param array $attributes
      */
-    public function create( Array $attributes)
+    public function create( Array $attributes )
     {
-        DB::transaction(function () use ($attributes){
+        DB::transaction(function () use ( $attributes ) {
             $this->keywordRepository->create($attributes);
         });
     }
@@ -38,10 +47,14 @@ class KeywordService
      * @param array $attributes
      * @param $id
      */
-    public function update( Array $attributes, $id)
+    public function update( Array $attributes, $id )
     {
-        DB::transaction(function () use ($attributes, $id){
+        DB::transaction(function () use ( $attributes, $id ) {
             $this->keywordRepository->update($attributes, $id);
         });
+    }
+    public function find($id)
+    {
+        return $this->keywordRepository->find($id);
     }
 }
