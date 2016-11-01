@@ -9,7 +9,6 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        <link href="{{ asset('assets/css/font-awesome/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
         <!-- Styles -->
         <style>
             html, body {
@@ -58,23 +57,17 @@
             </header>
     
         
-            <main>
-            
-                <aside>
-                    Sidebar    
-                </aside>
+            <aside>
+                <div class="sidebar">
+                    Sidebar
+                </div>    
+            </aside>
 
-                <div class="content">
-                    @yield('content')
-                </div>
-
+            <main class="main-content">
+                @yield('content')
             </main>
-
     
     </div> {{-- .wrapper --}}
-
-        <script src="{{ asset('assets/js/jquery/jquery.min.js') }}"></script>
-    @yield('scripts')
 
     </body>
 </html>

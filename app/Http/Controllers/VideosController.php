@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App;
 
-class VideoController extends Controller
+class VideosController extends Controller
 {
     protected $videoRepository;
 

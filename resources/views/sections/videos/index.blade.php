@@ -31,8 +31,9 @@
                 Video goes here
             </div>
             <iframe 
-                title="youtube video player" src="youtube.com/{{ $video->url }}" frameborder="0" allowfullscreen>
+                title="youtube video player" src="https://www.youtube.com/embed/{{ $video->url }}" frameborder="0" allowfullscreen>
             </iframe>
+            
         </div>
     @endforeach
 </div>

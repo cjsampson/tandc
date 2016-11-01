@@ -16,7 +16,7 @@ class VideosTableSeeder extends Seeder
                 'title' => 'If Else & Comparison Operators',
                 'category' => 'JavaScript',
                 'keywords' => 'JavaScript, Programming, Beginner, Web', 
-                'url' => 'watch?v=Gy87ZS5sb1w&index=2&list=PLoYCgNOIyGACnrXwo5HMCfOH9VT05znGv',
+                'url' => 'https://youtu.be/Gy87ZS5sb1w',
                 'updated_at' => new \DateTime(),
                 'created_at' => new \DateTime(),
             ],
