@@ -166,12 +166,15 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class,
         //
 
         /*
          * Application Service Providers...
          */
+        App\Providers\RepositoriesServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
@@ -225,6 +228,17 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        /**
+         * laravel collective facade
+         */
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+
+        /**
+         * DataTables facade
+         */
+        'DataTables' => Yajra\Datatables\Facades\Datatables::class,
 
     ],
 

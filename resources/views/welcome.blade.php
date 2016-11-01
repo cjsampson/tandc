@@ -9,7 +9,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
+        <link href="{{ asset('assets/css/font-awesome/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
         <!-- Styles -->
         <style>
             html, body {
@@ -35,6 +35,7 @@
                 font-size: 2em;
             }
         </style>
+        @yield('styles')
     </head>
     <body>
         <div class="container">
@@ -42,11 +43,21 @@
                 <nav>
                     <a href="#" class="header-li"><li>Home</li></a>
                     <a href="#" class="header-li"><li>Terminology</li></a>
-                    <a href="#" class="header-li"><li>Articles</li></a>
-                    <a href="#" class="header-li"><li>Videos</li></a>
+                    <a href="{{ route('articles_index') }}" class="header-li"><li>Articles</li></a>
+                    <a href="{{ route('videos_index') }}" class="header-li"><li>Videos</li></a>
                     <a href="#" class="header-li"><li>About</li></a>
+                    <a href="{{ route('contact_index') }}" class="header-li">Contact</a>
+                    <a href="#" class="header-li">Settings</a>
                 </nav>
             </header>
         </div>
+
+        <div class="container">
+            @yield('content')
+        </div>
+
+        <script src="{{ asset('assets/js/jquery/jquery.min.js') }}"></script>
+    @yield('scripts')
+
     </body>
 </html>

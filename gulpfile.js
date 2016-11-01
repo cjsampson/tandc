@@ -1,6 +1,6 @@
 const elixir = require('laravel-elixir');
 
-require('laravel-elixir-vue-2');
+// require('laravel-elixir-vue-2');
 
 /*
  |--------------------------------------------------------------------------
@@ -13,7 +13,27 @@ require('laravel-elixir-vue-2');
  |
  */
 
-elixir(mix => {
-    mix.sass('app.scss')
-       .webpack('app.js');
+// elixir(mix => {
+//     mix.sass('app.scss')
+//        .webpack('app.js');
+// });
+let node = 'node_modules/',
+    assets = 'public/assets/',
+    js = `${assets}js/`,
+    css = `${assets}css/`,
+    fonts = `public/fonts/`;
+
+elixir(function (mix) {
+    //datatables
+    mix.copy(`${node}datatables.net/js/jquery.dataTables.js`, `${js}dataTables`);
+    mix.copy(`${node}datatables.net-dt/css/jquery.dataTables.css`, `${css}dataTables`);
+    mix.copy(`${node}datatables.net-bs/css/dataTables.bootstrap.css`, `${css}dataTables`);
+    mix.copy(`${node}datatables.net-bs/js/dataTables.bootstrap.js`, `${js}dataTables`);
+    //jquery
+    mix.copy(`${node}jquery/dist/jquery.min.js`, `${js}jquery`);
+    //font-awesome
+    mix.copy(`${node}font-awesome/css/font-awesome.min.css`, `${css}font-awesome`);
+    mix.copy(`${node}font-awesome/fonts`, `${fonts}`);
+
+
 });
