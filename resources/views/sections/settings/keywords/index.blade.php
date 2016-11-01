@@ -61,7 +61,6 @@
                 ],
                 "createdRow": function (row, data, index) {
                     $('td', row).eq(3).html(
-//                    $('td', row).eq(5).html($.templates("#actions_tmpl").render(data));
                    `<a href="/settings/keywords/edit/${data.id}" class="btn btn-sm btn-outline dark tooltips" data-container="body" data-placement="top" data-original-title="Show">
                         <i class="fa fa-pencil-square-o"></i>
                     </a>`
@@ -70,8 +69,5 @@
             });
         });
 
-    </script>
-    <script id="actions_tmpl" type="text/x-jsrender">
-        {{--@include('admin.clinic.action_menu', ['clinic' => null])--}}
     </script>
 @stop
