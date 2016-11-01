@@ -11,6 +11,7 @@ use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
 use League\Flysystem\Exception;
+use Datatables;
 
 class ArticlesController extends Controller
 {

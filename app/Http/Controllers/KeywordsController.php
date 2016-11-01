@@ -30,9 +30,13 @@ class KeywordsController extends Controller
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index( Request $request )
     {
-        return view('sections.keywords.index');
+        if ( $request->ajax() ) {
+            return $this->keywordsService->dataTables();
+        }
+
+        return view('sections.settings.keywords.index');
     }
 
     /**
@@ -40,7 +44,7 @@ class KeywordsController extends Controller
      */
     public function create()
     {
-        return view('sections.keywords.create');
+        return view('sections.settings.keywords.create');
     }
 
     /**
@@ -50,6 +54,7 @@ class KeywordsController extends Controller
     {
         try {
             $this->keywordsService->create($request->all());
+            return redirect()->route('settings_keywords_index');
         } catch ( QueryException $e ) {
             dd($e);
         } catch ( Exception $e ) {
@@ -61,19 +66,22 @@ class KeywordsController extends Controller
      * @param Keyword $keyword
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function update( Keyword $keyword )
+    public function edit( $id )
     {
-        return view('sections.keywords.update', compact('keyword'));
+        $keyword = $this->keywordsService->find($id);
+
+        return view('sections.settings.keywords.edit', compact('keyword'));
     }
 
     /**
      * @param $id
      * @param KeywordUpdateRequest $request
      */
-    public function edit( $id, KeywordUpdateRequest $request )
+    public function update( $id, KeywordUpdateRequest $request )
     {
         try {
             $this->keywordsService->update($request->all(), $id);
+            return redirect()->route('settings_keywords_index');
         } catch ( QueryException $e ) {
             dd($e);
         } catch ( Exception $e ) {

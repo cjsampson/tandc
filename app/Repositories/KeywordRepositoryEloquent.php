@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use Datatables;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use App\Repositories\KeywordRepository;
@@ -24,7 +25,6 @@ class KeywordRepositoryEloquent extends BaseRepository implements KeywordReposit
         return Keyword::class;
     }
 
-    
 
     /**
      * Boot up the repository, pushing criteria
@@ -32,5 +32,22 @@ class KeywordRepositoryEloquent extends BaseRepository implements KeywordReposit
     public function boot()
     {
         $this->pushCriteria(app(RequestCriteria::class));
+    }
+
+    public function dataTables()
+    {
+        $keywords = Keyword::select([
+            'keywords.id',
+            'keywords.name',
+            'keywords.created_at',
+        ]);
+
+        return Datatables::of($keywords)
+            ->addColumn('actions', '')
+            ->editColumn('created_at', function ( $data ) {
+                return $data->created_at->format('m/d/Y');
+            })
+            ->make(true);
+
     }
 }
