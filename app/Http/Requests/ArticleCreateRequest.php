@@ -13,7 +13,7 @@ class ArticleCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class ArticleCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'     => 'required',
+            'keywords' => 'required',
+            'body'     => 'required',
         ];
     }
 }

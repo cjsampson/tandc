@@ -53,8 +53,14 @@ class KeywordService
             $this->keywordRepository->update($attributes, $id);
         });
     }
-    public function find($id)
+
+    public function find( $id )
     {
         return $this->keywordRepository->find($id);
+    }
+
+    public function all()
+    {
+        return $this->keywordRepository->all();
     }
 }
