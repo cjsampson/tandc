@@ -38,6 +38,21 @@
                 background-color: orange; 
                 height: 200px;
             }
+            main {
+                display: flex;
+            }
+            main .left--aside {
+                flex: 0 0 300px;
+                background: lightblue;
+            }
+            main section.content {
+                flex: 3 3 auto;
+                background: yellow;
+            }
+            main .right--aside {
+                flex: 0 0 150px;
+                background: tomato;
+            }
         </style>
         @yield('styles')
     </head>
@@ -60,13 +75,17 @@
         
             <main>
             
-                <aside>
-                    Sidebar    
+                <aside class="left--aside">
+                    <p>Sidebar</p>    
                 </aside>
 
-                <div class="content">
+                <section class="content">
                     @yield('content')
-                </div>
+                </section>
+
+                <aside class="right--aside">
+                    <p>stuff</p>
+                </aside>
 
             </main>
 
