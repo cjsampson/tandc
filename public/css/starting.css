@@ -28,7 +28,7 @@ main {
   min-height: 70vh; }
 
 main .left--aside {
-  flex: 0 0 300px;
+  flex: 0 0 250px;
   background: lightblue; }
 
 main section.content {
