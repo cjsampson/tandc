@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ArticleCreateRequest;
 use App\Http\Requests\ArticleUpdateRequest;
 use App\Models\Article;
-use App\Models\Keyword;
 use App\Services\ArticleService;
+use App\Services\KeywordService;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
@@ -19,14 +19,16 @@ class ArticlesController extends Controller
      * @var ArticleService
      */
     private $articleService;
+    private $keywordService;
 
     /**
      * ArticlesController constructor.
      * @param ArticleService $articleService
      */
-    public function __construct( ArticleService $articleService )
+    public function __construct( ArticleService $articleService, KeywordService $keywordService)
     {
         $this->articleService = $articleService;
+        $this->keywordService = $keywordService;
     }
 
     /**
@@ -51,7 +53,8 @@ class ArticlesController extends Controller
      */
     public function create()
     {
-        return view('sections.articles.create');
+        $keywords = $this->keywordService->all();
+        return view('sections.articles.create', compact('keywords'));
     }
 
     /**
@@ -60,6 +63,7 @@ class ArticlesController extends Controller
     public function store( ArticleCreateRequest $request )
     {
         try {
+            dd($request->all());
             $this->articleService->create($request->all());
         } catch ( QueryException $e ) {
             dd($e);

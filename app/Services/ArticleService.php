@@ -30,7 +30,8 @@ class ArticleService
     public function create( Array $attributes )
     {
         DB::transaction(function () use ( $attributes ) {
-            $this->articleRepository->create($attributes);
+            $article = $this->articleRepository->create($attributes);
+            $article->keywords()->sync($attributes['keywords']);
         });
     }
 
