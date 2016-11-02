@@ -1,0 +1,31 @@
+.video--content
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: space-around
+
+.video--title
+    flex-wrap: wrap
+    flex: 1 1 100%
+    text-align: center
+    margin: 50px
+
+@media all and (max-width: 1300px)
+    .video--box--container
+        flex: 1 1 45%
+        border: 1px solid black
+
+    .video--box
+        margin: 50px auto
+    
+.video--box
+    border: 1px solid black
+    width: 300px
+    height: 400px
+    margin-top: 50px
+
+
+.video--box:nth-child(1) , .video--box:nth-child(2)
+    margin-top: 100px
+
+

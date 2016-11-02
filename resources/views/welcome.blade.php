@@ -8,52 +8,11 @@
         <title>TandC</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        <link href="{{ asset('assets/css/font-awesome/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet">
+        <link href="{{ asset('assets/css/font-awesome/font-awesome.min.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="/css/starting.css">
         <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-            a {
-                text-decoration: none;
-            }
-            li {
-                list-style-type: none;
-            }
-            nav {
-                display: flex;
-                justify-content: space-around;
-                /*align-items: flex-end;*/
-            }
-            .header-li {
-                font-size: 2em;
-            }
-            header { 
-                background-color: orange; 
-                height: 200px;
-            }
-            main {
-                display: flex;
-            }
-            main .left--aside {
-                flex: 0 0 300px;
-                background: lightblue;
-            }
-            main section.content {
-                flex: 3 3 auto;
-                background: yellow;
-            }
-            main .right--aside {
-                flex: 0 0 150px;
-                background: tomato;
-            }
-        </style>
+
         @yield('styles')
     </head>
     <body>
@@ -83,17 +42,16 @@
                     @yield('content')
                 </section>
 
-                <aside class="right--aside">
-                    <p>stuff</p>
-                </aside>
-
             </main>
+
+            <footer>
+                Footer content
+            </footer>
 
     
     </div> {{-- .wrapper --}}
 
-        <script src="{{ asset('assets/js/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery/jquery.min.js') }}"></script>
     @yield('scripts')
-
     </body>
 </html>

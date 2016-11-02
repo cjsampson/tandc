@@ -1,42 +1,43 @@
 @extends('welcome')
 
 @section('styles')
-
-<style>
-
-    .video-grid {
-        
-    }
-    .video-box { 
-        border: 1px solid black;
-        margin-bottom: 20px;
-        max-width: 300px;
-        min-height: 400px;
-    }
-</style>
-
+        <link rel="stylesheet" href="/css/videos.css">
 @stop
 
 
 @section('content')
 
-<div class="video-grid">
-    <h1>Video Index</h1>
+    <div class="video--content">
+        
+        <h2 class="video--title">Video Section</h2>
 
-    @foreach($videos as $video)
-        <div class="video-box">
-            <h4>{{ $video->title}}</h4>
-            <p>{{ $video->category }}</p>
-            <div class="im-a-video-box">
-                Video goes here
-            </div>
-            <iframe 
-                title="youtube video player" src="https://www.youtube.com/embed/{{ $video->url }}" frameborder="0" allowfullscreen>
-            </iframe>
-            
+        <div class="video--box--container">
+            <div class="video--box">span </div>                        
         </div>
-    @endforeach
-</div>
-
+        <div class="video--box--container">
+            <div class="video--box">Video 2</div>                    
+        </div>
+        <div class="video--box--container">
+            <div class="video--box">Video 3</div>            
+        </div>
+        <div class="video--box--container">
+            <div class="video--box">Video 4</div>            
+        </div>
+        <div class="video--box--container">
+            <div class="video--box">Video 5</div> 
+        </div>
+        <div class="video--box--container">
+            <div class="video--box">Video 6</div>
+        </div>
+        <div class="video--box--container">
+            <div class="video--box">Video 7</div>
+        </div>
+        <div class="video--box--container">
+            <div class="video--box">Video 7</div>
+        </div>
+        <div class="video--box--container">
+            <div class="video--box">Video 8</div>
+        </div>        
+    </div>
 
 @stop
