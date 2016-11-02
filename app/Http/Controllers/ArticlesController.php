@@ -7,6 +7,8 @@ use App\Http\Requests\ArticleUpdateRequest;
 use App\Models\Article;
 use App\Services\ArticleService;
 use App\Services\KeywordService;
+use App\Services\ImageService;
+use DB;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
@@ -17,18 +19,22 @@ class ArticlesController extends Controller
 {
     /**
      * @var ArticleService
+     * @var KeywordService
+     * @var ImageService
      */
     private $articleService;
     private $keywordService;
+    private $imageService;
 
     /**
      * ArticlesController constructor.
      * @param ArticleService $articleService
      */
-    public function __construct( ArticleService $articleService, KeywordService $keywordService)
+    public function __construct( ArticleService $articleService, KeywordService $keywordService, ImageService $imageService )
     {
         $this->articleService = $articleService;
         $this->keywordService = $keywordService;
+        $this->imageService = $imageService;
     }
 
     /**
@@ -54,6 +60,7 @@ class ArticlesController extends Controller
     public function create()
     {
         $keywords = $this->keywordService->all();
+
         return view('sections.articles.create', compact('keywords'));
     }
 
@@ -63,8 +70,14 @@ class ArticlesController extends Controller
     public function store( ArticleCreateRequest $request )
     {
         try {
-            dd($request->all());
-            $this->articleService->create($request->all());
+            foreach ( $request->file('images') as $photo ) {
+                $image = $this->imageService->storeAndCreate($photo);
+                $images[] = $image->id;
+            }
+            $request['image_id'] = $images;
+            $article = $this->articleService->create($request->all());
+
+
         } catch ( QueryException $e ) {
             dd($e);
         } catch ( Exception $e ) {

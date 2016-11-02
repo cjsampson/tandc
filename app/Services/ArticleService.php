@@ -29,10 +29,15 @@ class ArticleService
      */
     public function create( Array $attributes )
     {
-        DB::transaction(function () use ( $attributes ) {
+        $article = DB::transaction(function () use ( $attributes ) {
             $article = $this->articleRepository->create($attributes);
             $article->keywords()->sync($attributes['keywords']);
+            $article->images()->sync($attributes['image_id']);
+
+            return $article;
         });
+
+        return $article;
     }
 
     /**
