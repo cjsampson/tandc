@@ -25,7 +25,7 @@ $routes = [
     'articles',
     'contact',
     'videos',
-    'settings',
+    'dashboard',
 ];
 
 /*
