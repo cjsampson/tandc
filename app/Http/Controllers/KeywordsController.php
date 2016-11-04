@@ -36,7 +36,7 @@ class KeywordsController extends Controller
             return $this->keywordsService->dataTables();
         }
 
-        return view('sections.settings.keywords.index');
+        return view('sections.dashboard.keywords.index');
     }
 
     /**
@@ -44,7 +44,7 @@ class KeywordsController extends Controller
      */
     public function create()
     {
-        return view('sections.settings.keywords.create');
+        return view('sections.dashboard.keywords.create');
     }
 
     /**
@@ -54,7 +54,7 @@ class KeywordsController extends Controller
     {
         try {
             $this->keywordsService->create($request->all());
-            return redirect()->route('settings_keywords_index');
+            return redirect()->route('dashboard_keywords_index');
         } catch ( QueryException $e ) {
             dd($e);
         } catch ( Exception $e ) {
@@ -70,7 +70,7 @@ class KeywordsController extends Controller
     {
         $keyword = $this->keywordsService->find($id);
 
-        return view('sections.settings.keywords.edit', compact('keyword'));
+        return view('sections.dashboard.keywords.edit', compact('keyword'));
     }
 
     /**
@@ -81,7 +81,7 @@ class KeywordsController extends Controller
     {
         try {
             $this->keywordsService->update($request->all(), $id);
-            return redirect()->route('settings_keywords_index');
+            return redirect()->route('dashboard_keywords_index');
         } catch ( QueryException $e ) {
             dd($e);
         } catch ( Exception $e ) {

@@ -17,32 +17,26 @@
     </head>
     <body>
 
-        <div class="wrapper">
+        <div>
 
             <header>
-                <nav>
-                    <a href="#" class="header-li"><li>Home</li></a>
-                    <a href="#" class="header-li"><li>Terminology</li></a>
-                    <a href="{{ route('articles_index') }}" class="header-li"><li>Articles</li></a>
-                    <a href="{{ route('videos_index') }}" class="header-li"><li>Videos</li></a>
-                    <a href="#" class="header-li"><li>About</li></a>
-                    <a href="{{ route('contact_index') }}" class="header-li">Contact</a>
-                    <a href="{{ route('dashboard') }}" class="header-li">Dashboard</a>
-                    
-                </nav>
-            </header>
-    
-        
-            <main>
             
-                <aside class="left--aside">
-                    <p>Sidebar</p>    
-                </aside>
-
+                <div class="container">
+                    <h1>TandC</h1>
+                    <nav>
+                        <a href="#" class="header-li">Home</a>
+                        <a href="#" class="header-li">Lingo</a>
+                        <a href="{{ route('articles_index') }}" class="header-li">Articles</a>
+                        <a href="{{ route('videos_index') }}" class="header-li">Videos</a>
+                        <a href="#" class="header-li">Who</a>
+                    </nav>
+                </div>
+            </header>
+            
+            <main>
                 <section class="content">
                     @yield('content')
                 </section>
-
             </main>
 
             <footer>
@@ -53,6 +47,7 @@
     </div> {{-- .wrapper --}}
 
     <script src="{{ asset('assets/js/jquery/jquery.min.js') }}"></script>
+    <script src="js/header.js"></script>
     @yield('scripts')
     </body>
 </html>
