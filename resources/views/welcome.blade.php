@@ -20,9 +20,8 @@
         <div>
 
             <header>
-            
                 <div class="container">
-                    <h1>TandC</h1>
+                    <h1 id="logo">TandC</h1>
                     <nav>
                         <a href="#" class="header-li">Home</a>
                         <a href="#" class="header-li">Lingo</a>
@@ -32,7 +31,7 @@
                     </nav>
                 </div>
             </header>
-            
+
             <main>
                 <section class="content">
                     @yield('content')
