@@ -17,6 +17,7 @@ class CreateVideosTable extends Migration
             $table->increments('id');
 			$table->string('title');
 			$table->string('description');
+			$table->string('cover_image');
 			$table->string('author');
 			$table->string('category');
 			$table->string('keywords');
