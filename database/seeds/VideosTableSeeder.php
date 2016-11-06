@@ -51,7 +51,7 @@ class VideosTableSeeder extends Seeder
                 'category' => 'JavaScript',
                 'keywords' => 'JavaScript, ES6, Intermediate',
                 'author' => 'CJ Sampson',
-                'cover_image' => '/images/jquery.jpg',
+                'cover_image' => '/images/jquery.png',
                 'url' => 'watch?v=obaSQBBWZLk&index=25&list=PLoYCgNOIyGACnrXwo5HMCfOH9VT05znGv',
                 'updated_at' => new \DateTime(),
                 'created_at' => new \DateTime(),
