@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ArticleCreateRequest;
 use App\Http\Requests\ArticleUpdateRequest;
 use App\Models\Article;
+use App\Models\Image;
+use App\Models\Keyword;
 use App\Services\ArticleService;
 use App\Services\KeywordService;
 use App\Services\ImageService;
@@ -74,6 +76,8 @@ class ArticlesController extends Controller
                 $image = $this->imageService->storeAndCreate($photo);
                 $images[] = $image->id;
             }
+
+            $request['body'] = $this->articleService->imgReplace($images, $request->body);
             $request['image_id'] = $images;
             $article = $this->articleService->create($request->all());
 

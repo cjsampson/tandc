@@ -1,7 +1,7 @@
 <?php
-Route::group(['prefix' => 'keywords'], function () {
+Route::group(['prefix' => 'articles'], function () {
     Route::match(['get','post'],'/', [
-        'uses' => 'KeywordsController@index',
+        'uses' => 'duuController@index',
         'as'   => 'settings_keywords_index',
     ]);
     Route::get('/create', [

@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Image;
 use DB;
 use App;
 use App\Repositories\ArticleRepository;
@@ -49,5 +50,23 @@ class ArticleService
         DB::transaction(function () use ( $attributes, $id ) {
             $this->articleRepository->update($attributes, $id);
         });
+    }
+
+    /**
+     * @param array $images
+     * @param $body
+     * @return mixed
+     */
+    public function imgReplace( array $images, $body )
+    {
+        foreach ( $images as $key => $image ) {
+            $test = Image::find($image)->path;
+            $replacementNumber = $key + 1;
+            $replacement = "{{img" . $replacementNumber . "}}";
+            $result = str_replace($replacement, "{$test}", $body);
+            $body = $result;
+        }
+
+        return $body;
     }
 }
