@@ -45,15 +45,27 @@ class ArticlesController extends Controller
      */
     public function index()
     {
-        $newKeyword = Keyword::create(['name' => 'keyword 3']);
-        $article = Article::find(1);
-        $article->keywords()->attach($newKeyword->id);
-        $article->keywords()->detach(1);
-        $keywords = $article->keywords;
-        $images = $article->images;
-        dd($keywords);
+//        $newKeyword = Keyword::create(['name' => 'keyword 3']);
+//        $article = Article::find(1);
+//        $article->keywords()->attach($newKeyword->id);
+//        $article->keywords()->detach(1);
+//        $keywords = $article->keywords;
+//        $images = $article->images;
+//        dd($keywords);
+        $articles = $this->articleService->all();
 
-        return view('sections.articles.index');
+        return view('sections.articles.index', compact('articles'));
+    }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show( $id )
+    {
+        $article = $this->articleService->find($id);
+
+        return view('sections.articles.show', compact('article'));
     }
 
     /**
@@ -81,6 +93,7 @@ class ArticlesController extends Controller
             $request['image_id'] = $images;
             $article = $this->articleService->create($request->all());
 
+            return redirect()->route('articles_show', $article->id);
 
         } catch ( QueryException $e ) {
             dd($e);

@@ -26,6 +26,15 @@ class ArticleService
     }
 
     /**
+     * @param $id
+     * @return mixed
+     */
+    public function find( $id )
+    {
+        return $this->articleRepository->find($id);
+    }
+
+    /**
      * @param array $attributes
      */
     public function create( Array $attributes )
@@ -53,6 +62,14 @@ class ArticleService
     }
 
     /**
+     * @return mixed
+     */
+    public function all()
+    {
+        return $this->articleRepository->all();
+    }
+
+    /**
      * @param array $images
      * @param $body
      * @return mixed
@@ -60,10 +77,10 @@ class ArticleService
     public function imgReplace( array $images, $body )
     {
         foreach ( $images as $key => $image ) {
-            $test = Image::find($image)->path;
+            $path = Image::find($image)->path;
             $replacementNumber = $key + 1;
             $replacement = "{{img" . $replacementNumber . "}}";
-            $result = str_replace($replacement, "{$test}", $body);
+            $result = str_replace($replacement, "{$path}", $body);
             $body = $result;
         }
 
