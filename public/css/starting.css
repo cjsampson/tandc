@@ -22,9 +22,6 @@ nav {
 .header-li {
   font-size: 2em; }
 
-header {
-  background-color: #f2de7d; }
-
 .container {
   max-width: 1268px;
   margin-right: auto;
@@ -42,11 +39,6 @@ main section.content {
   flex: 3 3 auto;
   background: #FFFFFF; }
 
-footer {
-  background: lightgreen;
-  display: block;
-  height: 15vh; }
-
 header.smaller {
   height: 75px; }
 
@@ -59,5 +51,8 @@ header.smaller h1#logo {
 
 header.smaller nav a {
   line-height: 75px; }
+
+main {
+  margin-top: 200px; }
 
 /*# sourceMappingURL=starting.css.map */
