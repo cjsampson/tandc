@@ -1,0 +1,33 @@
+footer {
+  display: flex;
+  background-color: white;
+  color: black;
+  border-top: 3px solid black; }
+
+.footer__wrapper {
+  max-width: 1248px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex; }
+
+.footer__mission-statement {
+  flex: 2 2 40%;
+  min-width: 20%;
+  border: 1px solid black; }
+
+.footer__nav__box {
+  min-width: 20%;
+  border: 1px solid black;
+  flex: 1 1 20%; }
+
+.footer__social__box {
+  min-width: 20%;
+  border: 1px solid black;
+  flex: 1 1 20%; }
+
+.footer__contact__box {
+  min-width: 20%;
+  border: 1px solid black;
+  flex: 1 1 20%; }
+
+/*# sourceMappingURL=footer.css.map */

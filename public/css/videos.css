@@ -1,3 +1,6 @@
+.wrapper {
+  background-color: orange; }
+
 .video--content {
   display: flex;
   flex-direction: row;
