@@ -24,4 +24,12 @@ class VideosController extends Controller
             'videos' => $this->videoRepository->all(),
         ]);
     }
+
+    public function show($id){
+        $video = [
+            'video' => $this->videoRepository->find($id)
+        ];
+
+        return view('sections.videos.show', $video);
+    }    
 }
