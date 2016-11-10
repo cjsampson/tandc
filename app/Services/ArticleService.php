@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Image;
 use DB;
 use App;
 use App\Repositories\ArticleRepository;
@@ -22,6 +23,15 @@ class ArticleService
     public function __construct( ArticleRepository $articleRepository )
     {
         $this->articleRepository = $articleRepository;
+    }
+
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function find( $id )
+    {
+        return $this->articleRepository->find($id);
     }
 
     /**
@@ -49,5 +59,31 @@ class ArticleService
         DB::transaction(function () use ( $attributes, $id ) {
             $this->articleRepository->update($attributes, $id);
         });
+    }
+
+    /**
+     * @return mixed
+     */
+    public function all()
+    {
+        return $this->articleRepository->all();
+    }
+
+    /**
+     * @param array $images
+     * @param $body
+     * @return mixed
+     */
+    public function imgReplace( array $images, $body )
+    {
+        foreach ( $images as $key => $image ) {
+            $path = Image::find($image)->path;
+            $replacementNumber = $key + 1;
+            $replacement = "{{img" . $replacementNumber . "}}";
+            $result = str_replace($replacement, "{$path}", $body);
+            $body = $result;
+        }
+
+        return $body;
     }
 }
