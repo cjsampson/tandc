@@ -29,11 +29,11 @@
                     </div>
 
                     <div class="description--container">
-                        {{--<h2 class="cb--title">{{ $video->title }}</h2>--}}
+                        <h2 class="cb--title">{{ $article->name }}</h2>
 
-                        {{--<p class="cb--description">{{ $video->description }}</p>--}}
+                        <p class="cb--description">{{ $article->description }}</p>
                         <p class="cb--date">{{ $article->updated_at }}</p>
-                        {{--<p class="cb--author">Author: <a href="#">{{ $video->author }}</a></p>--}}
+                        <p class="cb--author">Author: <a href="#">{{ $article->author }}</a></p>
                     </div>
 
                 </div>
@@ -74,20 +74,5 @@
             </div>
 
         </aside>
-
-        <pre><code class="lang-js">
-for (var i = 0; i < array.length; i++) {
-var obj = array[i];
-
-}
-if(hello){
-    console.log(true);
-}
-
-            </code></pre>
-
     </div> {{-- .wrapper --}}
-    <script>
-
-    </script>
 @stop

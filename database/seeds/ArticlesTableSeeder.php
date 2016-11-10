@@ -15,6 +15,7 @@ class ArticlesTableSeeder extends Seeder
         $article = Article::create([
             'name'        => 'Making laravel easy!',
             'description' => 'This is a simple description filler, dummy text for layout purposes',
+            'cover_image' => '/images/laravel.png',
             'body'        => '<div><p>This is a P tag</p></div>',
             'author'      => 'Tomas Leffew',
         ]);
@@ -23,8 +24,9 @@ class ArticlesTableSeeder extends Seeder
 
 // new article--------------------
         $article = Article::create([
-            'name'        => 'Learning PHP',
+            'name'        => 'Learning React',
             'description' => 'This is a simple description filler, dummy text for layout purposes',
+            'cover_image' => '/images/react.png',
             'body'        => '<div><p>This is a P tag</p></div>',
             'author'      => 'CJ Sampson',
         ]);
@@ -35,6 +37,7 @@ class ArticlesTableSeeder extends Seeder
         $article = Article::create([
             'name'        => 'Mapping over arrays',
             'description' => 'This is a simple description filler, dummy text for layout purposes',
+            'cover_image' => '/images/jquery.png',
             'body'        => '<div><p>This is a P tag</p></div>',
             'author'      => 'CJ Sampson',
         ]);
