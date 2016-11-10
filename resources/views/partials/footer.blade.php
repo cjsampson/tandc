@@ -1,8 +1,8 @@
 <footer>
     <div class="footer__wrapper">
         <div class="footer__mission-statement footer__box">
-            <p>We're just two coders looking to add to the community one "ah-ha" at a time!</p>
-            <p class="">TandC 2016</p>
+            <p class="footer__statement">We're just two coders looking to add to the community one "ah-ha" at a time!</p>
+            <p class="footer__tandc">TandC 2016</p>
         </div>                    
         
         <div class="footer__nav__box footer__box">
