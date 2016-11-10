@@ -12,4 +12,9 @@ class Image extends Model implements Transformable
 
     protected $fillable = ['path'];
 
+    public function articles()
+    {
+        return $this->belongsToMany('App\Models\Article');
+    }
+
 }

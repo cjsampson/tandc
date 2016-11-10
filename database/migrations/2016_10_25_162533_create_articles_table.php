@@ -18,6 +18,7 @@ class CreateArticlesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->text('body');
+			$table->string('author');
             $table->string('description');
 
             $table->timestamps();
