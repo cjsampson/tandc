@@ -1,10 +1,11 @@
 * {
+  font-family: "Merriweather Sans", sans-serif;
   margin: 0px;
   padding: 0px; }
 
 html, body {
   color: #636b6f;
-  font-family: "Raleway", sans-serif;
+  font-family: "Merriweather Sans", sans-serif;
   font-weight: 100;
   margin: 0;
   height: 100vh; }
