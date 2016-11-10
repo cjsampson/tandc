@@ -8,7 +8,8 @@
         <title>TandC</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
         <link href="{{ asset('assets/css/font-awesome/font-awesome.min.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="/css/content_box_component.css">
         <link rel="stylesheet" href="/css/starting.css">
@@ -21,12 +22,12 @@
 
         <header>
             <div class="container">
-                <h1 id="logo">TandC</h1>
+                <a href="{{ url('/') }}"><h1 id="logo">TandC</h1></a>
                 <nav>
                     <a href="{{ url('/') }}" class="header-li">Home</a>
-                    <a href="#" class="header-li">Lingo</a>
                     <a href="{{ route('articles_index') }}" class="header-li">Articles</a>
                     <a href="{{ route('videos_index') }}" class="header-li">Videos</a>
+                    <a href="#" class="header-li">Resources</a>
                     <a href="#" class="header-li">Who</a>
                 </nav>
             </div>
@@ -37,6 +38,11 @@
                 @yield('content')
             </section>
         </main>
+
+        <aside>
+            SideBar
+        </aside>
+
 
         @include('partials.footer')            
 
