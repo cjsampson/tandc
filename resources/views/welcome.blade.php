@@ -39,10 +39,6 @@
             </section>
         </main>
 
-        <aside>
-            SideBar
-        </aside>
-
 
         @include('partials.footer')            
 

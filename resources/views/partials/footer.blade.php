@@ -3,6 +3,9 @@
         <div class="footer__mission-statement footer__box">
             <p class="footer__statement">We're just two coders looking to add to the community one "ah-ha" at a time!</p>
             <p class="footer__tandc">TandC 2016</p>
+
+            <label for="message">Drop us a line and let us know what you think!</label>
+            <textarea name="message" id="message" cols="80" rows="5"></textarea>
         </div>
         
         <div class="footer__nav__box footer__box">
