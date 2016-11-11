@@ -25,7 +25,6 @@
             <div class="container">
                 <a href="{{ url('/') }}"><h1 id="logo">TandC</h1></a>
                 <nav>
-                    <a href="{{ url('/') }}" class="header-li">Home</a>
                     <a href="{{ route('articles_index') }}" class="header-li">Articles</a>
                     <a href="{{ route('videos_index') }}" class="header-li">Videos</a>
                     <a href="#" class="header-li">Resources</a>

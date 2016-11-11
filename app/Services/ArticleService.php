@@ -86,4 +86,9 @@ class ArticleService
 
         return $body;
     }
+
+    public function coverImage($image)
+    {
+        return $image->storeAs( 'public/images/', $image->getClientOriginalName() );    
+    }
 }

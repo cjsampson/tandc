@@ -24,7 +24,7 @@ class ImageService
 
     public function storePhoto( $file)
     {
-        return $file->storeAs('public/images/', uniqid('img_') . $file->getClientOriginalName());
+        return $file->storeAs('public/images', uniqid('img_') . $file->getClientOriginalName());
     }
 
     /**
