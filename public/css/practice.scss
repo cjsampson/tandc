@@ -1,0 +1,30 @@
+$main:        #34314c;
+$secondary:   #9592ad;
+$border:      #d9dee9;
+$highlight_1: #001f3f;
+$highlight_2: #2ECC40;
+$highlight_3: #FF4136;
+$highlight_4: #FF851B;
+
+body {
+  font-family: 'Helvetica', sans-serif;
+}
+
+
+.border {
+  height: 6px;
+  border: 0;
+  background-color: $highlight_1;
+  background-image:
+    linear-gradient(
+      to right,
+      $highlight_1,
+      $highlight_1 33%,
+      $highlight_2 33%,
+      $highlight_2 66%,
+      $highlight_3 66%,
+      $highlight_3 100%,
+      $highlight_3 100%
+    );
+  background-size: 50% 100%;
+}

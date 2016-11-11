@@ -8,66 +8,22 @@
         <title>TandC</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+        <link href="{{ asset('assets/css/font-awesome/font-awesome.min.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="/css/content_box_component.css">
+        <link rel="stylesheet" href="/css/starting.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/practice.css">
         <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-            a {
-                text-decoration: none;
-            }
-            li {
-                list-style-type: none;
-            }
-            nav {
-                display: flex;
-                justify-content: space-around;
-                /*align-items: flex-end;*/
-            }
-            .header-li {
-                font-size: 2em;
-            }
-            header { 
-                background-color: orange; 
-                height: 200px;
-            }
-        </style>
+
         @yield('styles')
     </head>
     <body>
 
-        <div class="wrapper">
-
-            <header>
-                <nav>
-                    <a href="#" class="header-li"><li>Home</li></a>
-                    <a href="#" class="header-li"><li>Terminology</li></a>
-                    <a href="{{ route('articles_index') }}" class="header-li"><li>Articles</li></a>
-                    <a href="{{ route('videos_index') }}" class="header-li"><li>Videos</li></a>
-                    <a href="#" class="header-li"><li>About</li></a>
-                    <a href="{{ route('contact_index') }}" class="header-li">Contact</a>
-                    <a href="#" class="header-li">Settings</a>
-                </nav>
-            </header>
-    
-        
-            <aside>
-                <div class="sidebar">
-                    Sidebar
-                </div>    
-            </aside>
-
-            <main class="main-content">
-                @yield('content')
-            </main>
-    
-    </div> {{-- .wrapper --}}
-
+    <div class="border"></div>
+    <h1>Hello World</h1>
+    <script src="js/header.js"></script>
+    @yield('scripts')
     </body>
 </html>
