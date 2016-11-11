@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="/css/content_box_component.css">
         <link rel="stylesheet" href="/css/starting.css">
         <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/practice.css">
         <!-- Styles -->
 
         @yield('styles')
@@ -31,8 +32,9 @@
                     <a href="#" class="header-li">Who</a>
                 </nav>
             </div>
+            <div class="border"></div>    
         </header>
-
+        
         <main>
             <section class="content">
                 @yield('content')
