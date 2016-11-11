@@ -9,5 +9,4 @@
     {!! Form::multiSelect($keywords, 'keywords', null, 'test') !!}
     {!! Form::file('images[]', ['multiple' => 'multiple']) !!}
     {!! Form::submit('Submit') !!}
-    <img src="/storage/images.jpeg" alt="">
 @stop

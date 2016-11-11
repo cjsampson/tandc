@@ -12,7 +12,6 @@
     <div class="wrapper">
         <div>
 
-            <p>lorem</p>
             {!! $article->body !!}
         </div>
 
