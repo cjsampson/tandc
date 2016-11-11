@@ -1,23 +1,33 @@
-<div class="video-grid">
-    <h1>Video Index</h1>
+//
+// Dummy content box for the video page
 
-    @foreach($videos as $video)
-        <div class="video-box">
-            <h4>{{ $video->title}}</h4>
-            <p>{{ $video->category }}</p>
-            <div class="im-a-video-box">
-                Video goes here
-            </div>
-            <iframe 
-                title="youtube video player" src="https://www.youtube.com/embed/{{ $video->url }}" frameborder="0" allowfullscreen>
-            </iframe>
-            
-        </div>
-    @endforeach
+<div class="content--box">
 
-        <div class="video--box--container">
-            <div class="video--box">
-                <div class="video--box--iframe"></div>
-                <p class="video--box--description">Description</p>
-            </div>
-        </div>    
+    <div class="image--box">
+        <img src="https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAJ9AAAAJGYxOTExNjUxLWIyYTQtNDMzYi05OGZlLTMyYjM2MWM4ZDZlYQ.png" 
+        alt="lorem pixel" class="content--image">
+    </div>
+
+    <div class="description--container">
+        <h2 class="cb--title">PHP Basics</h2>
+        <p class="cb--description">Learn how to do the basics in PHP for the first part of this video series.</p>
+        <p class="cb--date">Date: 10-03-2016</p>
+        <p class="cb--author">Author: <a href="#">CJ Sampson</a></p>
+    </div>
+
+</div> 
+
+//
+// Stuff inside the side bar
+
+<div class="box box1">
+    <h3>Some text for a box</h3>
+</div>
+
+<div class="box box2">
+    <h3>Some text for a box</h3>
+</div>
+
+<div class="box box3">
+    <h3>Some text for a box</h3>
+</div>
