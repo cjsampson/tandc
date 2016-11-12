@@ -52,9 +52,7 @@ function _include($partial){
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/test', function () {
-    return view('test');
-});
+
 
 Route::get('/practice', function() {
     return view('practice');
