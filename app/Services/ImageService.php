@@ -27,6 +27,12 @@ class ImageService
         return $file->storeAs('public/images', uniqid('img_') . $file->getClientOriginalName());
     }
 
+    public function getPath($path)
+    {
+        $pathArray = explode('/', $path);
+        return '/storage/images/'. $pathArray[2];
+    }
+
     /**
      * @param $file
      */
@@ -34,8 +40,8 @@ class ImageService
     {
         return DB::transaction(function () use ($file){
             $path = $this->storePhoto($file);
-
-            return $this->create(['path' => $path]);
+            $publicPath = $this->getPath($path);
+            return $this->create(['path' => $publicPath]);
         });
 
 

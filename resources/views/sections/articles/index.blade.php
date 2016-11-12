@@ -30,7 +30,6 @@
 
                     <div class="description--container">
                         <h2 class="cb--title"><a href="{{ route('articles_show', $article->id) }}">{{ $article->name }}</a></h2>
-
                         <p class="cb--description">{{ $article->description }}</p>
                         <p class="cb--date">{{ $article->updated_at }}</p>
                         <p class="cb--author">Author: <a href="#">{{ $article->author }}</a></p>

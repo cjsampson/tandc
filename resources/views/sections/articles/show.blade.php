@@ -20,8 +20,15 @@
             <div class="sidebar--box">Box 2</div>
             <div class="sidebar--box">Box 3</div>
         </aside>
+        <img src="/storage/images/20161104_153019.jpg" alt="">
 
     </div> {{-- .wrapper --}}
 
+    <script>
+        for (var i = 0; i < array.length; i++) {
+            var obj = array[i];
+            
+        }
+    </script>
 @stop
 
