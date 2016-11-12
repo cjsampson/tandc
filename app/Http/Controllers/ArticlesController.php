@@ -2,20 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
+use App\Services\ImageService;
+use League\Flysystem\Exception;
+use App\Services\KeywordService;
+use App\Services\ArticleService;
+use Illuminate\Database\QueryException;
 use App\Http\Requests\ArticleCreateRequest;
 use App\Http\Requests\ArticleUpdateRequest;
-use App\Models\Article;
-use App\Models\Image;
-use App\Models\Keyword;
-use App\Services\ArticleService;
-use App\Services\KeywordService;
-use App\Services\ImageService;
-use DB;
-use Illuminate\Database\QueryException;
-use Illuminate\Http\Request;
 
-use League\Flysystem\Exception;
-use Datatables;
 
 class ArticlesController extends Controller
 {
@@ -31,6 +26,8 @@ class ArticlesController extends Controller
     /**
      * ArticlesController constructor.
      * @param ArticleService $articleService
+     * @param KeywordService $keywordService
+     * @param ImageService $imageService
      */
     public function __construct( ArticleService $articleService, KeywordService $keywordService, ImageService $imageService )
     {
@@ -40,18 +37,10 @@ class ArticlesController extends Controller
     }
 
     /**
-     * @param Article $article
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
-//        $newKeyword = Keyword::create(['name' => 'keyword 3']);
-//        $article = Article::find(1);
-//        $article->keywords()->attach($newKeyword->id);
-//        $article->keywords()->detach(1);
-//        $keywords = $article->keywords;
-//        $images = $article->images;
-//        dd($keywords);
         $articles = $this->articleService->all();
 
         return view('sections.articles.index', compact('articles'));
@@ -80,6 +69,7 @@ class ArticlesController extends Controller
 
     /**
      * @param ArticleCreateRequest $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store( ArticleCreateRequest $request )
     {
@@ -91,10 +81,10 @@ class ArticlesController extends Controller
 
             $request['body'] = $this->articleService->imgReplace($images, $request->body);
             $request['image_id'] = $images;
-
             $request['cover_image'] = $this->articleService->coverImage($request->cover_image);
 
-            $article = $this->articleService->create($request->all());            
+            //creation of the article
+            $article = $this->articleService->create($request->all());
 
             return redirect()->route('articles_show', $article->id);
 

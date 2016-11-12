@@ -2,9 +2,8 @@
 
 namespace App\Services;
 
-use App\Models\Image;
 use DB;
-use App;
+use App\Models\Image;
 use App\Repositories\ArticleRepository;
 
 
@@ -36,6 +35,7 @@ class ArticleService
 
     /**
      * @param array $attributes
+     * @return mixed
      */
     public function create( Array $attributes )
     {
@@ -87,8 +87,12 @@ class ArticleService
         return $body;
     }
 
-    public function coverImage($image)
+    /**
+     * @param $image
+     * @return mixed
+     */
+    public function coverImage( $image )
     {
-        return $image->storeAs( 'public/images/', $image->getClientOriginalName() );    
+        return $image->storeAs('public/images/', $image->getClientOriginalName());
     }
 }

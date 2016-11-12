@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\ContactService;
-use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use League\Flysystem\Exception;
+use App\Services\ContactService;
+use Illuminate\Database\QueryException;
 
 class ContactController extends Controller
 {

@@ -54,6 +54,7 @@ class KeywordsController extends Controller
     {
         try {
             $this->keywordsService->create($request->all());
+
             return redirect()->route('dashboard_keywords_index');
         } catch ( QueryException $e ) {
             dd($e);
@@ -81,6 +82,7 @@ class KeywordsController extends Controller
     {
         try {
             $this->keywordsService->update($request->all(), $id);
+
             return redirect()->route('dashboard_keywords_index');
         } catch ( QueryException $e ) {
             dd($e);

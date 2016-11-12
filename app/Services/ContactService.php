@@ -16,16 +16,26 @@ class ContactService
     protected $contactRepository;
 
 
+    /**
+     * ContactService constructor.
+     * @param ContactRepository $contactRepository
+     */
     public function __construct( ContactRepository $contactRepository )
     {
         $this->contactRepository = $contactRepository;
     }
 
+    /**
+     * @param array $attributes
+     */
     private function create( array $attributes )
     {
         $this->contactRepository->create($attributes);
     }
 
+    /**
+     * @param array $attributes
+     */
     private function sendEmail( array $attributes )
     {
         Mail::send('sections.contact.email', ['body' => $attributes['message']], function ( $message ) use ( $attributes ) {
@@ -35,6 +45,9 @@ class ContactService
         });
     }
 
+    /**
+     * @param array $attributes
+     */
     public function createAndSend( array $attributes )
     {
         DB::transaction(function () use ( $attributes ) {

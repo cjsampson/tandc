@@ -2,9 +2,8 @@
 
 namespace App\Services;
 
-use App;
-use App\Repositories\KeywordRepository;
 use DB;
+use App\Repositories\KeywordRepository;
 
 
 class KeywordService
@@ -54,11 +53,18 @@ class KeywordService
         });
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function find( $id )
     {
         return $this->keywordRepository->find($id);
     }
 
+    /**
+     * @return mixed
+     */
     public function all()
     {
         return $this->keywordRepository->all();
