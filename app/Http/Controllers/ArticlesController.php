@@ -79,12 +79,14 @@ class ArticlesController extends Controller
                 $images[] = $image->id;
             }
 
-            $request['body'] = $this->articleService->imgReplace($images, $request->body);
-            $request['image_id'] = $images;
-            $request['cover_image'] = $this->articleService->coverImage($request->cover_image);
+            //store the needed $request files in $data without mutating the $request object
+            $data = $request->except('cover_image', 'body');
+            $data['cover_image'] = $this->articleService->coverImage($request->file('cover_image'));
+            $data['images_id'] = $images;
+            $data['body'] = $this->articleService->imgReplace($images, $request->input('body'));
 
             //creation of the article
-            $article = $this->articleService->create($request->all());
+            $article = $this->articleService->create($data);
 
             return redirect()->route('articles_show', $article->id);
 

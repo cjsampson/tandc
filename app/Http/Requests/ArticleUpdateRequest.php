@@ -24,7 +24,12 @@ class ArticleUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'        => 'required',
+            'body'        => 'required',
+            'author'      => 'required',
+            'description' => 'required',
+            'cover_image' => 'required',
+            'keywords'    => 'required',
         ];
     }
 }
