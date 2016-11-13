@@ -58,3 +58,7 @@ Route::get('/practice', function() {
     return view('practice');
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

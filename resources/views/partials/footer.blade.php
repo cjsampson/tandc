@@ -41,7 +41,7 @@
             <ul>
                 <li class="footer__box__li"><a href="#">Contact</a></li>
                 <li class="footer__box__li"><a href="#">Subscribe</a></li>
-                <li class="footer__box__li"><a href="#">Register</a></li>
+                <li class="footer__box__li"><a href="/register">Register</a></li>
                 <li class="footer__box__li"><a href="#">Terms</a></li>
             </ul>
         </div>
