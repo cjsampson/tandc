@@ -3,6 +3,10 @@
   border: 0;
   background-color: #001f3f;
   background-image: linear-gradient(to right, #001f3f, #001f3f 33%, #2ECC40 33%, #2ECC40 66%, #FF4136 66%, #FF4136 100%, #FF4136 100%);
-  background-size: 50% 100%; }
+  background-size: 50% 100%;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 100%; }
 
 /*# sourceMappingURL=practice.css.map */

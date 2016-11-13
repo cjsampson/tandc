@@ -13,7 +13,7 @@
 
     <div class="wrapper">
 
-        {!! $article->body !!}
+{!! $article->body !!}
 
         <aside class="sidebar">
             <div class="sidebar--box">Box 1</div>
@@ -22,6 +22,7 @@
         </aside>
 
     </div> {{-- .wrapper --}}
-
+        
+    <img src="/images/name.jpg" alt="picture">
 @stop
 
