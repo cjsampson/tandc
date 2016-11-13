@@ -23,17 +23,36 @@ class AppServiceProvider extends ServiceProvider
          * The id attribute of the html
          * @param null $class
          * The class attribute of the html
+         * @param null $keywords
+         * The current $keywords a object has
          * @return string
          */
         Form::macro(
-            'multiSelect', function ( $data, $name, $id = null, $class = null ) {
+            'multiSelect', function ( $data, $name, $id = null, $class = null, $keywords = null ) {
             $html = "<select multiple='multiple'"
                 . "name='{$name}[]'"
-                . (isset($id) ? "id='{$id}'" : '')
-                . (isset($class) ? "class='{$class}'" : '')
+                . ( isset( $id ) ? "id='{$id}'" : '' )
+                . ( isset( $class ) ? "class='{$class}'" : '' )
                 . '>';
-            foreach ( $data as $item ) {
-                $html .= "<option value=$item->id> {$item->name} </option>";
+            //if $keywords then have those keywords selected
+            if ( $keywords ) {
+                foreach ( $data as $key => $item ) {
+                    $pass = false;
+                    for ( $x = 0; $x < count($keywords); $x++ ) {
+                        if ( $item->name == $keywords[$x]->name ) {
+                            $pass = true;
+                            $html .= "<option value=$item->id selected='selected'> {$item->name} </option>";
+                        }
+                    }
+                    if ( ! $pass ) {
+                        $html .= "<option value=$item->id > {$item->name} </option>";
+                    }
+                }
+
+            } else {
+                foreach ( $data as $item ) {
+                    $html .= "<option value=$item->id> {$item->name} </option>";
+                }
             }
             $html .= '</select>';
 

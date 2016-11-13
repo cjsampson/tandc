@@ -57,7 +57,8 @@ class ArticleService
     public function update( Array $attributes, $id )
     {
         DB::transaction(function () use ( $attributes, $id ) {
-            $this->articleRepository->update($attributes, $id);
+            $article = $this->articleRepository->update($attributes, $id);
+            $article->keywords()->sync($attributes['keywords']);
         });
     }
 

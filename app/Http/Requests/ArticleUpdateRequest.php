@@ -13,7 +13,7 @@ class ArticleUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -28,7 +28,6 @@ class ArticleUpdateRequest extends FormRequest
             'body'        => 'required',
             'author'      => 'required',
             'description' => 'required',
-            'cover_image' => 'required',
             'keywords'    => 'required',
         ];
     }
