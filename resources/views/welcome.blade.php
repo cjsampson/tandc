@@ -29,6 +29,9 @@
                     <a href="{{ route('videos_index') }}" class="header-li">Videos</a>
                     <a href="#" class="header-li">Resources</a>
                     <a href="#" class="header-li">Who</a>
+                    @if(isset(Auth::user()->role) && Auth::user()->role === 'admin')
+                        <a href="#" class="header-li">Dashboard</a>
+                    @endif
                 </nav>
             </div>
             <div class="border"></div>    
