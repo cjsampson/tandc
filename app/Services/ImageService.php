@@ -2,43 +2,68 @@
 
 namespace App\Services;
 
-use App\Repositories\ImageRepository;
 use DB;
-use Mail;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
+use App\Repositories\ImageRepository;
 
 
 class ImageService
 {
 
+    /**
+     * @var ImageRepository
+     */
     private $imageRepository;
 
-    public function __construct(ImageRepository $imageRepository)
+    /**
+     * ImageService constructor.
+     * @param ImageRepository $imageRepository
+     */
+    public function __construct( ImageRepository $imageRepository )
     {
         $this->imageRepository = $imageRepository;
     }
+
+    /**
+     * @param array $attributes
+     * @return mixed
+     */
     public function create( array $attributes )
     {
         return $this->imageRepository->create($attributes);
     }
 
-    public function storePhoto( $file)
+    /**
+     * @param $file
+     * @return mixed
+     */
+    public function storePhoto( $file )
     {
         return $file->storeAs('public/images', uniqid('img_') . $file->getClientOriginalName());
     }
 
     /**
+     * @param $path
+     * @return string
+     */
+    public function getPath( $path )
+    {
+        $pathArray = explode('/', $path);
+
+        return '/storage/images/' . $pathArray[2];
+    }
+
+    /**
      * @param $file
+     * @return mixed
      */
     public function storeAndCreate( $file )
     {
-        return DB::transaction(function () use ($file){
+        return DB::transaction(function () use ( $file ) {
             $path = $this->storePhoto($file);
+            $publicPath = $this->getPath($path);
 
-            return $this->create(['path' => $path]);
+            return $this->create(['path' => $publicPath]);
         });
-
-
     }
 
 }

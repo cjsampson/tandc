@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Keyword;
+use Illuminate\Http\Request;
+use League\Flysystem\Exception;
 use App\Services\KeywordService;
 use Illuminate\Database\QueryException;
-use Illuminate\Http\Request;
 use App\Http\Requests\KeywordCreateRequest;
 use App\Http\Requests\KeywordUpdateRequest;
-use League\Flysystem\Exception;
 
 
 class KeywordsController extends Controller
@@ -28,6 +27,7 @@ class KeywordsController extends Controller
     }
 
     /**
+     * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index( Request $request )
@@ -49,11 +49,13 @@ class KeywordsController extends Controller
 
     /**
      * @param KeywordCreateRequest $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store( KeywordCreateRequest $request )
     {
         try {
             $this->keywordsService->create($request->all());
+
             return redirect()->route('dashboard_keywords_index');
         } catch ( QueryException $e ) {
             dd($e);
@@ -63,8 +65,9 @@ class KeywordsController extends Controller
     }
 
     /**
-     * @param Keyword $keyword
+     * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @internal param Keyword $keyword
      */
     public function edit( $id )
     {
@@ -76,11 +79,13 @@ class KeywordsController extends Controller
     /**
      * @param $id
      * @param KeywordUpdateRequest $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update( $id, KeywordUpdateRequest $request )
     {
         try {
             $this->keywordsService->update($request->all(), $id);
+
             return redirect()->route('dashboard_keywords_index');
         } catch ( QueryException $e ) {
             dd($e);

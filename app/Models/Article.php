@@ -29,7 +29,7 @@ class Article extends Model implements Transformable
      */
     public function images()
     {
-     return $this->belongsToMany('App\Models\Image');
+        return $this->belongsToMany('App\Models\Image');
     }
 
 }

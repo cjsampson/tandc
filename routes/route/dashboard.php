@@ -1,5 +1,5 @@
 <?php
-Route::group(['prefix' => 'dashboard'], function () {
+Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], function () {
     require 'dashboard/keywords.php';
     Route::get('/dashboard', function () {
         return view('dashboard');
@@ -9,5 +9,5 @@ Route::group(['prefix' => 'dashboard'], function () {
         return view('sections.videos.index');
     });
     // require 'dashboard/videos.php';
-//    require 'dashboard/articles.php';
+    require 'dashboard/articles.php';
 });
