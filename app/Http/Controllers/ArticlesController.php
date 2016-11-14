@@ -101,9 +101,11 @@ class ArticlesController extends Controller
      * @param Article $article
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function edit( Article $article )
+    public function edit( $id )
     {
-        return view('sections.articles.edit');
+        $article = $this->articleService->find($id);
+        $keywords = $this->keywordService->all();
+        return view('sections.articles.edit', compact('article', 'keywords'));
     }
 
     /**
@@ -119,6 +121,8 @@ class ArticlesController extends Controller
         } catch ( Exception $e ) {
             dd($e);
         }
+
+        return redirect()->route('articles_show', $id);
     }
 
 
