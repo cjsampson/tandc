@@ -68,4 +68,12 @@ class VideoService
             $video->keywords()->sync($attributes['keywords']);
         });
     }
+
+    /**
+     * @param $id
+     */
+    public function delete( $id)
+    {
+        $this->videoRepository->delete($id);
+    }
 }

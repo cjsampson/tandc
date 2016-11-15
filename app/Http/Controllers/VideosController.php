@@ -110,4 +110,19 @@ class VideosController extends Controller
 
         return redirect()->route('video_show', $id);
     }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function delete( $id )
+    {
+        try {
+            $this->videoService->delete($id);
+        } catch ( Exception $e ) {
+            dd($e);
+        }
+
+        return redirect()->route('video_index');
+    }
 }
