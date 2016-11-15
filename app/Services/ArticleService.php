@@ -106,4 +106,12 @@ class ArticleService
     {
         return $image->storeAs('public/images', uniqid('cover_img_') . $image->getClientOriginalName());
     }
+
+    /**
+     * @param $id
+     */
+    public function delete( $id )
+    {
+        $this->articleRepository->delete($id);
+    }
 }
