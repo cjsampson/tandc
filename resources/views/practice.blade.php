@@ -21,7 +21,7 @@
     </head>
     <body>
 
-    <div class="border"></div>
+    
     <h1>Hello World</h1>
     <script src="js/header.js"></script>
     @yield('scripts')

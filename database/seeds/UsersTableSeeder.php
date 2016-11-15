@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Keyword;
 use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder

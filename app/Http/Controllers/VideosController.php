@@ -32,4 +32,10 @@ class VideosController extends Controller
 
         return view('sections.videos.show', $video);
     }    
+
+    public function store(Request $request)
+    {   
+        $this->videoRepository->create($request->all()); 
+        dd($this->videoRepository->all());
+    }    
 }
