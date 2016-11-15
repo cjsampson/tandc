@@ -64,7 +64,6 @@ Route::get('/logout', [
     'uses' => 'Auth\LoginController@logout',
     'as' => 'logout',
 ]);
-Route::get('/home', 'HomeController@index');
 
 Route::get('/dashboard', function() {
     return view('dashboard');

@@ -16,22 +16,18 @@
 
                 {{ csrf_field() }}
 
-                
                 <input type="text" name="name" id="name" placeholder="Your Name:">
-                
-                
+
                 <input type="text" name="email" id="email" placeholder="Your Email:">
 
-                
-                <select name="reason" id="reason">
+                <select name="title" id="reason">
                     <option value="select" disabled selected>Select Reason</option>
                     <option value="feedback">Feedback</option>
                     <option value="hire">Hire</option>
                     <option value="hello">Just Saying Hello :)</option>
                     <option value="ski">Ski with us!</option>
                 </select>
-                
-                
+
                 <textarea name="message" id="" cols="30" rows="10" placeholder="Let us know what you're thinking!"></textarea>
 
                 <button type="submit" class="contact--form--button">Send</button>
