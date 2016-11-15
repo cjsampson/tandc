@@ -10,5 +10,15 @@
 
 
 @section('content')
+
+
+    <div class="article--wrapper">
+
+        <div class="article--header">
+            <h2 class="article--title">React JS for Noobs</h2>
+            <img src="/images/react.png" alt="React Js">
+        </div>
+    </div>
+
 @stop
 
