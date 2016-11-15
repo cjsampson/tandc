@@ -1,12 +1,12 @@
 <?php
 Route::group(['prefix' => 'contact'], function () {
     Route::match(['get', 'post'], '/', [
-        'uses' => 'ContactsController@index',
+        'uses' => 'ContactController@index',
         'as'   => 'contact_index',
     ]);
 
     Route::post('store', [
-        'uses' => 'ContactsController@store',
+        'uses' => 'ContactController@store',
         'as'   => 'contact_store',
     ]);
 });
