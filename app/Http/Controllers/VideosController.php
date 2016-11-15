@@ -14,15 +14,27 @@ use Psy\Exception\Exception;
 class VideosController extends Controller
 {
 
+    /**
+     * @var App\Services\VideoService
+     * @var KeywordService
+     */
     protected $videoService;
     protected $keywordService;
 
+    /**
+     * VideosController constructor.
+     * @param KeywordService $keywordService
+     * @param App\Services\VideoService $videoService
+     */
     public function __construct( KeywordService $keywordService, App\Services\VideoService $videoService )
     {
         $this->videoService = $videoService;
         $this->keywordService = $keywordService;
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $videos = $this->videoService->all();
@@ -30,6 +42,10 @@ class VideosController extends Controller
         return view('sections.videos.index', compact('videos'));
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function show( $id )
     {
         $video = $this->videoService->find($id);
@@ -37,6 +53,9 @@ class VideosController extends Controller
         return view('sections.videos.show', compact('video'));
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function create()
     {
         $keywords = $this->keywordService->all();
@@ -44,6 +63,10 @@ class VideosController extends Controller
         return view('sections.videos.create', compact('keywords'));
     }
 
+    /**
+     * @param VideoRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store( VideoRequest $request )
     {
         try {
@@ -58,6 +81,10 @@ class VideosController extends Controller
         }
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function edit( $id )
     {
         $video = $this->videoService->find($id);
@@ -66,6 +93,11 @@ class VideosController extends Controller
         return view('sections.videos.edit', compact('video', 'keywords'));
     }
 
+    /**
+     * @param $id
+     * @param VideoRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function update( $id, VideoRequest $request )
     {
         try {
