@@ -10,5 +10,7 @@ class Video extends Model implements Transformable
 {
     use TransformableTrait;
 
-    protected $fillable = ['title', 'description', 'cover_image', 'author', 'category', 'keywords', 'url'];
+    protected $fillable = [
+        'title', 'description', 'cover_image', 'author', 'category', 'keywords', 'url'
+    ];
 }
