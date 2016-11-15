@@ -11,24 +11,24 @@ Route::group(['prefix' => 'videos'], function (){
 
     Route::group(['middleware' => ['auth', 'admin']], function (){
         Route::get('/create', [
-            'uses' => 'KeywordsController@create',
-            'as'   => 'settings_keywords_create',
+            'uses' => 'VideosController@create',
+            'as'   => 'video_create',
         ]);
         Route::post('/store', [
             'uses' => 'VideosController@store',
             'as'   => 'video_store',
         ]);
         Route::get('/edit/{id}', [
-            'uses' => 'KeywordsController@edit',
-            'as'   => 'settings_keywords_edit',
+            'uses' => 'VideosController@edit',
+            'as'   => 'video_edit',
         ]);
         Route::post('/update/{id}', [
-            'uses' => 'KeywordsController@update',
-            'as'   => 'settings_keywords_update',
+            'uses' => 'VideosController@update',
+            'as'   => 'video_update',
         ]);
         Route::delete('/destroy/{id}', [
-            'uses' => 'KeywordsController@destroy',
-            'as'   => 'settings_keywords_destroy',
+            'uses' => 'VideosController@destroy',
+            'as'   => 'video_destroy',
         ]);
     });
 });
