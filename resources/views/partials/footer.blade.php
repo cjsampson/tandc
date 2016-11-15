@@ -6,7 +6,10 @@
             <p class="footer__statement">We love all things programming and web-development</p>
             <p class="footer__tandc">TandC 2016</p>
 
-            <button class="contact--button">Drop us a line!</button>
+            <div class="contact--button--box">
+                <button class="contact--button" id="contact--button">Drop us a line!</button>    
+            </div>
+            
         </div>
         
         <div class="footer__nav__box footer__box">
