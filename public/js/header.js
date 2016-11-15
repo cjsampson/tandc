@@ -11,3 +11,9 @@ function init() {
   });
 }
 window.onload = init()
+
+
+document.getElementById("contact--button").onclick = function () {
+  location.href = "/contact";
+}
+
