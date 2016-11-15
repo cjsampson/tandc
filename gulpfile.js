@@ -34,6 +34,8 @@ elixir(function (mix) {
     //font-awesome
     mix.copy(`${node}font-awesome/css/font-awesome.min.css`, `${css}font-awesome`);
     mix.copy(`${node}font-awesome/fonts`, `${fonts}`);
-
+    // highlight.js
+    mix.copy(`${node}highlightjs/styles/solarized_light.css`, `${css}highlightjs/styles`);
+    mix.copy(`${node}highlightjs/highlight.pack.min.js`, `${js}highlightjs/`);
 
 });

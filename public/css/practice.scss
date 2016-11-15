@@ -6,11 +6,6 @@ $highlight_2: #2ECC40;
 $highlight_3: #FF4136;
 $highlight_4: #FF851B;
 
-body {
-  font-family: 'Helvetica', sans-serif;
-}
-
-
 .border {
   height: 6px;
   border: 0;
@@ -27,4 +22,8 @@ body {
       $highlight_3 100%
     );
   background-size: 50% 100%;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 100%;
 }

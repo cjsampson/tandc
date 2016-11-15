@@ -2,9 +2,8 @@
 
 namespace App\Services;
 
-use App\Models\Image;
 use DB;
-use App;
+use App\Models\Image;
 use App\Repositories\ArticleRepository;
 
 
@@ -36,18 +35,17 @@ class ArticleService
 
     /**
      * @param array $attributes
+     * @return mixed
      */
     public function create( Array $attributes )
     {
-        $article = DB::transaction(function () use ( $attributes ) {
+        return DB::transaction(function () use ( $attributes ) {
             $article = $this->articleRepository->create($attributes);
             $article->keywords()->sync($attributes['keywords']);
-            $article->images()->sync($attributes['image_id']);
+            $article->images()->sync($attributes['images_id']);
 
             return $article;
         });
-
-        return $article;
     }
 
     /**
@@ -57,7 +55,8 @@ class ArticleService
     public function update( Array $attributes, $id )
     {
         DB::transaction(function () use ( $attributes, $id ) {
-            $this->articleRepository->update($attributes, $id);
+            $article = $this->articleRepository->update($attributes, $id);
+            $article->keywords()->sync($attributes['keywords']);
         });
     }
 
@@ -85,5 +84,26 @@ class ArticleService
         }
 
         return $body;
+    }
+
+    /**
+     * @param $image
+     * @return string
+     */
+    public function coverImage( $image )
+    {
+        $path = $this->storeCoverImage($image);
+        $pathArray = explode('/', $path);
+
+        return '/storage/images/' . $pathArray[2];
+    }
+
+    /**
+     * @param $image
+     * @return mixed
+     */
+    public function storeCoverImage( $image )
+    {
+        return $image->storeAs('public/images', uniqid('cover_img_') . $image->getClientOriginalName());
     }
 }

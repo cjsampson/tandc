@@ -26,10 +26,10 @@ class ImagesController extends Controller
      */
     protected $validator;
 
-    public function __construct(ImageRepository $repository, ImageValidator $validator)
+    public function __construct( ImageRepository $repository, ImageValidator $validator )
     {
         $this->repository = $repository;
-        $this->validator  = $validator;
+        $this->validator = $validator;
     }
 
 
@@ -43,7 +43,7 @@ class ImagesController extends Controller
         $this->repository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
         $images = $this->repository->all();
 
-        if (request()->wantsJson()) {
+        if ( request()->wantsJson() ) {
 
             return response()->json([
                 'data' => $images,
@@ -60,7 +60,7 @@ class ImagesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(ImageCreateRequest $request)
+    public function store( ImageCreateRequest $request )
     {
 
         try {
@@ -74,14 +74,14 @@ class ImagesController extends Controller
                 'data'    => $image->toArray(),
             ];
 
-            if ($request->wantsJson()) {
+            if ( $request->wantsJson() ) {
 
                 return response()->json($response);
             }
 
             return redirect()->back()->with('message', $response['message']);
-        } catch (ValidatorException $e) {
-            if ($request->wantsJson()) {
+        } catch ( ValidatorException $e ) {
+            if ( $request->wantsJson() ) {
                 return response()->json([
                     'error'   => true,
                     'message' => $e->getMessageBag()
@@ -100,11 +100,11 @@ class ImagesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show( $id )
     {
         $image = $this->repository->find($id);
 
-        if (request()->wantsJson()) {
+        if ( request()->wantsJson() ) {
 
             return response()->json([
                 'data' => $image,
@@ -122,7 +122,7 @@ class ImagesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit( $id )
     {
 
         $image = $this->repository->find($id);
@@ -135,11 +135,11 @@ class ImagesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  ImageUpdateRequest $request
-     * @param  string            $id
+     * @param  string $id
      *
      * @return Response
      */
-    public function update(ImageUpdateRequest $request, $id)
+    public function update( ImageUpdateRequest $request, $id )
     {
 
         try {
@@ -153,15 +153,15 @@ class ImagesController extends Controller
                 'data'    => $image->toArray(),
             ];
 
-            if ($request->wantsJson()) {
+            if ( $request->wantsJson() ) {
 
                 return response()->json($response);
             }
 
             return redirect()->back()->with('message', $response['message']);
-        } catch (ValidatorException $e) {
+        } catch ( ValidatorException $e ) {
 
-            if ($request->wantsJson()) {
+            if ( $request->wantsJson() ) {
 
                 return response()->json([
                     'error'   => true,
@@ -181,11 +181,11 @@ class ImagesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy( $id )
     {
         $deleted = $this->repository->delete($id);
 
-        if (request()->wantsJson()) {
+        if ( request()->wantsJson() ) {
 
             return response()->json([
                 'message' => 'Image deleted.',

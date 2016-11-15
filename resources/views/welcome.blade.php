@@ -23,16 +23,23 @@
 
         <header>
             <div class="container">
+
                 <a href="{{ url('/') }}"><h1 id="logo">TandC</h1></a>
+
                 <nav>
-                    <a href="{{ url('/') }}" class="header-li">Home</a>
-                    <a href="{{ route('articles_index') }}" class="header-li">Articles</a>
+
+                    <a href="{{ route('articles_index') }}" class="header-li">Articles</a>                    
                     <a href="{{ route('videos_index') }}" class="header-li">Videos</a>
                     <a href="#" class="header-li">Resources</a>
                     <a href="#" class="header-li">Who</a>
+                    @if(isset(Auth::user()->role) && Auth::user()->role === 'admin')
+                        <a href="#" class="header-li">Dashboard</a>
+                    @endif
                 </nav>
+                <div class="border"></div>
             </div>
-            <div class="border"></div>    
+
+
         </header>
         
         <main>

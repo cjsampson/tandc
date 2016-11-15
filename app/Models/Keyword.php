@@ -22,4 +22,14 @@ class Keyword extends Model implements Transformable
         return $this->belongsToMany('App\Models\Article');
     }
 
+    /**
+     * get all videos related to a keyword
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function videos()
+    {
+        return $this->belongsToMany('App\Models\Video');
+    }
+
 }

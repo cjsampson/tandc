@@ -10,5 +10,18 @@ class Video extends Model implements Transformable
 {
     use TransformableTrait;
 
-    protected $fillable = [];
+    protected $fillable = [
+        'title', 'description', 'cover_image', 'author', 'url'
+    ];
+
+
+    /**
+     * get all keywords related to an article
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function keywords()
+    {
+        return $this->belongsToMany('App\Models\Keyword');
+    }
 }
