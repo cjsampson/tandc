@@ -35,7 +35,7 @@ class VideosController extends Controller
 
     public function store(Request $request)
     {   
-        $this->videoRepository->create($request->all()); 
+        $this->videoRepository->create($request->all());
         dd($this->videoRepository->all());
-    }    
+    }
 }

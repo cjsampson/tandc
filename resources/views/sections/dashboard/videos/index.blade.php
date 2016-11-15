@@ -17,7 +17,7 @@
 
             <div class="form-group">
                 <label for="title">Title</label>
-                <input type="text" name="tite" id="name" class="form-control">
+                <input type="text" name="title" id="title" class="form-control">
             </div>
 
             <div class="form-group">
@@ -68,4 +68,11 @@
 
     </div> {{-- .container-fluid --}}
 
+<script>
+    function findElement(arr, func) {
+        var num = 0;
+        return num;
+    }
+    findElement([1, 2, 3, 4], function(num) { return num % 2 === 0});
+</script>
 @stop

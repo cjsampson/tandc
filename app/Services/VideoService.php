@@ -2,7 +2,9 @@
 
 namespace App\Services;
 
-use App;
+use DB;
+use App\Models\Image;
+use App\Repositories\VideoRepository;
 
 
 class VideoService{
@@ -13,8 +15,8 @@ class VideoService{
     protected $videoRepository;
 
     
-    public function __construct(){
-        $this->videoRepository = App::make(\App\Repositories\VideoRepository::class);
+    public function __construct(VideoRepository $videoRepository){
+        $this->videoRepository = $videoRepository;
     }
 
     /**
@@ -23,11 +25,8 @@ class VideoService{
      */
     public function create( Array $attributes )
     {
-        $article = DB::transaction(function () use ( $attributes ) {
-            $article = $this->articleRepository->create($attributes);
-        
-            return $video;
-        });
+        // $article = DB::transaction(function () use ( $attributes ) {
+        $video = $this->videoRepository->create($attributes);
 
         return $video;
     }
