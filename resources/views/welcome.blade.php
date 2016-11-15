@@ -36,7 +36,7 @@
                         <a href="#" class="header-li">Dashboard</a>
                     @endif
                 </nav>
-                <div class="border"></div>
+
             </div>
 
 
