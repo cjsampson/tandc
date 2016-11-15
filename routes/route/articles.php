@@ -27,8 +27,8 @@ Route::group(['prefix' => 'articles'], function () {
             'as'   => 'articles_update',
         ]);
         Route::delete('/destroy/{id}', [
-            'uses' => 'ArticlesController@destroy',
-            'as'   => 'articles_destroy',
+            'uses' => 'ArticlesController@delete',
+            'as'   => 'articles_delete',
         ]);
     });
 });
