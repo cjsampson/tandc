@@ -11,10 +11,10 @@
 
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
         <link href="{{ asset('assets/css/font-awesome/font-awesome.min.css') }}" rel="stylesheet">
-        <link rel="stylesheet" href="/css/content_box_component.css">
-        <link rel="stylesheet" href="/css/starting.css">
-        <link rel="stylesheet" href="/css/footer.css">
-        <link rel="stylesheet" href="/css/practice.css">
+        <link rel="stylesheet" href="{{ asset('/css/content_box_component.css') }}">
+        <link rel="stylesheet" href="{{ asset('/css/starting.css') }}">
+        <link rel="stylesheet" href="{{ asset('/css/footer.css') }}">
+        <link rel="stylesheet" href="{{ asset('/css/practice.css') }}">
         <!-- Styles -->
 
         @yield('styles')
@@ -52,7 +52,7 @@
         @include('partials.footer')            
 
     <script src="{{ asset('assets/js/jquery/jquery.min.js') }}"></script>
-    <script src="js/header.js"></script>
+    <script src="{{asset('/js/header.js')}}"></script>
     @yield('scripts')
     </body>
 </html>
