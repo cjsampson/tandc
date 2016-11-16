@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="{{ asset('/css/starting.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/footer.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/practice.css') }}">
+        <link rel="stylesheet" href="{{ asset('/css/sidebar.css') }}">
         <!-- Styles -->
 
         @yield('styles')
