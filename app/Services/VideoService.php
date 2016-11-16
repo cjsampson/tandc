@@ -88,4 +88,13 @@ class VideoService
 
         return '/storage/images/' . $pathArray[2];
     }
+
+    /**
+     * @param $image
+     * @return mixed
+     */
+    public function storeCoverImage( $image )
+    {
+        return $image->storeAs('public/images', uniqid('cover_img_') . $image->getClientOriginalName());
+    }
 }
