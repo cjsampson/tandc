@@ -7,7 +7,7 @@
             <p class="footer__tandc">TandC 2016</p>
 
             <div class="contact--button--box">
-                <button class="contact--button" id="contact--button">Drop us a line!</button>    
+                <button class="footer__contact__button" id="contact--button">Drop us a line!</button>    
             </div>
             
         </div>

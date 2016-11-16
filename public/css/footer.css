@@ -25,7 +25,8 @@ footer {
   margin-right: 45px; }
 
 .footer__box__li {
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  margin-right: 5px; }
 
 .footer__mission-statement {
   flex-basis: 40%; }
@@ -39,8 +40,33 @@ footer {
 .footer__contact__box {
   flex-basis: 20%; }
 
-.footer__box ul li a {
+.footer__box a {
+  display: flex;
+  color: white;
+  position: relative;
+  text-decoration: none; }
+
+.footer__box a:hover {
   color: white; }
+
+.footer__box a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s; }
+
+.footer__box a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1); }
 
 .footer__tandc {
   margin-top: 20px; }
@@ -52,9 +78,10 @@ footer {
   display: flex; }
 
 .footer__box__li a {
-  flex-basis: 75px; }
+  flex-basis: 75px;
+  margin-right: 6px; }
 
-.contact--button {
+.footer__contact__button {
   display: flex;
   overflow: hidden;
   margin-top: 15px;
@@ -77,16 +104,16 @@ footer {
   border: 4px solid white;
   background-color: #0074D9;
   color: white; }
-  .contact--button:hover {
+  .footer__contact__button:hover {
     transition: all 60ms ease;
     background-color: white;
     border: 4px solid #0074D9;
     border-radius: 4px;
     color: #0074D9; }
-  .contact--button:active {
+  .footer__contact__button:active {
     transition: all 60ms ease;
     opacity: 0.75; }
-  .contact--button:focus {
+  .footer__contact__button:focus {
     outline: 1px dotted #959595;
     outline-offset: -4px; }
 
