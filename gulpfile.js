@@ -36,6 +36,7 @@ elixir(function (mix) {
     mix.copy(`${node}font-awesome/fonts`, `${fonts}`);
     // highlight.js
     mix.copy(`${node}highlightjs/styles/solarized_light.css`, `${css}highlightjs/styles`);
+    mix.copy(`${node}highlightjs/styles/tomorrow.css`, `${css}highlightjs/styles`);
     mix.copy(`${node}highlightjs/highlight.pack.min.js`, `${js}highlightjs/`);
 
 });
