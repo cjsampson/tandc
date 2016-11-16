@@ -3,8 +3,17 @@
     max-width: 1000px
     margin-right: auto
     margin-left: auto
-    margin-top: 100px
+    flex-basis: 65%
+    flex-direction: column
+    font-family: 'Helvetica'
+
+.article--header
+    border-bottom: 2px solid whitesmoke
+    margin-bottom: 50px
+    display: flex
     justify-content: center
+    flex-direction: column
+    padding: 15px
 
 
 .article--title
@@ -13,7 +22,8 @@
     justify-content: center
     align-items: center
     padding-bottom: 50px
-    border-bottom: 3px solid grey
+    margin-top: 75px
+    text-decoration: underline
 
 .article--header img
     margin-top: 50px
@@ -38,6 +48,28 @@
     text-align: left
     font-size: 25px
 
+.sidebar
+    flex-basis: 300px
 
-// #something > pre > code[class*=lang-]
-//     font-family: 'Source Code Pro', monospace
+section > div > div > pre > code
+    white-space: pre
+    font-family: 'Anonymous Pro', monospace
+    line-height: 1.9
+    border: 2px solid whitesmoke
+    display: flex
+    align-items: center
+    margin-bottom: 50px
+
+.article--paragraph
+    line-height: 2
+    font-size: 1.25em
+    background-color: #fcfcfc
+    padding: 30px
+    padding-top: 50px
+    box-sizing: border-box
+    min-height: 250px
+    text-align: left
+    display: flex
+    align-items: center
+    margin-bottom: 50px
+    border: 2px solid whitesmoke

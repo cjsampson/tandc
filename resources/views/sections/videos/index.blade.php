@@ -36,9 +36,7 @@
 
         </div> {{-- .video--section --}}
 
-        <aside>
-            <section style="width: 350px; border: 1px solid black;"></section>
-        </aside>
+
 
     </div> {{-- .wrapper --}}
 
