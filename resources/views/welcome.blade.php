@@ -21,10 +21,14 @@
         @yield('styles')
     </head>
     <body>
-
+        
+        @include('partials.sidebar')
         <header>
             <div class="container">
-
+                <div id="main">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+                </div>
                 <a href="{{ url('/') }}"><h1 id="logo">TandC</h1></a>
 
                 <nav>

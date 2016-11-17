@@ -19,6 +19,19 @@ $(document).ready(function() {
   }
 });
 
+
+// $(document).ready(function() {
+//   $('#mySidenav').
+// })
+// $(document).ready(function() {
+//   $('.open--close--sidebar').on('click', function() {
+//     document.getElementsClassName("mySidenav").style.width = "250px";
+//     document.getElementById("main").style.marginLeft = "250px";
+//     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+//   });
+// })
+// <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
