@@ -21,6 +21,7 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
+
   $('.openSidebar').on('click', function() {
     $('.sidenav').css({
       'width': '250px'
@@ -28,6 +29,7 @@ $(document).ready(function() {
     $('body').css({
       'opacity': '0.5'
     });
+  });
   
   $('.closeSidebar').on('click', function() {
     $('.sidenav').css({
@@ -36,8 +38,8 @@ $(document).ready(function() {
     $('body').css({
       'opacity': '1'
     });
-  });
 });
+
   // function openNav() {
   //     document.getElementById("mySidenav").style.width = "250px";
   //     document.getElementById("main").style.marginLeft = "250px";
