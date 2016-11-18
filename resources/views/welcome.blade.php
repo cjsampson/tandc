@@ -23,12 +23,15 @@
     <body>
         
         @include('partials.sidebar')
+
         <header>
             <div class="container">
+            
                 <div id="main">
                     <a>&times;</a>
                     <span class="openSidebar">&#9776; open</span>
                 </div>
+
                 <a href="{{ url('/') }}"><h1 id="logo">TandC</h1></a>
 
                 <nav>

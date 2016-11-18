@@ -14,55 +14,14 @@
 
     <div class="wrapper">
         
-        <div class="article--wrapper">
 
-            <div class="article--header">
-                <h2 class="article--title">How to Give a Button Tag an Href</h2>
-            </div>
-            
-            <p class="article--paragraph">Being that button tags do not have href attributes, you can instead link an event handler to the button and add a location property like so: </p>
 
-            <pre>
-                <code class="js">
-                
-    document.getElementById("contact--button").onclick = function () {
-      location.href = "/someURI";
-    }
+    </div> {{-- .wrapper --}}
+    
+    <section class="sidebar">
+        <p>Content</p>
+    </section>
 
-                </code>
-            </pre>
-
-            <pre>
-                <code class="js">
-                
-    document.getElementById("contact--button").onclick = function () {
-      location.href = "/someURI";
-    }
-
-                </code>
-            </pre>
-
-            <p class="article--paragraph">Being that button tags do not have href attributes, you can instead link an event handler to the button and add a location property like so: </p>
-
-            <pre>
-                <code class="js">
-                
-    document.getElementById("contact--button").onclick = function () {
-      location.href = "/someURI";
-    }
-
-                </code>
-            </pre>                        
-
-            <p class="article--paragraph">Being that button tags do not have href attributes, you can instead link an event handler to the button and add a location property like so: </p>
-
-        </div>
-
-        <section class="sidebar">
-            <p>Content</p>
-        </section>
-
-    </div>
 
 
 @stop
