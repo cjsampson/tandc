@@ -6,6 +6,7 @@
     <script>hljs.initHighlightingOnLoad();</script>
     <link rel="stylesheet" href="/css/article_show.css">
     <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 @stop
 
 
@@ -16,7 +17,6 @@
         <div class="article--wrapper">
 
             <div class="article--header">
-                <img src="/images/javascript.png" alt="React Js">
                 <h2 class="article--title">How to Give a Button Tag an Href</h2>
             </div>
             
