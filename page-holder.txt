@@ -66,3 +66,123 @@ body {
     );
   background-size: 50% 100%;
 }
+
+//
+// header work
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+  <header class="header">
+    <nav>
+      <li>Hello</li>
+      <li>About</li>
+      <li>Contact</li>
+      <li>Resources</li>
+    </nav>
+  </header>
+  
+  <main>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque eum cupiditate unde, deserunt dignissimos nostrum voluptatum molestias aspernatur eius! Asperiores consectetur qui necessitatibus porro, blanditiis, iure quibusdam natus provident incidunt!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed distinctio soluta cum, est neque explicabo! Dignissimos laudantium sapiente adipisci perferendis praesentium, neque, vel eaque a accusantium, odio error modi recusandae?
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora doloremque facilis totam corporis rem perferendis adipisci cupiditate consequatur, accusamus cumque. Commodi cupiditate sunt rem animi obcaecati doloribus error minima eligendi.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur similique facilis, fuga provident corrupti doloribus blanditiis reiciendis iure. Error quibusdam ut voluptatum nemo ad nostrum earum cumque deleniti, nesciunt nihil.
+    </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque eum cupiditate unde, deserunt dignissimos nostrum voluptatum molestias aspernatur eius! Asperiores consectetur qui necessitatibus porro, blanditiis, iure quibusdam natus provident incidunt!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed distinctio soluta cum, est neque explicabo! Dignissimos laudantium sapiente adipisci perferendis praesentium, neque, vel eaque a accusantium, odio error modi recusandae?
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora doloremque facilis totam corporis rem perferendis adipisci cupiditate consequatur, accusamus cumque. Commodi cupiditate sunt rem animi obcaecati doloribus error minima eligendi.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur similique facilis, fuga provident corrupti doloribus blanditiis reiciendis iure. Error quibusdam ut voluptatum nemo ad nostrum earum cumque deleniti, nesciunt nihil.
+    </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque eum cupiditate unde, deserunt dignissimos nostrum voluptatum molestias aspernatur eius! Asperiores consectetur qui necessitatibus porro, blanditiis, iure quibusdam natus provident incidunt!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed distinctio soluta cum, est neque explicabo! Dignissimos laudantium sapiente adipisci perferendis praesentium, neque, vel eaque a accusantium, odio error modi recusandae?
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora doloremque facilis totam corporis rem perferendis adipisci cupiditate consequatur, accusamus cumque. Commodi cupiditate sunt rem animi obcaecati doloribus error minima eligendi.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur similique facilis, fuga provident corrupti doloribus blanditiis reiciendis iure. Error quibusdam ut voluptatum nemo ad nostrum earum cumque deleniti, nesciunt nihil.
+    </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque eum cupiditate unde, deserunt dignissimos nostrum voluptatum molestias aspernatur eius! Asperiores consectetur qui necessitatibus porro, blanditiis, iure quibusdam natus provident incidunt!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed distinctio soluta cum, est neque explicabo! Dignissimos laudantium sapiente adipisci perferendis praesentium, neque, vel eaque a accusantium, odio error modi recusandae?
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora doloremque facilis totam corporis rem perferendis adipisci cupiditate consequatur, accusamus cumque. Commodi cupiditate sunt rem animi obcaecati doloribus error minima eligendi.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur similique facilis, fuga provident corrupti doloribus blanditiis reiciendis iure. Error quibusdam ut voluptatum nemo ad nostrum earum cumque deleniti, nesciunt nihil.
+    </p>
+  </main>
+  
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+</body>
+</html>
+
+body {
+  font-family: 'Helvetica';
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  margin: 0px;
+}
+
+main {
+  height: 2000px;
+  margin-top: 200px;
+}
+
+p {
+  padding: 30px 40px;
+  border: 2px solid indianred;
+  background-color: sandybrown;
+  line-height: 2em;
+  text-indent: 2em;
+}
+
+header {
+  position: fixed;
+  background-color: lime;
+  height: 200px;
+  width: 100%;
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: 15px;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+}
+
+header nav li {
+  line-height: 2em;
+  list-style-type: none;
+  background-color: gainsboro;
+  padding-left: 20px;
+  border-radius: 2px;
+}
+
+header {
+  display: flex;
+  flex-basis: 150px;
+}
+
+.small {
+  height: 100px;
+  transition: height 0.25s ease-in 0.0s;
+}
+
+header {
+  transition: height 0.2s ease-out 0.0s;
+}
+
+$(document).scroll(function() {
+  navbarScroll();
+});
+
+function navbarScroll() {
+  var y = window.scrollY;
+  if (y > 10)
+    $('.header').addClass('small');
+  else if(y < 10) {
+    $('.header').removeClass('small');
+  }
+}
