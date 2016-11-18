@@ -60,8 +60,10 @@ Route::get('/practice', function() {
 
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index');
+Route::get('/logout', [
+    'uses' => 'Auth\LoginController@logout',
+    'as' => 'logout',
+]);
 
 Route::get('/dashboard', function() {
     return view('dashboard');

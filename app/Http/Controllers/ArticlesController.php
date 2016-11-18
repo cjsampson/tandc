@@ -125,5 +125,14 @@ class ArticlesController extends Controller
         return redirect()->route('articles_show', $id);
     }
 
+    public function delete($id)
+    {
+        try{
+            $this->articleService->delete($id);
+        }catch (Exception $e){
+            dd($e);
+        }
+    }
+
 
 }

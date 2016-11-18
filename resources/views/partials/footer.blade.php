@@ -15,8 +15,8 @@
         <div class="footer__nav__box footer__box">
             <h4 class="footer__box__header">Site Navigation</h4>
             <ul>
-                <li class="footer__box__li"><a href="#">Articles</a></li>
-                <li class="footer__box__li"><a href="#">Videos</a></li>
+                <li class="footer__box__li"><a href="{{ route('articles_index') }}">Articles</a></li>
+                <li class="footer__box__li"><a href="{{ route('videos_index') }}">Videos</a></li>
                 <li class="footer__box__li"><a href="#">Resources</a></li>
                 <li class="footer__box__li"><a href="#">About</a></li>
             </ul>
@@ -26,7 +26,7 @@
             <h4 class="footer__box__header">Follow Us</h4>
             <ul>
                 <li class="footer__box__li">
-                    <a href="#">YouTube</a>
+                    <a href="https://www.youtube.com/channel/UCqtCWgVnyMtCynS_EV1t5DQ" target="_blank">YouTube</a>
                     <img src="/images/youtube-icon.png" alt="youtube icon" width="20" height="20">
                 </li>
                 <li class="footer__box__li">

@@ -70,7 +70,10 @@ class VideosController extends Controller
     public function store( VideoRequest $request )
     {
         try {
-            $video = $this->videoService->create($request->all());
+            $data = $request->except('cover_image');
+            $data['cover_image'] = $this->videoService->coverImage($request->file('cover_image'));
+
+            $video = $this->videoService->create($data);
 
             return redirect()->route('video_show', $video->id);
 
@@ -109,5 +112,20 @@ class VideosController extends Controller
         }
 
         return redirect()->route('video_show', $id);
+    }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function delete( $id )
+    {
+        try {
+            $this->videoService->delete($id);
+        } catch ( Exception $e ) {
+            dd($e);
+        }
+
+        return redirect()->route('video_index');
     }
 }

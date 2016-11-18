@@ -19,5 +19,7 @@ class RepositoriesServiceProvider extends ServiceProvider
         $this->app->bind('App\Repositories\ArticleRepository', 'App\Repositories\ArticleRepositoryEloquent');
         $this->app->bind('App\Repositories\ImageRepository',   'App\Repositories\ImageRepositoryEloquent');
         $this->app->bind('App\Repositories\KeywordRepository', 'App\Repositories\KeywordRepositoryEloquent');
+        $this->app->bind('App\Repositories\UserRepository',    'App\Repositories\UserRepositoryEloquent');
+
     }
 }

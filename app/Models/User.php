@@ -2,18 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Prettus\Repository\Contracts\Transformable;
+use Prettus\Repository\Traits\TransformableTrait;
 
 class User extends Authenticatable
 {
     use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'name', 'email', 'password', 'role',
     ];
@@ -27,13 +25,4 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    /**
-     * Sets the password to encrypted when saving to database
-     *
-     * @param $value
-     */
-//    public function setPasswordAttribute( $value)
-//    {
-//        $this->attributes['password'] = bcrypt($value);
-//    }
 }
