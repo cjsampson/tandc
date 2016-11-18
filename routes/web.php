@@ -66,3 +66,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('/dashboard', function() {
     return view('dashboard');
 });
+
+Route::get('/about', function() {
+    return view('about');
+});
