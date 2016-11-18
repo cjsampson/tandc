@@ -43,5 +43,16 @@ class ArticlesTableSeeder extends Seeder
         ]);
         $article->keywords()->sync([2, 5]);
         $article->images()->sync([1, 3, 4]);
+
+// new article--------------------
+        $article = Article::create([
+            'name'        => 'Setting href for a Button Tag',
+            'description' => 'Here\'s a quick hack for dynamically setting a location property for a button tag',
+            'cover_image' => '/images/javascript.png',
+            'body'        => '<div><p>This is a P tag</p></div>',
+            'author'      => 'CJ Sampson',
+        ]);
+        $article->keywords()->sync([2, 5]);
+        $article->images()->sync([1, 3, 4]);        
     }
 }

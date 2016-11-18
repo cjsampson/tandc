@@ -70,7 +70,10 @@ class VideosController extends Controller
     public function store( VideoRequest $request )
     {
         try {
-            $video = $this->videoService->create($request->all());
+            $data = $request->except('cover_image');
+            $data['cover_image'] = $this->videoService->coverImage($request->file('cover_image'));
+
+            $video = $this->videoService->create($data);
 
             return redirect()->route('video_show', $video->id);
 

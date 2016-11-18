@@ -76,4 +76,25 @@ class VideoService
     {
         $this->videoRepository->delete($id);
     }
+
+    /**
+     * @param $image
+     * @return string
+     */
+    public function coverImage( $image )
+    {
+        $path = $this->storeCoverImage($image);
+        $pathArray = explode('/', $path);
+
+        return '/storage/images/' . $pathArray[2];
+    }
+
+    /**
+     * @param $image
+     * @return mixed
+     */
+    public function storeCoverImage( $image )
+    {
+        return $image->storeAs('public/images', uniqid('cover_img_') . $image->getClientOriginalName());
+    }
 }

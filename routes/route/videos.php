@@ -27,8 +27,8 @@ Route::group(['prefix' => 'videos'], function (){
             'as'   => 'video_update',
         ]);
         Route::delete('/destroy/{id}', [
-            'uses' => 'VideosController@destroy',
-            'as'   => 'video_destroy',
+            'uses' => 'VideosController@delete',
+            'as'   => 'video_delete',
         ]);
     });
 });
