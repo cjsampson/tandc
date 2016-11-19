@@ -6,7 +6,7 @@ Route::group(['prefix' => 'videos'], function (){
     ]);
     Route::get('/show/{id}', [
         'uses' => 'VideosController@show',
-        'as'   => 'video_show',
+        'as'   => 'video_show'
     ]);
 
     Route::group(['middleware' => ['auth', 'admin']], function (){

@@ -68,3 +68,7 @@ Route::get('/logout', [
 Route::get('/dashboard', function() {
     return view('dashboard');
 });
+
+Route::get('/about', function() {
+    return view('about');
+});
