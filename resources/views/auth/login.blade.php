@@ -1,68 +1,46 @@
-@extends('layouts.app')
+@extends('welcome')
+
+@section('styles')
+    <link rel="stylesheet" href="{{ asset('/css/login.css') }}">
+@stop
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
-                        {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+    <div class="register--wrapper">
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+        <h1>Log into TandC</h1>
+        <div class="form--question--box--container">
 
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+            <form id="register--form" role="form" method="POST" action="{{ url('/login') }}">
+                {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required
+                       placeholder="Email">
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
+                <input id="password" type="password" class="form-control" name="password" required
+                       placeholder="Password">
 
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                <button type="submit" class="register--form--button">
+                    Login
+                </button>
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember"> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+            </form>
 
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
+            {{--<h2><a href="/login">Already have a account?</a></h2>--}}
+            <div class="password--checks">
+                <label for="remember">Remember Me</label>
+                <input type="checkbox" name="remember">
 
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                <a class="btn btn-link" href="{{ url('/password/reset') }}">
+                    Forgot Your Password?
+                </a>
+
             </div>
-        </div>
+            <div class="newAccount">
+                <a href="/register">Need a new account?</a>
+            </div>
+        </div> {{-- .form--question--box--container --}}
+
     </div>
-</div>
-@endsection
+
+@stop
