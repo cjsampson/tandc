@@ -117,7 +117,11 @@ class ArticleService
         $this->articleRepository->delete($id);
     }
 
-    public function slug($title)
+    /**
+     * @param $title
+     * @return mixed
+     */
+    public function slug( $title)
     {
         $title = strtolower($title);
         return str_replace(' ', '-', $title);

@@ -102,4 +102,15 @@ class VideoService
     {
         return $image->storeAs('public/images', uniqid('cover_img_') . $image->getClientOriginalName());
     }
+
+    /**
+     * @param $title
+     * @return mixed
+     */
+    public function slug( $title)
+    {
+        $title = strtolower($title);
+        return str_replace(' ', '-', $title);
+
+    }
 }

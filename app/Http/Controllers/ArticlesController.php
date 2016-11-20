@@ -92,7 +92,7 @@ class ArticlesController extends Controller
             //creation of the article
             $article = $this->articleService->create($data);
 
-            return redirect()->route('articles_show', $article->id);
+            return redirect()->route('articles_show', $article->slug);
 
         } catch ( QueryException $e ) {
             dd($e);

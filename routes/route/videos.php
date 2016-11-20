@@ -1,14 +1,13 @@
 <?php
+Route::get('/video/{title}', [
+    'uses' => 'VideosController@show',
+    'as'   => 'video_show'
+]);
 Route::group(['prefix' => 'videos'], function (){
     Route::match(['get','post'],'/', [
         'uses' => 'VideosController@index',
         'as'   => 'videos_index',
     ]);
-    Route::get('/{title}', [
-        'uses' => 'VideosController@show',
-        'as'   => 'video_show'
-    ]);
-
     Route::group(['middleware' => ['auth', 'admin']], function (){
         Route::get('/create', [
             'uses' => 'VideosController@create',
