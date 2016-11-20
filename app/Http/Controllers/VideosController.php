@@ -46,9 +46,9 @@ class VideosController extends Controller
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show( $id )
+    public function show( $title )
     {
-        $video = $this->videoService->find($id);
+        $video = $this->videoService->findBySlug($title);
 
         return view('sections.videos.show', compact('video'));
     }

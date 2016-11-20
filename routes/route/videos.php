@@ -4,7 +4,7 @@ Route::group(['prefix' => 'videos'], function (){
         'uses' => 'VideosController@index',
         'as'   => 'videos_index',
     ]);
-    Route::get('/show/{id}', [
+    Route::get('/{title}', [
         'uses' => 'VideosController@show',
         'as'   => 'video_show'
     ]);

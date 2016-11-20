@@ -21,6 +21,7 @@ class CreateArticlesTable extends Migration
             $table->string('cover_image');
 			$table->string('author');
             $table->string('description');
+            $table->string('slug')->unique();
 
             $table->timestamps();
 		});

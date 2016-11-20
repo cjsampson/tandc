@@ -4,7 +4,7 @@ Route::group(['prefix' => 'articles'], function () {
         'as'   => 'articles_index',
         'uses' => 'ArticlesController@index',
     ]);
-    Route::get('/show/{id}', [
+    Route::get('/{title}', [
         'as'   => 'articles_show',
         'uses' => 'ArticlesController@show',
     ]);

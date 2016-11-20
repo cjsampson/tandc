@@ -33,6 +33,11 @@ class VideoService
         return $this->videoRepository->all();
     }
 
+    public function findBySlug( $title )
+    {
+        return $this->videoRepository->findBySlug($title);
+    }
+
     /**
      * @param $id
      * @return mixed

@@ -28,9 +28,9 @@ class ArticleService
      * @param $id
      * @return mixed
      */
-    public function find( $id )
+    public function findBySlug( $title )
     {
-        return $this->articleRepository->find($id);
+        return $this->articleRepository->findBySlug($title);
     }
 
     /**
@@ -42,7 +42,9 @@ class ArticleService
         return DB::transaction(function () use ( $attributes ) {
             $article = $this->articleRepository->create($attributes);
             $article->keywords()->sync($attributes['keywords']);
-            $article->images()->sync($attributes['images_id']);
+            if (isset($attributes['images_id'])){
+                $article->images()->sync($attributes['images_id']);
+            }
 
             return $article;
         });
@@ -113,5 +115,12 @@ class ArticleService
     public function delete( $id )
     {
         $this->articleRepository->delete($id);
+    }
+
+    public function slug($title)
+    {
+        $title = strtolower($title);
+        return str_replace(' ', '-', $title);
+
     }
 }

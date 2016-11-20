@@ -18,6 +18,7 @@ class ArticlesTableSeeder extends Seeder
             'cover_image' => '/images/laravel.png',
             'body'        => '<div><p>This is a P tag</p></div>',
             'author'      => 'Tomas Leffew',
+            'slug' => 'makeing-larevl-easy!',
         ]);
         $article->keywords()->sync([1, 3, 5]);
         $article->images()->sync([1, 2, 3]);
@@ -29,6 +30,7 @@ class ArticlesTableSeeder extends Seeder
             'cover_image' => '/images/react.png',
             'body'        => '<div><p>This is a P tag</p></div>',
             'author'      => 'CJ Sampson',
+            'slug' => 'learning-react',
         ]);
         $article->keywords()->sync([2, 4]);
         $article->images()->sync([1, 2, 4]);
@@ -40,6 +42,7 @@ class ArticlesTableSeeder extends Seeder
             'cover_image' => '/images/jquery.png',
             'body'        => '<div><p>This is a P tag</p></div>',
             'author'      => 'CJ Sampson',
+            'slug' => 'mapping-over-arrays',
         ]);
         $article->keywords()->sync([2, 5]);
         $article->images()->sync([1, 3, 4]);
@@ -51,6 +54,7 @@ class ArticlesTableSeeder extends Seeder
             'cover_image' => '/images/javascript.png',
             'body'        => '<div><p>This is a P tag</p></div>',
             'author'      => 'CJ Sampson',
+            'slug' => 'setting-href-for-a-button-tag',
         ]);
         $article->keywords()->sync([2, 5]);
         $article->images()->sync([1, 3, 4]);        
