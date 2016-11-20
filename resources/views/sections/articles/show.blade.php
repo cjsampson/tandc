@@ -14,7 +14,7 @@
 
     <div class="wrapper">
         
-
+        {!! $article->body !!}
 
     </div> {{-- .wrapper --}}
     
