@@ -61,6 +61,7 @@
 
     <script src="{{ asset('assets/js/jquery/jquery.min.js') }}"></script>
     <script src="{{asset('/js/header.js')}}"></script>
+    <script src="https://cdnjs.com/libraries/bulma"></script>
     @yield('scripts')
     </body>
 </html>
