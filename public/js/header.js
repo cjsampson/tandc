@@ -25,12 +25,10 @@ $(document).ready(function() {
         $('.sidenav').toggleClass('active');
     });
     $(document).on('click', function(e) {
-        // console.log(e.target)
-        var sidebar = $('.sidenav', '#main');
-        if (!sidebar.is(e.target) && sidebar.has(e.target).length === 0) {
-            sidebar.removeClass('active');
+        var sideNav = document.getElementById('mySidenav');
+        var sidebarOpen =document.getElementsByClassName('openSidebar')[0];
+        if (e.target != sideNav && e.target != sidebarOpen) {
+            $('.sidenav').removeClass('active');
         }
-        if (e.target !== sidebar) 
-            sidebar.removeClass('active')
     });
 });
