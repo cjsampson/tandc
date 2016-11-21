@@ -16,4 +16,14 @@
 .wrapper iframe {
   border-radius: 2px; }
 
+.disqus--comments{
+    display: flex;
+  /*flex-basis: 1000px;*/
+  }
+#disqus_thread{
+    /*flex-basis: 1000px;*/
+  /*max-width: 1600px;*/
+    width: 100%;
+}
+
 /*# sourceMappingURL=videos_show.css.map */
