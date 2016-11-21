@@ -21,17 +21,16 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
-
     $('.openSidebar').on('click', function() {
-        $('.sidenav').css({ 'width': '250px' });
-        $('main').css({ 'opacity': '0.5' });
-        $('header').css({ 'opacity': '0.5' });
+        $('.sidenav').toggleClass('active');
     });
-  
-    $('.closeSidebar').on('click', function() {
-        $('.sidenav').css({ 'width': 0 });
-        $('main').css({ 'opacity': '1' });
-        $('header').css({ 'opacity': '1' });
+    $(document).on('click', function(e) {
+        // console.log(e.target)
+        var sidebar = $('.sidenav', '#main');
+        if (!sidebar.is(e.target) && sidebar.has(e.target).length === 0) {
+            sidebar.removeClass('active');
+        }
+        if (e.target !== sidebar) 
+            sidebar.removeClass('active')
     });
-
 });
