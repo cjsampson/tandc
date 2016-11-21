@@ -24,7 +24,7 @@
                         </div>
                 
                         <div class="description--container">
-                            <a href="{{ route('video_show', ['id' => $video->id] ) }}"><h2 class="cb--title">{{ $video->title }}</h2></a>
+                            <a href="{{ route('video_show', $video->slug ) }}"><h2 class="cb--title">{{ $video->title }}</h2></a>
                             <p class="cb--description">{{ $video->description }}</p>
                             <p class="cb--date">{{ $video->updated_at }}</p>
                             <p class="cb--author">Author: <a href="#">{{ $video->author }}</a></p>

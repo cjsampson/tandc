@@ -36,6 +36,6 @@ class UserRepositoryEloquent extends BaseRepository implements UserRepository
 
     public function admins()
     {
-        return User::where('role', 'admin')->get();
+        return $this->model()->where('role', '=', 'admin')->get();
     }
 }

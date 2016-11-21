@@ -46,9 +46,9 @@ class VideosController extends Controller
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show( $id )
+    public function show( $title )
     {
-        $video = $this->videoService->find($id);
+        $video = $this->videoService->findBySlug($title);
 
         return view('sections.videos.show', compact('video'));
     }
@@ -72,10 +72,11 @@ class VideosController extends Controller
         try {
             $data = $request->except('cover_image');
             $data['cover_image'] = $this->videoService->coverImage($request->file('cover_image'));
+            $data['slug'] = $this->videoService->slug($request->input('title'));
 
             $video = $this->videoService->create($data);
 
-            return redirect()->route('video_show', $video->id);
+            return redirect()->route('video_show', $video->slug);
 
         } catch ( QueryException $e ) {
             dd($e);

@@ -1,4 +1,3 @@
-
 @extends('welcome')
 
 @section('styles')
@@ -7,73 +6,36 @@
 
 @section('content')
 
-    <div class="contact--wrapper">
+    <div class="register--wrapper">
 
-        <h1>Get in Touch!</h1>
-
+        <h1>Register with TandC</h1>
         <div class="form--question--box--container">
 
-            <form id="contact--form" role="form" method="POST" action="{{ url('/register') }}">
+            <form id="register--form" role="form" method="POST" action="{{ url('/register') }}">
                 {{ csrf_field() }}
 
-                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                    <label for="name" class="col-md-4 control-label">Name</label>
 
-                    <div class="col-md-6">
-                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required
+                       autofocus placeholder="Name">
 
-                        @if ($errors->has('name'))
-                            <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                        @endif
-                    </div>
-                </div>
 
-                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                    <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
-                    <div class="col-md-6">
-                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required placeholder="Email">
 
-                        @if ($errors->has('email'))
-                            <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                        @endif
-                    </div>
-                </div>
 
-                <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                    <label for="password" class="col-md-4 control-label">Password</label>
 
-                    <div class="col-md-6">
-                        <input id="password" type="password" class="form-control" name="password" required>
+                <input id="password" type="password" class="form-control" name="password" required placeholder="Password">
 
-                        @if ($errors->has('password'))
-                            <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                        @endif
-                    </div>
-                </div>
 
-                <div class="form-group">
-                    <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
 
-                    <div class="col-md-6">
-                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                    </div>
-                </div>
+                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required placeholder="Confirm Password">
 
-                <div class="form-group">
-                    <div class="col-md-6 col-md-offset-4">
-                        <button type="submit" class="btn btn-primary">
-                            Register
-                        </button>
-                    </div>
-                </div>
+                <button type="submit" class="register--form--button">
+                    Register
+                </button>
+                <h2><a href="/login">Already have a account?</a></h2>
             </form>
+
         </div> {{-- .form--question--box--container --}}
 
     </div>

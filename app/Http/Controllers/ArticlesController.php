@@ -50,9 +50,9 @@ class ArticlesController extends Controller
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show( $id )
+    public function show( $title )
     {
-        $article = $this->articleService->find($id);
+        $article = $this->articleService->findBySlug($title);
 
         return view('sections.articles.show', compact('article'));
     }
@@ -74,21 +74,25 @@ class ArticlesController extends Controller
     public function store( ArticleCreateRequest $request )
     {
         try {
-            foreach ( $request->file('images') as $photo ) {
-                $image = $this->imageService->storeAndCreate($photo);
-                $images[] = $image->id;
-            }
 
             //store the needed $request files in $data without mutating the $request object
             $data = $request->except('cover_image', 'body');
             $data['cover_image'] = $this->articleService->coverImage($request->file('cover_image'));
-            $data['images_id'] = $images;
-            $data['body'] = $this->articleService->imgReplace($images, $request->input('body'));
+            $data['slug'] = $this->articleService->slug($request->input('name'));
 
+            if ($request->file('images')){
+                foreach ( $request->file('images') as $photo ) {
+                    $image = $this->imageService->storeAndCreate($photo);
+                    $images[] = $image->id;
+                }
+
+                $data['images_id'] = $images;
+            }
+            $data['body'] = (isset($images) ? $this->articleService->imgReplace($images, $request->input('body')) : $request->input('body'));
             //creation of the article
             $article = $this->articleService->create($data);
 
-            return redirect()->route('articles_show', $article->id);
+            return redirect()->route('articles_show', $article->slug);
 
         } catch ( QueryException $e ) {
             dd($e);

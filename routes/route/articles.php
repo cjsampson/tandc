@@ -1,15 +1,15 @@
 <?php
+Route::get('/article/{title}', [
+    'as'   => 'articles_show',
+    'uses' => 'ArticlesController@show',
+]);
 Route::group(['prefix' => 'articles'], function () {
     Route::match(['get', 'post'], '/', [
         'as'   => 'articles_index',
         'uses' => 'ArticlesController@index',
     ]);
-    Route::get('/show/{id}', [
-        'as'   => 'articles_show',
-        'uses' => 'ArticlesController@show',
-    ]);
 
-    Route::group(['middleware' => ['auth', 'admin']], function (){
+    Route::group(['middleware' => ['auth', 'admin']], function () {
         Route::get('/create', [
             'uses' => 'ArticlesController@create',
             'as'   => 'articles_create',

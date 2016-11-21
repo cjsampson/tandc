@@ -33,6 +33,11 @@ class VideoService
         return $this->videoRepository->all();
     }
 
+    public function findBySlug( $title )
+    {
+        return $this->videoRepository->findBySlug($title);
+    }
+
     /**
      * @param $id
      * @return mixed
@@ -96,5 +101,16 @@ class VideoService
     public function storeCoverImage( $image )
     {
         return $image->storeAs('public/images', uniqid('cover_img_') . $image->getClientOriginalName());
+    }
+
+    /**
+     * @param $title
+     * @return mixed
+     */
+    public function slug( $title)
+    {
+        $title = strtolower($title);
+        return str_replace(' ', '-', $title);
+
     }
 }
