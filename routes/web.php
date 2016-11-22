@@ -72,3 +72,7 @@ Route::get('/dashboard', function() {
 Route::get('/about', function() {
     return view('about');
 });
+
+Route::get('/resources', function() {
+    return view('resources');
+});

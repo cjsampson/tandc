@@ -41,7 +41,7 @@
         </div>
 
         <div class="footer__contact__box footer__box">
-            <h4 class="footer__box__header">Filler</h4>
+            <h4 class="footer__box__header">Info</h4>
             <ul>
                 <li class="footer__box__li"><a href="#">Contact</a></li>
                 <li class="footer__box__li"><a href="#">Subscribe</a></li>
