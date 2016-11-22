@@ -13,9 +13,13 @@
         <link href="{{ asset('assets/css/font-awesome/font-awesome.min.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('/css/content_box_component.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/starting.css') }}">
-        <link rel="stylesheet" href="{{ asset('/css/footer.css') }}">
+        {{-- <link rel="stylesheet" href="{{ asset('/css/footer.css') }}"> --}}
         <link rel="stylesheet" href="{{ asset('/css/practice.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/sidebar.css') }}">
+        <script src="{{ asset('assets/js/jquery/jquery.min.js') }}"></script>
+        <script src="{{asset('/js/header.js')}}"></script>
+        {{-- <script src="https://cdnjs.com/libraries/bulma"></script> --}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
         <!-- Styles -->
 
         @yield('styles')
@@ -59,9 +63,7 @@
 
         @include('partials.footer')            
 
-    <script src="{{ asset('assets/js/jquery/jquery.min.js') }}"></script>
-    <script src="{{asset('/js/header.js')}}"></script>
-    <script src="https://cdnjs.com/libraries/bulma"></script>
+
     @yield('scripts')
     </body>
 </html>

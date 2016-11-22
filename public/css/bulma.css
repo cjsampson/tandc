@@ -1,0 +1,8 @@
+.tabs-container {
+  display: flex;
+  flex-direction: column; }
+
+.tabs-container li {
+  color: black; }
+
+/*# sourceMappingURL=bulma.css.map */
