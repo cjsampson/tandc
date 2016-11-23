@@ -16,6 +16,7 @@
         {{-- <link rel="stylesheet" href="{{ asset('/css/footer.css') }}"> --}}
         <link rel="stylesheet" href="{{ asset('/css/practice.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/sidebar.css') }}">
+        <link rel="stylesheet" href="{{ asset('/css/hamburger.css') }}">
         <script src="{{ asset('assets/js/jquery/jquery.min.js') }}"></script>
         <script src="{{asset('/js/header.js')}}"></script>
         {{-- <script src="https://cdnjs.com/libraries/bulma"></script> --}}
@@ -32,8 +33,13 @@
             <div class="container">
             
                 <div id="main">
-                    <a>&times;</a>
-                    <span class="openSidebar">&#9776; open</span>
+                    {{--<a>&times;</a>--}}
+                    {{--<span class="openSidebar">&#9776; open</span>--}}
+                    <div class="openSidebar" id="nav-icon1">
+                        <span class="hamburger--line"></span>
+                        <span class="hamburger--line"></span>
+                        <span class="hamburger--line"></span>
+                    </div>
                 </div>
 
                 <a href="{{ url('/') }}"><h1 id="logo">TandC</h1></a>
@@ -61,8 +67,14 @@
         </main>
 
 
-        @include('partials.footer')            
-
+        @include('partials.footer')
+        <script>
+//            $(document).ready(function(){
+//                $('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function(){
+//                    $(this).toggleClass('open');
+//                });
+//            });
+        </script>
 
     @yield('scripts')
     </body>
