@@ -13,9 +13,11 @@
         <link href="{{ asset('assets/css/font-awesome/font-awesome.min.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('/css/content_box_component.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/starting.css') }}">
-        {{-- <link rel="stylesheet" href="{{ asset('/css/footer.css') }}"> --}}
+        <link rel="stylesheet" href="{{ asset('/css/footer.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/practice.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/sidebar.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.css">
+        <link rel="stylesheet" href="/css/bulma.css">
         <script src="{{ asset('assets/js/jquery/jquery.min.js') }}"></script>
         <script src="{{asset('/js/header.js')}}"></script>
         {{-- <script src="https://cdnjs.com/libraries/bulma"></script> --}}
