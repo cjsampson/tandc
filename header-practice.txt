@@ -14,95 +14,73 @@
 <body>
   <header>
     <nav>
-      <li class="header-li"><a href="#">Articles</a></li>
-      <li class="header-li"><a href="#">Videos</a></li>
-      <li class="header-li"><a href="#"><img src="https://raw.githubusercontent.com/reactjs/redux/master/logo/logo.png" alt="" width="150" height="150"></a></li>      
-      <li class="header-li"><a href="#">Who</a></li>
-      <li class="header-li"><a href="#">Resources</a></li>      
+      <li>Home</li>
+      <li>About</li>
+      <li>Resources</li>
     </nav>
   </header>
   <main>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, laborum. Optio inventore aperiam eius adipisci, aliquam ullam deleniti excepturi, blanditiis, corrupti officia dolor beatae reprehenderit consequatur porro veritatis dolores eos.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, laborum. Optio inventore aperiam eius adipisci, aliquam ullam deleniti excepturi, blanditiis, corrupti officia dolor beatae reprehenderit consequatur porro veritatis dolores eos.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, laborum. Optio inventore aperiam eius adipisci, aliquam ullam deleniti excepturi, blanditiis, corrupti officia dolor beatae reprehenderit consequatur porro veritatis dolores eos.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, laborum. Optio inventore aperiam eius adipisci, aliquam ullam deleniti excepturi, blanditiis, corrupti officia dolor beatae reprehenderit consequatur porro veritatis dolores eos.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem saepe id corporis quas mollitia aspernatur beatae minima excepturi debitis est corrupti molestiae, laboriosam quos, aperiam ab incidunt soluta, sunt modi.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem saepe id corporis quas mollitia aspernatur beatae minima excepturi debitis est corrupti molestiae, laboriosam quos, aperiam ab incidunt soluta, sunt modi.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem saepe id corporis quas mollitia aspernatur beatae minima excepturi debitis est corrupti molestiae, laboriosam quos, aperiam ab incidunt soluta, sunt modi.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem saepe id corporis quas mollitia aspernatur beatae minima excepturi debitis est corrupti molestiae, laboriosam quos, aperiam ab incidunt soluta, sunt modi.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem saepe id corporis quas mollitia aspernatur beatae minima excepturi debitis est corrupti molestiae, laboriosam quos, aperiam ab incidunt soluta, sunt modi.</p>
   </main>
-  
 </body>
 </html>
-
 
 ////////////////////////////////////////////////////////////////////////
 
                                   CSS
 
 ////////////////////////////////////////////////////////////////////////
-html, body
+body
   font-family: 'Helvetica'
-  display: flex
-  flex-direction: column
   margin: 0
-  padding: 0
-  
-header
-  list-style-type: none
-  background-color: deepskyblue
-  width: 100%
-  height: 175px
-  position: fixed
-  transition: height 0.5s
-  
-nav
-  display: flex
-  height: 175px
-  width: 100%
-  justify-content: space-between
-  align-content: center
-  align-items: center
-  transition: height: 0.5s
 
-nav li
-  line-height: 175px
-  font-size: 1.75em
+header
+  height: 150px
+  position: fixed
+  background-color: #FF851B
+  width: 100%
+  color: #111
+  transition: height 0.25s
+
+
+header nav
+  height: 150px
   display: flex
   justify-content: center
+  align-items: center
   align-content: center
-  transition: height: 0.5s  
-  
-nav li a
-  color: black
-  text-decoration: none
-  display: flex
-  justify-content: center
-  transition: height: 0.5s
+  font-size: 2em
+  transition: all 0.3s
+
+header nav li
+  list-style-type: none
+  padding: 10px 15px
+  border: 3px solid #111
+  margin-right: 10px
+  background-color: #fff
   
 main
-  margin-top: 125px
-  height: 3000px
-  background-color: lemonchiffon
+  height: 2000px
+  background-color: #3D9970
+  color: #111
+  padding-top: 150px
   
-main p
-  padding: 25px
-  background-color: palegoldenrod
-  margin: 25px
-  margin-bottom: 30px
-  border: 1px solid khaki
-  border-radius: 2px
+main p 
+  border: 3px solid #fff
+  margin: 10px 20px 20px 20px
+  padding: 10px 12px
+  color: #fff
+  background-color: #111
   
-main p:first-of-type
-  margin-top: 100px
-  
-.header-li
-  width: 15%
-  height: 175px
-  
-.header-li a
-  width: 100%
   
 .smaller
-  background-color: orange
-  height: 50px
-  font-size: 0.5em
+  height: 100px
+  justify-content: flex-end
+  font-size: 1em
   
 ////////////////////////////////////////////////////////////////////////
 
@@ -112,16 +90,19 @@ main p:first-of-type
 function init() {
   window.addEventListener('scroll', function(e) {
     var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-        shrinkOn  = 200,
-        header    = document.querySelector('header');
-
+        shrinkOn  = 25,
+        header    = document.querySelector('header'),
+        headerNav = document.querySelector('header nav');    
+    if (distanceY > shrinkOn) {
+      header.setAttribute('class', 'smaller');
+      headerNav.setAttribute('class', 'smaller');
+    } else {
+      header.removeAttribute('class');
+      headerNav.removeAttribute('class', 'smaller');
+    }
   
-  if (distanceY > shrinkOn) {
-    header.setAttribute('class', 'smaller');
-  } else {
-    header.removeAttribute('class');
-  }
-});
+  
+  });
 }
 
 window.onload = init();
