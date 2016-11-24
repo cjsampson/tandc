@@ -2,7 +2,7 @@
     <div class="footer__wrapper">
         <div class="footer__mission-statement footer__box">
             <p class="footer__statement">We're just two coders looking to add to</p>
-            <p class="footer__statement">The community one "ah-ha" at a time</p>
+            <p class="footer__statement">The community one "ah-ha" at a time!</p>
             <p class="footer__statement">We love all things programming and web-development</p>
             <p class="footer__tandc">TandC 2016</p>
 

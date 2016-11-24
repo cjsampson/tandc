@@ -12,17 +12,22 @@
 
 @section('content')
 
-    <div class="wrapper">
-        
-        {!! $article->body !!}
-
-    </div> {{-- .wrapper --}}
+    <div class="container is-fluid">
+        <div class="columns">
+            <div class="column is-three-quarters">
+                <p class="notification is-info">
+                    <code class="html">is-three-quarters</code>
+                </p>
+            </div>
+            <div class="column">
+                <p class="notification is-warning">Auto</p>
+            </div>
+            <div class="column">
+                <p class="notification is-danger">Auto</p>
+            </div>
+        </div>
+    </div>
     
-    <section class="sidebar">
-        <p>Content</p>
-    </section>
-
-
 
 @stop
 

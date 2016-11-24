@@ -1,38 +1,45 @@
 function init() {
-    window.addEventListener('scroll', function(e){
+    window.addEventListener('scroll', function (e) {
         var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-            shrinkOn = 35,
-            header = document.querySelector("header");
+            shrinkOn  = 30,
+            header    = document.querySelector("header");
         if (distanceY > shrinkOn) {
-            header.setAttribute("class","smaller");
+            header.setAttribute("class", "smaller");
         } else {
             header.removeAttribute("class");
         }
     });
 }
-window.onload = init()
+window.onload = init();
 
 
-$(document).ready(function() {
+
+$(document).ready(function () {
+    $('#tabs').tabs();
+
     document.getElementById("contact--button").onclick = function () {
         location.href = "/contact";
     }
 });
 
+$(document).ready(function () {
+    $(document).on('click', function (e) {
+        var sideNav        = document.getElementById('mySidenav'),
+            sidebarOptions = document.getElementsByClassName('sidebar--options')[0],
+            sidebarOpen    = document.getElementsByClassName('openSidebar')[0],
+            hamburger1     = document.getElementsByClassName('hamburger--line')[0],
+            hamburger2     = document.getElementsByClassName('hamburger--line')[1],
+            hamburger3     = document.getElementsByClassName('hamburger--line')[2];
+        console.log();
+        console.log(e.target, hamburger2);
+        if (e.target != sideNav && e.target != sidebarOpen && e.target != hamburger1 && e.target != hamburger2 && e.target != hamburger3 && e.target != sidebarOptions) {
 
-$(document).ready(function() {
-    $('#tabs').tabs();
-
-    $('.openSidebar').on('click', function() {
-        $('.sidenav').toggleClass('active');
-    });
-    $(document).on('click', function(e) {
-        var sideNav = document.getElementById('mySidenav');
-        var sidebarOpen =document.getElementsByClassName('openSidebar')[0];
-        if (e.target != sideNav && e.target != sidebarOpen) {
             $('.sidenav').removeClass('active');
+            $('#nav-icon1').removeClass('open');
+        } else if (e.target == hamburger1 || e.target == hamburger2 || e.target == hamburger3 || e.target == sidebarOpen) {
+            $('#nav-icon1').toggleClass('open');
+            $('.sidenav').toggleClass('active');
+
         }
     });
 });
-
-  

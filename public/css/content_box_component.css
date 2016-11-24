@@ -94,10 +94,6 @@ header {
   background-color: #0074D9;
   transition: height 0.3s; }
 
-.container {
-  max-width: 1248px;
-  display: flex; }
-
 header h1#logo {
   align-self: flex-end;
   line-height: 3em;
