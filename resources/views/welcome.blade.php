@@ -13,7 +13,6 @@
         <link href="{{ asset('assets/css/font-awesome/font-awesome.min.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('/css/content_box_component.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/footer.css') }}">
-        <link rel="stylesheet" href="{{ asset('/css/practice.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/sidebar.css') }}">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.css">
@@ -34,27 +33,30 @@
         
         @include('partials.sidebar')
 
-        <header>
         
-            <nav>
-                <a href="{{ route('articles_index') }}" class="header-li">Articles</a>                    
-                <a href="{{ route('videos_index') }}" class="header-li">Videos</a>
-                <a href="{{ url('/') }}"><h1 id="logo">TandC</h1></a>
-                <a href="{{ url('resources') }}" class="header-li">Resources</a>
-                <a href="{{ url('about') }}" class="header-li">Who</a>
-                @if(isset(Auth::user()->role) && Auth::user()->role === 'admin')
-                    <a href="#" class="header-li">Dashboard</a>
-                @endif
-            </nav>
-            
-            <div id="main">
-                <div class="openSidebar" id="nav-icon1">
+        <header>
+            <div class="container">
+
+                <nav>
+                    <a href="{{ route('articles_index') }}" class="header-li">Articles</a>                    
+                    <a href="{{ route('videos_index') }}" class="header-li">Videos</a>
+                    <a href="{{ url('/') }}"><h1 id="logo">TandC</h1></a>
+                    <a href="{{ url('resources') }}" class="header-li">Resources</a>
+                    <a href="{{ url('about') }}" class="header-li">Who</a>
+                    @if(isset(Auth::user()->role) && Auth::user()->role === 'admin')
+                        <a href="#" class="header-li">Dashboard</a>
+                    @endif
+                </nav>                
+                
+                
+                <div id="nav-icon1" class="openSidebar">
                     <span class="hamburger--line"></span>
                     <span class="hamburger--line"></span>
                     <span class="hamburger--line"></span>
                 </div>
-            </div>
+            
 
+            </div>
 
         </header>
         

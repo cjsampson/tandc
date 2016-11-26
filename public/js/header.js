@@ -30,15 +30,19 @@ $(document).ready(function () {
             hamburger1     = document.getElementsByClassName('hamburger--line')[0],
             hamburger2     = document.getElementsByClassName('hamburger--line')[1],
             hamburger3     = document.getElementsByClassName('hamburger--line')[2];
-        console.log();
-        console.log(e.target, hamburger2);
-        if (e.target != sideNav && e.target != sidebarOpen && e.target != hamburger1 && e.target != hamburger2 && e.target != hamburger3 && e.target != sidebarOptions) {
 
-            $('.sidenav').removeClass('active');
+        var bodyEl = $('body');
+
+        if (e.target != sideNav && e.target != sidebarOpen && e.target != hamburger1 && e.target != hamburger2 && e.target != hamburger3 ) {
+            bodyEl.css({'transform': 'translateX(0px)'});
+            console.log('2')
+            // $('.sidenav').removeClass('active');
             $('#nav-icon1').removeClass('open');
         } else if (e.target == hamburger1 || e.target == hamburger2 || e.target == hamburger3 || e.target == sidebarOpen) {
+            console.log('1');
+            bodyEl.css({'transform': 'translateX(250px)'});
             $('#nav-icon1').toggleClass('open');
-            $('.sidenav').toggleClass('active');
+            // $('.sidenav').toggleClass('active');
 
         }
     });

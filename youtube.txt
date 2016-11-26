@@ -183,3 +183,35 @@ David Walsh's site is one of my favorite blogs with loads of content ranging fro
     </div>
         
 </div>
+
+
+
+$main:        #34314c;
+$secondary:   #9592ad;
+$border:      #d9dee9;
+$highlight_1: #001f3f;
+$highlight_2: #2ECC40;
+$highlight_3: #FF4136;
+$highlight_4: #FF851B;
+
+.border {
+  height: 6px;
+  border: 0;
+  background-color: $highlight_1;
+  background-image:
+    linear-gradient(
+      to right,
+      $highlight_1,
+      $highlight_1 33%,
+      $highlight_2 33%,
+      $highlight_2 66%,
+      $highlight_3 66%,
+      $highlight_3 100%,
+      $highlight_3 100%
+    );
+  background-size: 50% 100%;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 100%;
+}
