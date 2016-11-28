@@ -38,6 +38,6 @@ header.smaller {
   height: 75px; }
 
 .container {
-  flex-direction: column; }
+  min-width: 1200px; }
 
 /*# sourceMappingURL=starting.css.map */

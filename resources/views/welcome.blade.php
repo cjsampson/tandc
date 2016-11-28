@@ -15,16 +15,17 @@
         <link rel="stylesheet" href="{{ asset('/css/footer.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/sidebar.css') }}">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.css">
-        <link rel="stylesheet" href="/css/bulma.css">
 
         <link rel="stylesheet" href="{{ asset('/css/hamburger.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/starting.css') }}">
+         <link rel="stylesheet" href="{{ asset('/css/header.css') }}">
 
+    
         <script src="{{ asset('assets/js/jquery/jquery.min.js') }}"></script>
         <script src="{{asset('/js/header.js')}}"></script>
-        {{-- <script src="https://cdnjs.com/libraries/bulma"></script> --}}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.css">
+        <link rel="stylesheet" href="/css/bulma.css">
         <!-- Styles -->
 
         @yield('styles')
@@ -55,9 +56,7 @@
                     <span class="hamburger--line"></span>
                 </div>
             
-
             </div>
-
         </header>
         
         <main>
