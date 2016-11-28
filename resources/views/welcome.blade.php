@@ -11,14 +11,18 @@
 
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
         <link href="{{ asset('assets/css/font-awesome/font-awesome.min.css') }}" rel="stylesheet">
+        
+        <link rel="stylesheet" href="{{ asset('/css/starting.css') }}">
+        
         <link rel="stylesheet" href="{{ asset('/css/content_box_component.css') }}">
+        
         <link rel="stylesheet" href="{{ asset('/css/footer.css') }}">
+        
         <link rel="stylesheet" href="{{ asset('/css/sidebar.css') }}">
 
-
+        <link rel="stylesheet" href="{{ asset('/css/header.css') }}">
+        
         <link rel="stylesheet" href="{{ asset('/css/hamburger.css') }}">
-        <link rel="stylesheet" href="{{ asset('/css/starting.css') }}">
-         <link rel="stylesheet" href="{{ asset('/css/header.css') }}">
 
     
         <script src="{{ asset('assets/js/jquery/jquery.min.js') }}"></script>

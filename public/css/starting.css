@@ -15,27 +15,13 @@ a {
 li {
   list-style-type: none; }
 
-nav {
-  display: flex;
-  justify-content: space-around; }
-
-.header-li {
-  font-size: 2em; }
-
 main {
   display: flex;
   min-height: 90vh; }
 
-main .left--aside {
-  flex: 0 0 300px;
-  background: lightblue; }
-
 main section.content {
   flex: 3 3 auto;
   background: #FFFFFF; }
-
-header.smaller {
-  height: 75px; }
 
 .container {
   min-width: 1200px; }
