@@ -17,7 +17,7 @@
                     <div class="content--box">
 
                         <div class="image--box">
-                            <img src="/images/video_cover_images{{ $video->cover_image }}" 
+                            <img src="/images/video_cover_images/{{ $video->cover_image }}" 
                                  alt="video cover image"
                                  class="content--image"
                             >
