@@ -17,8 +17,8 @@
             <ul>
                 <li class="footer__box__li"><a href="{{ route('articles_index') }}">Articles</a></li>
                 <li class="footer__box__li"><a href="{{ route('videos_index') }}">Videos</a></li>
-                <li class="footer__box__li"><a href="#">Resources</a></li>
-                <li class="footer__box__li"><a href="#">About</a></li>
+                <li class="footer__box__li"><a href="/resources">Resources</a></li>
+                <li class="footer__box__li"><a href="/about">About</a></li>
             </ul>
         </div>
 
@@ -43,7 +43,7 @@
         <div class="footer__contact__box footer__box">
             <h4 class="footer__box__header">Info</h4>
             <ul>
-                <li class="footer__box__li"><a href="#">Contact</a></li>
+                <li class="footer__box__li"><a href="{{ route('contact_index') }}">Contact</a></li>
                 <li class="footer__box__li"><a href="#">Subscribe</a></li>
                 <li class="footer__box__li"><a href="/register">Register</a></li>
                 <li class="footer__box__li"><a href="#">Terms</a></li>

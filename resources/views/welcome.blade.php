@@ -39,7 +39,13 @@
             
             <div class="container">
 
+                <div id="nav-icon1" class="openSidebar">
+                    <span class="hamburger--line"></span>
+                    <span class="hamburger--line"></span>
+                    <span class="hamburger--line"></span>
+                </div>
                 <header class="header">
+
                     <div class="header--wrapper">
                         <nav>
                             <a href="{{ route('articles_index') }}" class="header-li">Articles</a>                    
@@ -56,12 +62,6 @@
 
                 </header>   
 
-                <div id="nav-icon1" class="openSidebar">
-                    <span class="hamburger--line"></span>
-                    <span class="hamburger--line"></span>
-                    <span class="hamburger--line"></span>
-                </div>
-                
 
                 <main class="section">
                     @yield('content')
