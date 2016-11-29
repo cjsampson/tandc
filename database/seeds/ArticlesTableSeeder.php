@@ -15,7 +15,7 @@ class ArticlesTableSeeder extends Seeder
         $article = Article::create([
             'name'        => 'Making laravel easy!',
             'description' => 'This is a simple description filler, dummy text for layout purposes',
-            'cover_image' => '/images/laravel.png',
+            'cover_image' => 'laravel.png',
             'body'        => '<div><p>This is a P tag</p></div>',
             'author'      => 'Tomas Leffew',
             'slug' => 'makeing-larevl-easy!',
@@ -27,7 +27,7 @@ class ArticlesTableSeeder extends Seeder
         $article = Article::create([
             'name'        => 'Learning React',
             'description' => 'This is a simple description filler, dummy text for layout purposes',
-            'cover_image' => '/images/react.png',
+            'cover_image' => 'react.png',
             'body'        => '<div><p>This is a P tag</p></div>',
             'author'      => 'CJ Sampson',
             'slug' => 'learning-react',
@@ -39,7 +39,7 @@ class ArticlesTableSeeder extends Seeder
         $article = Article::create([
             'name'        => 'Mapping over arrays',
             'description' => 'This is a simple description filler, dummy text for layout purposes',
-            'cover_image' => '/images/jquery.png',
+            'cover_image' => 'jquery.png',
             'body'        => '<div><p>This is a P tag</p></div>',
             'author'      => 'CJ Sampson',
             'slug' => 'mapping-over-arrays',
@@ -51,7 +51,7 @@ class ArticlesTableSeeder extends Seeder
         $article = Article::create([
             'name'        => 'Setting href for a Button Tag',
             'description' => 'Here\'s a quick hack for dynamically setting a location property for a button tag',
-            'cover_image' => '/images/javascript.png',
+            'cover_image' => 'javascript.png',
             'body'        => '<div><p>This is a P tag</p></div>',
             'author'      => 'CJ Sampson',
             'slug' => 'setting-href-for-a-button-tag',
