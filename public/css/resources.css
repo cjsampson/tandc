@@ -1,7 +1,15 @@
 .borderclass {
-  border: 1px solid black; }
+  border: 1px solid black;
+  width: 100%; }
 
-.container.is-fluid {
-  border: 1px solid black; }
+.resources--image {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto; }
+
+.resources--image img {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center; }
 
 /*# sourceMappingURL=resources.css.map */

@@ -14,6 +14,9 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
         <link href="{{ asset('assets/css/font-awesome/font-awesome.min.css') }}" rel="stylesheet">
         
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.css">
+        <link rel="stylesheet" href="/css/bulma.css">
+        
         <link rel="stylesheet" href="{{ asset('/css/starting.css') }}">
         
         <link rel="stylesheet" href="{{ asset('/css/content_box_component.css') }}">
@@ -37,13 +40,15 @@
     
         @include('partials.sidebar')
             
-            <div class="container">
-
                 <div id="nav-icon1" class="openSidebar">
                     <span class="hamburger--line"></span>
                     <span class="hamburger--line"></span>
                     <span class="hamburger--line"></span>
                 </div>
+                
+            <div class="container">
+
+
                 <header class="header">
 
                     <div class="header--wrapper">

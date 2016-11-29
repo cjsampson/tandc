@@ -3,7 +3,9 @@
 <h3>Laracasts</h3>
 <p>https://www.laracasts.com</p>
 
-<img src="/images/laracasts.png" alt="Laracasts">
+<div class="resources--image">
+    <img src="/images/laracasts.png" alt="Laracasts">
+</div>
 
 <p>Laracasts is the ultimate online learning source for all things PHP and more.  Jeffrey Way definitely has an elite mastery of web development and teaching combined.  Laracasts starts out for only $9 a month and the site has loads and loads of content ranging from beginner PHP and JavaScript, to more advanced videos on Frontend and Backend frameworks/libraries.  You're money for spent on this site is a good investment.</p>
 
