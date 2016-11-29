@@ -11,8 +11,6 @@
 
 @section('content')
 
-    <div class="wrapper">
-
         <div class="video--section">
 
             <h2 class="video--title">Article Section</h2>
@@ -59,19 +57,5 @@
 
         </div> {{-- .video--section --}}
 
-        <aside class="sidebar">
-            <div class="box box1">
-                <h3>Some text for a box</h3>
-            </div>
 
-            <div class="box box2">
-                <h3>Some text for a box</h3>
-            </div>
-
-            <div class="box box3">
-                <h3>Some text for a box</h3>
-            </div>
-
-        </aside>
-    </div> {{-- .wrapper --}}
 @stop

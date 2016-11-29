@@ -14,13 +14,13 @@ window.onload = init();
 
 
 
-$(document).ready(function () {
-    $('#tabs').tabs();
+// $(document).ready(function () {
+//     $('#tabs').tabs();
 
-    document.getElementById("contact--button").onclick = function () {
-        location.href = "/contact";
-    }
-});
+//     document.getElementById("contact--button").onclick = function () {
+//         location.href = "/contact";
+//     }
+// });
 
 $(document).ready(function () {
     $(document).on('click', function (e) {
@@ -46,4 +46,16 @@ $(document).ready(function () {
 
         }
     });
+
+    $('a').on('click', function() {
+        $('header').css({'position': 'fixed', 'top': '0'});
+    })
 });
+
+// <script>
+//            $(document).ready(function(){
+//                $('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function(){
+//                    $(this).toggleClass('open');
+//                });
+//            });
+// </script>

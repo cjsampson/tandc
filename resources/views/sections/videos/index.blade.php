@@ -8,7 +8,7 @@
 
 @section('content')
 
-    <div class="wrapper">
+    <div class="container">
         
         <div class="video--section">        
             <h2 class="video--title">Video Section</h2>
