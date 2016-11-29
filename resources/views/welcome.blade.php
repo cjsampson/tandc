@@ -68,14 +68,7 @@
                 </main>
             </div>
 
-                
-
-    @include('partials.footer')
-
-            
-
-            
-        
+        @include('partials.footer')
 
     @yield('scripts')
 

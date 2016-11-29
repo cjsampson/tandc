@@ -8,9 +8,9 @@
 
 @section('content')
 
-    <div class="container">
         
-        <div class="video--section">        
+        <div class="video--section">
+
             <h2 class="video--title">Video Section</h2>
                 @foreach($videos as $video)
 
@@ -36,8 +36,5 @@
 
         </div> {{-- .video--section --}}
 
-
-
-    </div> {{-- .wrapper --}}
 
 @stop

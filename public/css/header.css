@@ -9,7 +9,8 @@ header {
   z-index: 999;
   border-bottom: 1px solid #aaa;
   background-color: #0074D9;
-  transition: height 0.3s; }
+  transition: height 0.3s;
+  display: block; }
 
 header h1#logo {
   line-height: 3em;
@@ -33,7 +34,8 @@ header nav a:hover {
   color: #AAA; }
 
 header.smaller {
-  height: 75px; }
+  height: 75px;
+  position: fixed; }
 
 header.smaller h1#logo {
   line-height: 75px;
