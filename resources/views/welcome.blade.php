@@ -40,18 +40,20 @@
             <div class="container">
 
                 <header class="header">
+                    <div class="header--wrapper">
+                        <nav>
+                            <a href="{{ route('articles_index') }}" class="header-li">Articles</a>                    
+                            <a href="{{ route('videos_index') }}" class="header-li">Videos</a>
+                            <a href="{{ url('/') }}"><h1 id="logo">TandC</h1></a>
+                            <a href="{{ url('resources') }}" class="header-li">Resources</a>
+                            <a href="{{ url('about') }}" class="header-li">Who</a>
+                            @if(isset(Auth::user()->role) && Auth::user()->role === 'admin')
+                                <a href="#" class="header-li">Dashboard</a>
+                            @endif
+                        </nav>
+                        
+                    </div>
 
-                    <nav>
-                        <a href="{{ route('articles_index') }}" class="header-li">Articles</a>                    
-                        <a href="{{ route('videos_index') }}" class="header-li">Videos</a>
-                        <a href="{{ url('/') }}"><h1 id="logo">TandC</h1></a>
-                        <a href="{{ url('resources') }}" class="header-li">Resources</a>
-                        <a href="{{ url('about') }}" class="header-li">Who</a>
-                        @if(isset(Auth::user()->role) && Auth::user()->role === 'admin')
-                            <a href="#" class="header-li">Dashboard</a>
-                        @endif
-                    </nav>
-                    
                 </header>   
 
                 <div id="nav-icon1" class="openSidebar">
