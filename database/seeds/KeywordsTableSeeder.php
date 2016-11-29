@@ -11,6 +11,7 @@ class KeywordsTableSeeder extends Seeder
      * @return void
      */
     private $keywords = [
+        'laravel',
         'js',
         'react',
         'php',

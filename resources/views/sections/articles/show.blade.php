@@ -1,7 +1,7 @@
 @extends('welcome')
 
 @section('styles')
-    <link rel="stylesheet" href="{{asset('assets/css/highlightjs/styles/tomorrow.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/highlightjs/styles/solarized_light.css')}}">
     <script src="{{asset('assets/js/highlightjs/highlight.pack.min.js')}}"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <link rel="stylesheet" href="/css/article_show.css">
@@ -12,22 +12,20 @@
 
 @section('content')
 
-    <div class="container is-fluid">
+    <div class="container">
+
         <div class="columns">
-            <div class="column is-three-quarters">
-                <p class="notification is-info">
-                    <code class="html">is-three-quarters</code>
-                </p>
-            </div>
-            <div class="column">
-                <p class="notification is-warning">Auto</p>
-            </div>
-            <div class="column">
-                <p class="notification is-danger">Auto</p>
+
+            <div class="column is-9">
+                {!! $article->body !!}
             </div>
         </div>
+
     </div>
-    
+
+
+
+
 
 @stop
 
