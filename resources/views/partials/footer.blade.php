@@ -27,15 +27,15 @@
             <ul>
                 <li class="footer__box__li">
                     <a href="https://www.youtube.com/channel/UCqtCWgVnyMtCynS_EV1t5DQ" target="_blank">YouTube</a>
-                    <img src="/images/youtube-icon.png" alt="youtube icon" width="20" height="20">
+                    <img src="/images/social-icons/youtube-icon.png" alt="youtube icon" width="20" height="20">
                 </li>
                 <li class="footer__box__li">
                     <a href="#">Facebook</a>
-                    <img src="/images/facebook-icon.png" alt="facebook icon" width="18" height="18">
+                    <img src="/images/social-icons/facebook-icon.png" alt="facebook icon" width="18" height="18">
                 </li>
                 <li class="footer__box__li">
                     <a href="#">Twitter</a>
-                    <img src="/images/twitter-icon.png" alt="twitter icon" width="18" height="18">
+                    <img src="/images/social-icons/twitter-icon.png" alt="twitter icon" width="18" height="18">
                 </li>
             </ul>
         </div>

@@ -20,7 +20,7 @@
                 <div class="content--box">
 
                     <div class="image--box">
-                        <img src="{{ $article->cover_image }}"
+                        <img src="/images/article_cover_images/{{ $article->cover_image }}"
                              alt="bear"
                              class="content--image"
                         >
