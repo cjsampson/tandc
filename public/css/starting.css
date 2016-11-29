@@ -6,8 +6,7 @@ html, body {
   color: black;
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 100;
-  margin: 0;
-  height: 100vh; }
+  margin: 0; }
 
 a {
   text-decoration: none; }
@@ -17,13 +16,14 @@ li {
 
 main {
   display: flex;
-  min-height: 90vh; }
+  min-height: 90vh;
+  margin-top: 175px; }
 
 main section.content {
   flex: 3 3 auto;
   background: #FFFFFF; }
 
 .container {
-  min-width: 1200px; }
+  min-height: 100%; }
 
 /*# sourceMappingURL=starting.css.map */

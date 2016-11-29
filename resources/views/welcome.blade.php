@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, user-scalable=no" />
+
 
         <title>TandC</title>
 
@@ -28,57 +30,52 @@
         <script src="{{ asset('assets/js/jquery/jquery.min.js') }}"></script>
         <script src="{{asset('/js/header.js')}}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.css">
-        <link rel="stylesheet" href="/css/bulma.css">
-        <!-- Styles -->
 
         @yield('styles')
     </head>
     <body>
-        
+    
         @include('partials.sidebar')
-
-        
-        <header>
+            
             <div class="container">
 
-                <nav>
-                    <a href="{{ route('articles_index') }}" class="header-li">Articles</a>                    
-                    <a href="{{ route('videos_index') }}" class="header-li">Videos</a>
-                    <a href="{{ url('/') }}"><h1 id="logo">TandC</h1></a>
-                    <a href="{{ url('resources') }}" class="header-li">Resources</a>
-                    <a href="{{ url('about') }}" class="header-li">Who</a>
-                    @if(isset(Auth::user()->role) && Auth::user()->role === 'admin')
-                        <a href="#" class="header-li">Dashboard</a>
-                    @endif
-                </nav>                
-                
-                
+                <header class="header">
+
+                    <nav>
+                        <a href="{{ route('articles_index') }}" class="header-li">Articles</a>                    
+                        <a href="{{ route('videos_index') }}" class="header-li">Videos</a>
+                        <a href="{{ url('/') }}"><h1 id="logo">TandC</h1></a>
+                        <a href="{{ url('resources') }}" class="header-li">Resources</a>
+                        <a href="{{ url('about') }}" class="header-li">Who</a>
+                        @if(isset(Auth::user()->role) && Auth::user()->role === 'admin')
+                            <a href="#" class="header-li">Dashboard</a>
+                        @endif
+                    </nav>
+                    
+                </header>   
+
                 <div id="nav-icon1" class="openSidebar">
                     <span class="hamburger--line"></span>
                     <span class="hamburger--line"></span>
                     <span class="hamburger--line"></span>
                 </div>
-            
+                
+
+                <main class="section">
+                    @yield('content')
+                </main>
             </div>
-        </header>
+
+                
+
+    @include('partials.footer')
+
+            
+
+            
         
-        <main>
-            <section class="content">
-                @yield('content')
-            </section>
-        </main>
-
-
-        @include('partials.footer')
-        <script>
-//            $(document).ready(function(){
-//                $('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function(){
-//                    $(this).toggleClass('open');
-//                });
-//            });
-        </script>
 
     @yield('scripts')
+
     </body>
 </html>
