@@ -1,19 +1,22 @@
-body {
+html {
   transition: all 0.2s; }
 
 #nav-icon1 {
+  top: 50px;
+  margin-left: 20px;
+  z-index: 9999;
   display: flex;
   width: 60px;
   height: 45px;
-  position: relative;
+  position: fixed;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   transform: rotate(0deg);
-  -webkit-transition: 0.5s ease-in-out;
-  -moz-transition: 0.5s ease-in-out;
-  -o-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
   cursor: pointer; }
 
 #nav-icon1 span {
