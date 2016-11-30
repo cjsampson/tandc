@@ -50,9 +50,12 @@ class ArticleRepositoryEloquent extends BaseRepository implements ArticleReposit
             'slug',
             'created_at',
             'updated_at',
-        ]);
+        ])->get();
+        foreach ($articles as $article){
+            $article->type = 'article';
+        }
 
-        $articlesVideos = \DB::table('videos')->select([
+        $videos = \DB::table('videos')->select([
             'title',
             'description',
             'author',
@@ -60,12 +63,10 @@ class ArticleRepositoryEloquent extends BaseRepository implements ArticleReposit
             'slug',
             'created_at',
             'updated_at',
-        ])->union($articles)->orderBy('updated_at')->get();
-        return Datatables::of($articlesVideos)
-            ->addColumn('actions', '')
-            ->editColumn('created_at', function ( $data ) {
-                return $data->created_at->format('m/d/Y');
-            })
-            ->make(true);
+        ])->get();
+        foreach ($videos as $video){
+            $video->type = 'video';
+        }
+        return $videos->merge($articles);
     }
 }
