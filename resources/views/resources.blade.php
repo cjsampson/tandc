@@ -47,3 +47,11 @@
     </div>
     
 @stop
+
+@section('scripts')
+    <script>
+        $(function() {
+            $('#tabs').tabs();
+        });
+    </script>
+@stop
