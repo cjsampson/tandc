@@ -29,7 +29,7 @@ elixir(function (mix) {
     mix.copy(`${node}datatables.net-dt/css/jquery.dataTables.css`, `${css}dataTables`);
     mix.copy(`${node}datatables.net-bs/css/dataTables.bootstrap.css`, `${css}dataTables`);
     mix.copy(`${node}datatables.net-bs/js/dataTables.bootstrap.js`, `${js}dataTables`);
-    //jquery
+    //jQuery
     mix.copy(`${node}jquery/dist/jquery.min.js`, `${js}jquery`);
     //font-awesome
     mix.copy(`${node}font-awesome/css/font-awesome.min.css`, `${css}font-awesome`);
@@ -41,6 +41,6 @@ elixir(function (mix) {
     // bulma.css
     mix.copy(`${node}bulma/css/bulma.css`, `${css}bulma/css`);
     mix.copy(`${node}bulma/css/bulma.css.map`, `${css}bulma/css`);
-
-
+    //jQuery unslider
+    mix.copy(`${node}jquery-unslider/dist/js/unslider-min.js`, `${js}unslider`);
 });

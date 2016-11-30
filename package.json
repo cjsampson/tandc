@@ -23,7 +23,8 @@
     "datatables.net-bs": "^1.10.12",
     "datatables.net-dt": "^1.10.12",
     "font-awesome": "^4.7.0",
-    "highlightjs": "^9.8.0"
+    "highlightjs": "^9.8.0",
+    "jquery-unslider": "^1.2.0"
   },
   "repository": {
     "type": "git",
