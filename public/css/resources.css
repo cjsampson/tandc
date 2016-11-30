@@ -1,3 +1,23 @@
+.image-figure {
+  margin-top: 20px; }
 
+.subscription-box {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-top: 2px solid whitesmoke;
+  padding-top: 30px;
+  padding-bottom: 30px; }
+
+.card-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center; }
+
+.paragraph-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center; }
 
 /*# sourceMappingURL=resources.css.map */
