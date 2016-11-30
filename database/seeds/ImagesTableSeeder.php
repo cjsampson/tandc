@@ -16,6 +16,7 @@ class ImagesTableSeeder extends Seeder
         '/images/middleware.jpg',
         '/images/jquery.png',
         '/images/green.png',
+        '/images/homestead.jpg',
     ];
     public function run()
     {

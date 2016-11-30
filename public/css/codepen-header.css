@@ -1,21 +1,21 @@
 /*
 Error: Invalid CSS after "...r-bottom:solid ": expected selector, was "0.5em #f4f4f4"
-        on line 75 of css/codepen-header.sass
+        on line 49 of css/codepen-header.sass
 
-70:     overflow: hidden
-71:     position: fixed
-72:     top: 0
-73:     left: 0
-74:     z-index: 999
-75:     border-bottom:solid 0.5em #f4f4f4
-76:     background-color: #394e63
-77:     -webkit-transition: height 0.3s
-78:     -moz-transition: height 0.3s
-79:     -ms-transition: height 0.3s
-80:     -o-transition: height 0.3s
+44:     overflow: hidden
+45:     position: fixed
+46:     top: 0
+47:     left: 0
+48:     z-index: 999
+49:     border-bottom:solid 0.5em #f4f4f4
+50:     background-color: #394e63
+51:     -webkit-transition: height 0.3s
+52:     -moz-transition: height 0.3s
+53:     -ms-transition: height 0.3s
+54:     -o-transition: height 0.3s
 
 Backtrace:
-css/codepen-header.sass:75
+css/codepen-header.sass:49
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1189:in `expected'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/parser.rb:1125:in `expected'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/scss/static_parser.rb:21:in `parse_selector'
@@ -68,4 +68,4 @@ css/codepen-header.sass:75
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"...r-bottom:solid \": expected selector, was \"0.5em #f4f4f4\"\A         on line 75 of css/codepen-header.sass\A \A 70:     overflow: hidden\A 71:     position: fixed\A 72:     top: 0\A 73:     left: 0\A 74:     z-index: 999\A 75:     border-bottom:solid 0.5em #f4f4f4\A 76:     background-color: #394e63\A 77:     -webkit-transition: height 0.3s\A 78:     -moz-transition: height 0.3s\A 79:     -ms-transition: height 0.3s\A 80:     -o-transition: height 0.3s"; }
+  content: "Error: Invalid CSS after \"...r-bottom:solid \": expected selector, was \"0.5em #f4f4f4\"\A         on line 49 of css/codepen-header.sass\A \A 44:     overflow: hidden\A 45:     position: fixed\A 46:     top: 0\A 47:     left: 0\A 48:     z-index: 999\A 49:     border-bottom:solid 0.5em #f4f4f4\A 50:     background-color: #394e63\A 51:     -webkit-transition: height 0.3s\A 52:     -moz-transition: height 0.3s\A 53:     -ms-transition: height 0.3s\A 54:     -o-transition: height 0.3s"; }

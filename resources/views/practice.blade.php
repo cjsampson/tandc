@@ -7,7 +7,6 @@
 
         <title>TandC</title>
 
-        <!-- Fonts -->
 
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
         <link href="{{ asset('assets/css/font-awesome/font-awesome.min.css') }}" rel="stylesheet">
@@ -15,15 +14,34 @@
         <link rel="stylesheet" href="/css/starting.css">
         <link rel="stylesheet" href="/css/footer.css">
         <link rel="stylesheet" href="/css/practice.css">
-        <!-- Styles -->
-
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.css">    
         @yield('styles')
     </head>
     <body>
 
+        
+    <div class="container is-fluid">
+      <div class="notification">
+        This container is <strong>centered</strong> on desktop.
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Hero title
+          </h1>
+          <h2 class="subtitle">
+            Hero subtitle
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    {{-- <script src="js/header.js"></script> --}}
     
-    <h1>Hello World</h1>
-    <script src="js/header.js"></script>
     @yield('scripts')
     </body>
 </html>

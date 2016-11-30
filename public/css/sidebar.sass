@@ -1,20 +1,15 @@
 .sidenav
     height: 100vh
-    width: 0
-    position: fixed
+    width: 250px
     z-index: 99
-    top: 0
-    left: 0
-    background-color: blue
+    background-color: mintcream
     overflow-x: hidden
-    transition: 0.5s
+    transition: all 0.5s
+    border-right: 2px solid black
+    transform: translateX(-250px)
 
-.sidenav .closebtn 
-    position: absolute
-    top: 0
-    right: 25px
-    font-size: 36px
-    margin-left: 50px
+// .active
+//     transform: translateX(0)
 
 #main 
     transition: margin-left .5s
@@ -25,3 +20,40 @@
     top: 0
     left: 0
     z-index: 99999
+    display: flex
+    flex-direction: column
+
+.sidebar--options
+    padding: 30px
+    border: 1px solid black
+    display: flex
+
+.sidebar--options ul
+    width: 100%
+
+.sidebar--options li
+    display: flex
+    line-height: 100%
+    padding-bottom: 10px
+    font-size: 1.25em
+    color: black
+    width: 100%
+    height: 30px
+
+.sidebar--options li:hover
+    background-color: ghostwhite
+    border-right: .5px solid black
+
+.sidebar--options li a
+    color: black
+    display: flex
+
+.sidebar--image--container
+    width: 20px
+    margin-right: 20px
+
+.sidebar--options ul li img
+    width: 100%
+    height: auto
+    margin-right: 20px
+    padding-left: 5px

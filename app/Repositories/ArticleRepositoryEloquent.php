@@ -33,4 +33,9 @@ class ArticleRepositoryEloquent extends BaseRepository implements ArticleReposit
     {
         $this->pushCriteria(app(RequestCriteria::class));
     }
+
+    public function findBySlug( $title )
+    {
+        return $this->model->where('slug', '=', $title)->first();
+    }
 }

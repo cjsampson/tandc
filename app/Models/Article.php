@@ -10,7 +10,7 @@ class Article extends Model implements Transformable
 {
     use TransformableTrait;
 
-    protected $fillable = ['name', 'body', 'author', 'description', 'cover_image'];
+    protected $fillable = ['name', 'body', 'author', 'description', 'cover_image', 'slug'];
 
     /**
      * get all keywords related to an article

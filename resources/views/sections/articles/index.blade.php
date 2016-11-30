@@ -11,8 +11,6 @@
 
 @section('content')
 
-    <div class="wrapper">
-
         <div class="video--section">
 
             <h2 class="video--title">Article Section</h2>
@@ -22,14 +20,14 @@
                 <div class="content--box">
 
                     <div class="image--box">
-                        <img src="{{ $article->cover_image }}"
+                        <img src="/images/article_cover_images/{{ $article->cover_image }}"
                              alt="bear"
                              class="content--image"
                         >
                     </div>
 
                     <div class="description--container">
-                        <h2 class="cb--title"><a href="{{ route('articles_show', $article->id) }}">{{ $article->name }}</a></h2>
+                        <h2 class="cb--title"><a href="{{ route('articles_show', $article->slug) }}">{{ $article->name }}</a></h2>
                         <p class="cb--description">{{ $article->description }}</p>
                         <p class="cb--date">{{ $article->updated_at }}</p>
                         <p class="cb--author">Author: <a href="#">{{ $article->author }}</a></p>
@@ -59,19 +57,5 @@
 
         </div> {{-- .video--section --}}
 
-        <aside class="sidebar">
-            <div class="box box1">
-                <h3>Some text for a box</h3>
-            </div>
 
-            <div class="box box2">
-                <h3>Some text for a box</h3>
-            </div>
-
-            <div class="box box3">
-                <h3>Some text for a box</h3>
-            </div>
-
-        </aside>
-    </div> {{-- .wrapper --}}
 @stop
