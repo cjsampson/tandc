@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use Datatables;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use App\Repositories\ArticleRepository;
@@ -24,7 +25,6 @@ class ArticleRepositoryEloquent extends BaseRepository implements ArticleReposit
         return Article::class;
     }
 
-    
 
     /**
      * Boot up the repository, pushing criteria
@@ -37,5 +37,35 @@ class ArticleRepositoryEloquent extends BaseRepository implements ArticleReposit
     public function findBySlug( $title )
     {
         return $this->model->where('slug', '=', $title)->first();
+    }
+
+    public function articlesVideos()
+    {
+
+        $articles = \DB::table('articles')->select([
+            'name',
+            'description',
+            'author',
+            'cover_image',
+            'slug',
+            'created_at',
+            'updated_at',
+        ]);
+
+        $articlesVideos = \DB::table('videos')->select([
+            'title',
+            'description',
+            'author',
+            'cover_image',
+            'slug',
+            'created_at',
+            'updated_at',
+        ])->union($articles)->orderBy('updated_at')->get();
+        return Datatables::of($articlesVideos)
+            ->addColumn('actions', '')
+            ->editColumn('created_at', function ( $data ) {
+                return $data->created_at->format('m/d/Y');
+            })
+            ->make(true);
     }
 }

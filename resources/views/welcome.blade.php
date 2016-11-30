@@ -16,7 +16,7 @@
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.css">
         <link rel="stylesheet" href="/css/bulma.css">
-        
+
         <link rel="stylesheet" href="{{ asset('/css/starting.css') }}">
         
         <link rel="stylesheet" href="{{ asset('/css/content_box_component.css') }}">
@@ -55,7 +55,7 @@
                         <nav>
                             <a href="{{ route('articles_index') }}" class="header-li">Articles</a>                    
                             <a href="{{ route('videos_index') }}" class="header-li">Videos</a>
-                            <a href="{{ url('/') }}"><h1 id="logo">TandC</h1></a>
+                            <a style="background-color: white" href="{{ url('/') }}"><img width="300" height="100" src="{{ asset('images/logo/tandcLogo.png') }}" alt=""></a>
                             <a href="{{ url('resources') }}" class="header-li">Resources</a>
                             <a href="{{ url('about') }}" class="header-li">Who</a>
                             @if(isset(Auth::user()->role) && Auth::user()->role === 'admin')
