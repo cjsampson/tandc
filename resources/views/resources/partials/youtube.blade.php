@@ -7,7 +7,7 @@
         </div>
         <div class="column is-4 is-offset-1 card-column">
             <figure class="image is-4by1 image-figure">
-                <img src="/images/youtube/learncodeacademy.png" alt="Learn Code Cademy">
+                <img src="/images/youtube/learncodeacademy.png" alt="Learn Code Cademy" class="resources-image">
             </figure>
         </div>
     </div>
@@ -50,7 +50,7 @@
     <div class="columns">
         <div class="column is-4 is-offset-1 card-column">
             <figure class="image is-4by1 image-figure">
-                <img src="/images/youtube/simpleprogrammer.png" alt="Simple Programmer">
+                <img src="/images/youtube/simpleprogrammer.png" alt="Simple Programmer" class="resources-image">
             </figure>
         </div>
 
@@ -72,7 +72,7 @@
 
         <div class="column is-4 is-offset-1 card-column">
             <figure class="image is-4by1 image-figure">
-                <img src="/images/youtube/elithecomputerguy.png" alt="Eli The Computer Guy">
+                <img src="/images/youtube/elithecomputerguy.png" alt="Eli The Computer Guy" class="resources-image">
             </figure>
         </div>
     </div>
@@ -83,7 +83,7 @@
 
         <div class="column is-4 is-offset-1 card-column">
             <figure class="image is-4by1 image-figure">
-                <img src="/images/youtube/thenewboston.png" alt="The New Boston">
+                <img src="/images/youtube/thenewboston.png" alt="The New Boston" class="resources-image">
             </figure>
         </div>
 
@@ -105,7 +105,7 @@
         
         <div class="column is-4 is-offset-1 card-column">
             <figure class="image is-4by1 image-figure">
-                <img src="/images/youtube/mackenziechild.png" alt="Mackenzie Child">
+                <img src="/images/youtube/mackenziechild.png" alt="Mackenzie Child" class="resources-image">
             </figure>
         </div>
 

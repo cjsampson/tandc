@@ -6,7 +6,7 @@
 
         <div class="column is-4 is-offset-1 card-column">
             <figure class="image is-1by3 image-figure">
-                <img src="/images/blogs/scotch.png" alt="Scotch">
+                <img src="/images/blogs/scotch.png" alt="Scotch" class="resources-image">
             </figure>
         </div>
     </div>
@@ -17,7 +17,7 @@
     <div class="columns">
         <div class="column is-4 is-offset-1 card-column">
             <figure class="image is-1by3 image-figure">
-                <img src="/images/blogs/wesbos.png" alt="Wes Bos">
+                <img src="/images/blogs/wesbos.png" alt="Wes Bos" class="resources-image">
             </figure>        
         </div>
 
@@ -36,7 +36,7 @@
 
         <div class="column is-4 is-offset-1 card-column">
             <figure class="image is-1by3 image-figure">
-                <img src="/images/blogs/davidwalsh.png" alt="David Walsh">
+                <img src="/images/blogs/davidwalsh.png" alt="David Walsh" class="resources-image">
             </figure>        
         </div>            
     </div>

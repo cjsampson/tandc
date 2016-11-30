@@ -8,7 +8,7 @@
             <div class="card">
                 <div class="card-image">
                     <figure class="image is-2by1 image-figure">
-                        <img src="/images/subscription/laracasts.png" alt="Laracasts">
+                        <img src="/images/subscription/laracasts.png" alt="Laracasts" class="resources-image">
                     </figure>
                 </div>
             </div>            
@@ -23,7 +23,7 @@
             <div class="card">
                 <div class="card-image">
                     <figure class="image is-2by1 image-figure">
-                        <img src="/images/subscription/teamtreehouse.png" alt="Team Tree House">                        
+                        <img src="/images/subscription/teamtreehouse.png" alt="Team Tree House" class="resources-image">
                     </figure>
                 </div>
             </div>
@@ -47,7 +47,7 @@
             <div class="card">
                 <div class="card-image">
                     <figure class="image is-2by1 image-figure">
-                        <img src="/images/subscription/codeschool.png" alt="Code School">
+                        <img src="/images/subscription/codeschool.png" alt="Code School" class="resources-image">
                     </figure>
                 </div>
             </div>                    
@@ -63,7 +63,7 @@
             <div class="card">
                 <div class="card-image">
                     <figure class="image is-2by1 image-figure">
-                        <img src="/images/subscription/codecademy.png" alt="Code Cademy">
+                        <img src="/images/subscription/codecademy.png" alt="Code Cademy" class="resources-image">
                     </figure>
                 </div>
             </div>                    
@@ -87,7 +87,7 @@
             <div class="card">
                 <div class="card-image">
                     <figure class="image is-2by1">
-                        <img src="/images/subscription/frontendmasters.png" alt="Front End Masters">
+                        <img src="/images/subscription/frontendmasters.png" alt="Front End Masters" class="resources-image">
                     </figure>
                 </div>
             </div>                    

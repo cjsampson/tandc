@@ -1,30 +1,59 @@
-<h1>Coding Practice</h1>
-
-<h3>Code Wars</h3>
-
-<div class="column is-12">
-    <img src="/images/codingsites/codewars.png" alt="Code Wars">                    
+<div class="columns subscription-box container content">
+    <div class="columns">
+        <div class="column is-4 is-offset-1">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt iure rerum similique ut, nesciunt quasi facere, suscipit mollitia quia officiis velit perferendis assumenda, harum alias! Sapiente adipisci itaque nam quidem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis iure officiis nam, autem libero officia asperiores mollitia vero voluptates minus qui laborum quaerat, voluptatum vitae explicabo, neque tenetur dolore totam.
+            </p>
+        </div>
+        <div class="column is-4 is-offset-1 card-column">
+            <figure class="image is-4by1 image-figure">
+                <img src="/images/codingsites/codewars.png" alt="Code Wars" class="resources-image">
+            </figure>
+        </div>
+    </div>
 </div>
 
-<br>
-
-<h3>Code Eval</h3>
-<div class="resources--image">
-    <img src="/images/codingsites/codeeval.png" alt="Code Eval">
+<div class="columns subscription-box container content">
+    <div class="columns">
+        <div class="column is-4 is-offset-1">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt iure rerum similique ut, nesciunt quasi facere, suscipit mollitia quia officiis velit perferendis assumenda, harum alias! Sapiente adipisci itaque nam quidem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis iure officiis nam, autem libero officia asperiores mollitia vero voluptates minus qui laborum quaerat, voluptatum vitae explicabo, neque tenetur dolore totam.
+            </p>
+        </div>
+        <div class="column is-4 is-offset-1 card-column">
+            <figure class="image is-4by1 image-figure">
+                <img src="/images/codingsites/codeeval.png" alt="Code Eval" class="resources-image">
+            </figure>
+        </div>
+    </div>
 </div>
 
-<br>
-
-<h3>Hacker Rank</h3>
-<div class="resources--image">
-    <img src="/images/codingsites/hackerrank.png" alt="Hacker Rank">
+<div class="columns subscription-box container content">
+    <div class="columns">
+        <div class="column is-4 is-offset-1">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt iure rerum similique ut, nesciunt quasi facere, suscipit mollitia quia officiis velit perferendis assumenda, harum alias! Sapiente adipisci itaque nam quidem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis iure officiis nam, autem libero officia asperiores mollitia vero voluptates minus qui laborum quaerat, voluptatum vitae explicabo, neque tenetur dolore totam.
+            </p>
+        </div>
+        <div class="column is-4 is-offset-1 card-column">
+            <figure class="image is-4by1 image-figure">
+                <img src="/images/codingsites/hackerrank.png" alt="Hacker Rank" class="resources-image">
+            </figure>
+        </div>
+    </div>
 </div>
 
-<br>
-
-<h3>Coder Byte</h3>
-<div class="resources--image">
-    <img src="/images/codingsites/coderbyte.png" alt="CoderByte">
+<div class="columns subscription-box container content">
+    <div class="columns">
+        <div class="column is-4 is-offset-1">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt iure rerum similique ut, nesciunt quasi facere, suscipit mollitia quia officiis velit perferendis assumenda, harum alias! Sapiente adipisci itaque nam quidem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis iure officiis nam, autem libero officia asperiores mollitia vero voluptates minus qui laborum quaerat, voluptatum vitae explicabo, neque tenetur dolore totam.
+            </p>
+        </div>
+        <div class="column is-4 is-offset-1 card-column">
+            <figure class="image is-4by1 image-figure">
+                <img src="/images/codingsites/coderbyte.png" alt="CoderByte" class="resources-image">
+            </figure>
+        </div>
+    </div>
 </div>
-
-
