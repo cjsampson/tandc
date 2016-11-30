@@ -17,8 +17,6 @@ window.onload = init();
 
 
 $(document).ready(function () {
-    $('#tabs').tabs();
-
 
     $(document).on('click', function (e) {
         var sideNav        = document.getElementById('mySidenav'),
