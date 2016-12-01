@@ -26,6 +26,7 @@ $routes = [
     'contact',
     'videos',
     'dashboard',
+    'errors'
 ];
 
 /*

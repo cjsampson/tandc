@@ -43,4 +43,6 @@ elixir(function (mix) {
     mix.copy(`${node}bulma/css/bulma.css.map`, `${css}bulma/css`);
     //jQuery unslider
     mix.copy(`${node}jquery-unslider/dist/js/unslider-min.js`, `${js}unslider`);
+    mix.copy(`${node}jquery-unslider/dist/css/unslider.css`, `${css}unslider/css`);
+    mix.copy(`${node}jquery-unslider/dist/css/unslider-dots.css`, `${css}unslider/css`);
 });

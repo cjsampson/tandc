@@ -16,6 +16,7 @@ window.onload = init();
 
 
 $(document).ready(function () {
+
     /**
      * jquery ui element
      */
@@ -24,6 +25,7 @@ $(document).ready(function () {
     /**
      * opens and closes hamburger and sidebar
      */
+
     $(document).on('click', function (e) {
         var sideNav = document.getElementById('mySidenav'),
             sidebarOptions = document.getElementsByClassName('sidebar--options')[0],

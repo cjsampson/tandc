@@ -31,9 +31,8 @@
 
     
         <script src="{{ asset('assets/js/jquery/jquery.min.js') }}"></script>
-        <script src="{{asset('/js/header.js')}}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
-
+        <script src="{{asset('/js/header.js')}}"></script>
         @yield('styles')
     </head>
     <body>
@@ -53,9 +52,12 @@
 
                     <div class="header--wrapper">
                         <nav>
+                            
+                            <a style="background-color: white" href="{{ url('/') }}">
+                                <img width="300" height="100" src="{{ asset('images/logo/tandcLogo.png') }}" alt="">
+                            </a>
                             <a href="{{ route('articles_index') }}" class="header-li">Articles</a>                    
                             <a href="{{ route('videos_index') }}" class="header-li">Videos</a>
-                            <a style="background-color: white" href="{{ url('/') }}"><img width="300" height="100" src="{{ asset('images/logo/tandcLogo.png') }}" alt=""></a>
                             <a href="{{ url('resources') }}" class="header-li">Resources</a>
                             <a href="{{ url('about') }}" class="header-li">Who</a>
                             @if(isset(Auth::user()->role) && Auth::user()->role === 'admin')
