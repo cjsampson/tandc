@@ -11,12 +11,14 @@
 
             @if (($key + 1) % 3 === 1)
                 <div class="columns">
-                        @endif
+                    @endif
                     <div class="column is-4 testMargin">
                         <div class="card">
                             <div class="card-image">
                                 <figure class="image is-4by3">
-                                    <img src="/images/article_cover_images/{{ $article->cover_image }}" alt="">
+                                    <a href="{{ $article->type === 'article' ? route('articles_show', $article->slug) : route('video_show', $article->slug) }}">
+                                        <img src="/images/article_cover_images/{{ $article->cover_image }}" alt="">
+                                    </a>
                                 </figure>
                             </div>
                             <div class="card-content">
@@ -33,7 +35,7 @@
                                 </div>
 
                                 <div class="content">
-                                   <p>{{ $article->description }}</p>
+                                    <p>{{ $article->description }}</p>
                                     <br>
                                     <small>{{ $article->created_at }}</small>
                                 </div>
@@ -41,7 +43,7 @@
                         </div>
 
                     </div>
-            @if (($key + 1) % 3 === 0)
+                    @if (($key + 1) % 3 === 0)
 
                 </div>
             @endif

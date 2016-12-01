@@ -29,7 +29,6 @@ class HomeController extends Controller
     public function index()
     {
         $articlesVideos = $this->articleService->articlesVideos();
-        dd($articlesVideos);
         return view('home', compact('articlesVideos'));
     }
 
