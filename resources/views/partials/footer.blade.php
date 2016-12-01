@@ -44,9 +44,9 @@
             <h4 class="footer__box__header">Info</h4>
             <ul>
                 <li class="footer__box__li"><a href="{{ route('contact_index') }}">Contact</a></li>
-                <li class="footer__box__li"><a href="#">Subscribe</a></li>
+                <li class="footer__box__li"><a href="/not-ready">Subscribe</a></li>
                 <li class="footer__box__li"><a href="/register">Register</a></li>
-                <li class="footer__box__li"><a href="#">Terms</a></li>
+                <li class="footer__box__li"><a href="/not-ready">Terms</a></li>
             </ul>
         </div>
 

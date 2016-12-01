@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<h1>page not found...</h1>
+<h1>page not ready...</h1>
 <iframe src="//giphy.com/embed/l41lFw057lAJQMwg0" 
         width="480" 
         height="270" 

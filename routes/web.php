@@ -79,3 +79,7 @@ Route::get('/about', function () {
 Route::get('/resources', function () {
     return view('resources');
 });
+
+Route::get('/not-ready', function(){
+    return view('sections.errors.not_here_yet');
+});

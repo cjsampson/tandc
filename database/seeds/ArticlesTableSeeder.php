@@ -14,7 +14,7 @@ class ArticlesTableSeeder extends Seeder
     {
         $article = Article::create([
             'name'        => 'How to set up homestead on Ubuntu',
-            'description' => 'I quick step by step guide to installing homestead.',
+            'description' => 'A quick step by step guide to installing homestead.',
             'cover_image' => 'homestead.jpg',
             'body'        => <<<'Homestead'
                 <div class="column is-10 is-offset-1">
@@ -198,6 +198,98 @@ Homestead
             ,
             'author'      => 'Tomas Leffew',
             'slug'        => 'how-to-set-up-homestead-on-ubuntu',
+        ]);
+        $article->keywords()->sync([1]);
+        $article->images()->sync([6]);
+
+        $article = Article::create([
+            'name'        => 'How to install oh-my-zsh',
+            'description' => 'A quick step by step guide to installing homestead.',
+            'cover_image' => 'ohmyzsh.png',
+            'body'        =>
+                <<<'zsh'
+                <div class="column is-10 is-offset-1">
+                    <h1 class="title article--title">How to install oh-my-zsh with auto complete</h1>
+                </div>
+
+                <div class="column is-10 is-offset-1">
+                    <img src="/images/article_cover_images/ohmyzsh.png" alt="">
+                </div>
+
+                <div class="column is-10 is-offset-1">
+                    <p>Are you sick of the way your normal terminal looks and want something that pops? Well in my
+                        opinion zsh is a great alternative to bash and is easy to install. I am going to show you how to
+                        install oh-my-zsh along with a auto text complete to make your life just a bit easier. First off
+                        we need to install zsh.</p>
+                </div>
+
+                <div class="column is-10 is-offset-1">
+                    <pre><code>
+sudo apt-get install zsh
+
+sudo apt-get install git-core
+
+    </code></pre>
+                </div>
+
+                <div class="column is-10 is-offset-1">
+                    <p>Next we need to install oh-my-zsh.</p>
+                </div>
+
+                <div class="column is-10 is-offset-1">
+                    <pre><code>
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+
+    </code></pre>
+                </div>
+
+                <div class="column is-10 is-offset-1">
+                    <p>Now we need to change out your shell from bash to zsh.</p>
+                </div>
+
+                <div class="column is-10 is-offset-1">
+                    <pre><code>
+chsh -s `which zsh`
+
+    </code></pre>
+                </div>
+
+                <div class="column is-10 is-offset-1">
+                    <p>From here just restart you computer and zsh should be installed, now to get auto complete to work
+                        we will need to download a package and add it to zsh</p>
+                </div>
+
+                <div class="column is-10 is-offset-1">
+                    <pre><code>
+git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+    </code></pre>
+                </div>
+
+                <div class="column is-10 is-offset-1">
+                    <p>Now we just need to add that plugin inside of your zshrc file, so just open your favorite editor
+                        and add this line</p>
+                </div>
+
+                <div class="column is-10 is-offset-1">
+                    <pre><code>
+vim ~/.zshrc      // opens your editor
+
+plugins=(zsh-autosuggestions)
+
+
+    </code></pre>
+                </div>
+
+                <div class="column is-10 is-offset-1">
+                    <p>After you save the file just open a new terminal window and you should have auto complete up and
+                        running.</p>
+                </div>
+zsh
+            ,
+
+            'author' => 'Tomas Leffew',
+            'slug'   => 'how-to-install-oh-my-zsh',
         ]);
         $article->keywords()->sync([1]);
         $article->images()->sync([6]);
