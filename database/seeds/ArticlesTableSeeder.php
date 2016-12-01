@@ -15,14 +15,14 @@ class ArticlesTableSeeder extends Seeder
         $article = Article::create([
             'name'        => 'How to set up homestead on Ubuntu',
             'description' => 'I quick step by step guide to installing homestead.',
-            'cover_image' => '/images/homestead.jpg',
+            'cover_image' => 'homestead.jpg',
             'body'        => <<<'Homestead'
                 <div class="column is-10 is-offset-1">
                     <h1 class="title article--title">How to set up homestead on Ubuntu</h1>
                 </div>
 
                 <div class="column is-10 is-offset-1">
-                    <img src="/images/homestead.jpg" alt="">
+                    <img src="/images/article_cover_images/homestead.jpg" alt="">
                 </div>
 
                 <div class="column is-10 is-offset-1">
@@ -195,9 +195,9 @@ vagrant up --provision
                         to create a new site just run vagrant halt then vagrant up --provision</p>
                 </div>
 Homestead
-,
+            ,
             'author'      => 'Tomas Leffew',
-            'slug' => 'how-to-set-up-homestead-on-ubuntu',
+            'slug'        => 'how-to-set-up-homestead-on-ubuntu',
         ]);
         $article->keywords()->sync([1]);
         $article->images()->sync([6]);
@@ -208,7 +208,7 @@ Homestead
             'cover_image' => 'laravel.png',
             'body'        => '<div><p>This is a P tag</p></div>',
             'author'      => 'Tomas Leffew',
-            'slug' => 'makeing-larevl-easy!',
+            'slug'        => 'makeing-larevl-easy!',
         ]);
         $article->keywords()->sync([1, 3, 5]);
         $article->images()->sync([1, 2, 3]);
@@ -220,7 +220,7 @@ Homestead
             'cover_image' => 'react.png',
             'body'        => '<div><p>This is a P tag</p></div>',
             'author'      => 'CJ Sampson',
-            'slug' => 'learning-react',
+            'slug'        => 'learning-react',
         ]);
         $article->keywords()->sync([2, 4]);
         $article->images()->sync([1, 2, 4]);
@@ -232,7 +232,7 @@ Homestead
             'cover_image' => 'jquery.png',
             'body'        => '<div><p>This is a P tag</p></div>',
             'author'      => 'CJ Sampson',
-            'slug' => 'mapping-over-arrays',
+            'slug'        => 'mapping-over-arrays',
         ]);
         $article->keywords()->sync([2, 5]);
         $article->images()->sync([1, 3, 4]);
@@ -244,9 +244,9 @@ Homestead
             'cover_image' => 'javascript.png',
             'body'        => '<div><p>This is a P tag</p></div>',
             'author'      => 'CJ Sampson',
-            'slug' => 'setting-href-for-a-button-tag',
+            'slug'        => 'setting-href-for-a-button-tag',
         ]);
         $article->keywords()->sync([2, 5]);
-        $article->images()->sync([1, 3, 4]);        
+        $article->images()->sync([1, 3, 4]);
     }
 }

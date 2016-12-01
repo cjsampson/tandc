@@ -127,4 +127,9 @@ class ArticleService
         return str_replace(' ', '-', $title);
 
     }
+
+    public function articlesVideos()
+    {
+        return $this->articleRepository->articlesVideos();
+    }
 }
