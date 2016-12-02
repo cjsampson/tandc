@@ -85,4 +85,8 @@
   text-align: left;
   border-bottom: 3px solid black; }
 
+.sidebar--navigation li:hover {
+  background-color: ghostwhite;
+  border-right: 0.5px solid black; }
+
 /*# sourceMappingURL=sidebar.css.map */
