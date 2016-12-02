@@ -31,4 +31,10 @@ main section.content {
   margin-right: auto;
   margin-left: auto; }
 
+.header-li {
+  font-weight: 400; }
+
+header {
+  border-bottom: 10px solid black; }
+
 /*# sourceMappingURL=starting.css.map */

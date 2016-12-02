@@ -8,33 +8,34 @@
 
 @section('content')
 
+    <div class="container">
+        
+        <div class="columns borderclass">
+            <div class="column">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi minima, laudantium eaque molestiae pariatur commodi, eum nulla iure et ab natus earum voluptates porro. Animi inventore cupiditate quisquam facilis modi.
+            </div>
 
-<div class="banner">
-    <ul>
-        <li style="background-image: url('http://unslider.com/img/sunset.jpg');">
-            <h1>The jQuery slider that just slides.</h1>
-            <p>No fancy effects or unnecessary markup, and it’s less than 3kb.</p>
-            <a class="btn" href="#download">Download</a>
-        </li>
-        <li style="background-image: url('http://unslider.com/img/wood.jpg');">
-            <h1>Fluid, flexible, fantastically minimal.</h1>
-            <p>Use any HTML in your slides, extend with CSS. You have full control.</p>
-            <a class="btn" href="#download">Download</a>
-        </li>
-        <li style="background-image: url('http://unslider.com/img/subway.jpg');">
-            <h1>Open-source.</h1>
-            <p>Everything to do with Unslider is hosted on GitHub.</p>
-            <a class="btn" href="//github.com/idiot/unslider">Contribute</a>
-        </li>
-        <li style="background-image: url('http://unslider.com/img/shop.jpg');">
-            <h1>Uh, that’s about it.</h1>
-            <p>I just wanted to show you another slide.</p>
-            <a class="btn" href="#download">Download</a>
-        </li>
-    </ul>
-</div>
-    
+            <div class="column is-half height">            
+                <figure class="image2">
+                    <img src="/images/cjtomas/tomasthumbnail.png">
+                </figure>            
+            </div>
+        </div>
 
+        <div class="columns borderclass">
+            <div class="column is-flex is-half is-mobile tomas">            
+                <figure class="image2">
+                    <img src="/images/cjtomas/cjthumbnail.png">
+                </figure>
+            </div>
+
+            <div class="column is-half is-mobile">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi minima, laudantium eaque molestiae pariatur commodi, eum nulla iure et ab natus earum voluptates porro. Animi inventore cupiditate quisquam facilis modi.
+            </div>
+
+        </div>        
+        
+    </div>
 
 
 @stop
@@ -43,7 +44,7 @@
     <script src="{{ asset('assets/js/unslider/unslider-min.js') }}"></script>
     <script>
         $(function() { 
-            $('.my-slider').unslider({
+            $('.banner').unslider({
                 animation: 'horizontal'
             });
 
