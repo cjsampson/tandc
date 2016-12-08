@@ -1,0 +1,59 @@
+header
+    width: 100%
+    height: 10em
+    overflow: hidden
+    position: fixed!important
+    top: 0
+    left: 0
+    width: 100%
+    z-index: 999
+    border-bottom: 1px solid #aaa
+    background-color: #0074D9
+    transition: height 0.3s
+    display: block
+
+header h1#logo
+    line-height: 3em
+    margin: 0
+    padding: 0 1em
+    background-color: #39CCCC
+    font-size: 60px
+    color: #111
+    font-weight: 400
+    transition: all 0.3s
+
+
+header nav a 
+    line-height: 150px
+    margin-left: 20px
+    color: #fcfcfc
+    font-weight: 300
+    font-size: 1em
+    transition: all 0.3s
+
+header nav a:hover 
+    color: #AAA
+
+header.smaller 
+    height: 75px
+    position: fixed
+
+header.smaller h1#logo
+    line-height: 75px
+    font-size: 30px
+
+header.smaller nav a 
+    line-height: 75px
+
+nav 
+    display: flex
+    justify-content: space-around
+
+.header-li 
+    font-size: 2em
+
+header.smaller
+    height: 75px
+
+.active
+    text-decoration: underline

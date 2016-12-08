@@ -7,67 +7,41 @@
 
         <title>TandC</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-            a {
-                text-decoration: none;
-            }
-            li {
-                list-style-type: none;
-            }
-            nav {
-                display: flex;
-                justify-content: space-around;
-                /*align-items: flex-end;*/
-            }
-            .header-li {
-                font-size: 2em;
-            }
-            header { 
-                background-color: orange; 
-                height: 200px;
-            }
-        </style>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+        <link href="{{ asset('assets/css/font-awesome/font-awesome.min.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="/css/content_box_component.css">
+        <link rel="stylesheet" href="/css/starting.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/practice.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.css">    
         @yield('styles')
     </head>
     <body>
 
-        <div class="wrapper">
-
-            <header>
-                <nav>
-                    <a href="#" class="header-li"><li>Home</li></a>
-                    <a href="#" class="header-li"><li>Terminology</li></a>
-                    <a href="{{ route('articles_index') }}" class="header-li"><li>Articles</li></a>
-                    <a href="{{ route('videos_index') }}" class="header-li"><li>Videos</li></a>
-                    <a href="#" class="header-li"><li>About</li></a>
-                    <a href="{{ route('contact_index') }}" class="header-li">Contact</a>
-                    <a href="#" class="header-li">Settings</a>
-                </nav>
-            </header>
-    
         
-            <aside>
-                <div class="sidebar">
-                    Sidebar
-                </div>    
-            </aside>
+    <div class="container is-fluid">
+      <div class="notification">
+        This container is <strong>centered</strong> on desktop.
+      </div>
+    </div>
 
-            <main class="main-content">
-                @yield('content')
-            </main>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Hero title
+          </h1>
+          <h2 class="subtitle">
+            Hero subtitle
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    {{-- <script src="js/header.js"></script> --}}
     
-    </div> {{-- .wrapper --}}
-
+    @yield('scripts')
     </body>
 </html>

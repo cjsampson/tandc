@@ -1,0 +1,108 @@
+////////////////////////////////////////////////////////////////////////
+
+                                  HTML
+
+////////////////////////////////////////////////////////////////////////
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <li>Home</li>
+      <li>About</li>
+      <li>Resources</li>
+    </nav>
+  </header>
+  <main>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem saepe id corporis quas mollitia aspernatur beatae minima excepturi debitis est corrupti molestiae, laboriosam quos, aperiam ab incidunt soluta, sunt modi.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem saepe id corporis quas mollitia aspernatur beatae minima excepturi debitis est corrupti molestiae, laboriosam quos, aperiam ab incidunt soluta, sunt modi.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem saepe id corporis quas mollitia aspernatur beatae minima excepturi debitis est corrupti molestiae, laboriosam quos, aperiam ab incidunt soluta, sunt modi.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem saepe id corporis quas mollitia aspernatur beatae minima excepturi debitis est corrupti molestiae, laboriosam quos, aperiam ab incidunt soluta, sunt modi.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem saepe id corporis quas mollitia aspernatur beatae minima excepturi debitis est corrupti molestiae, laboriosam quos, aperiam ab incidunt soluta, sunt modi.</p>
+  </main>
+</body>
+</html>
+
+////////////////////////////////////////////////////////////////////////
+
+                                  CSS
+
+////////////////////////////////////////////////////////////////////////
+body
+  font-family: 'Helvetica'
+  margin: 0
+
+header
+  height: 150px
+  position: fixed
+  background-color: #FF851B
+  width: 100%
+  color: #111
+  transition: height 0.25s
+
+
+header nav
+  height: 150px
+  display: flex
+  justify-content: center
+  align-items: center
+  align-content: center
+  font-size: 2em
+  transition: all 0.3s
+
+header nav li
+  list-style-type: none
+  padding: 10px 15px
+  border: 3px solid #111
+  margin-right: 10px
+  background-color: #fff
+  
+main
+  height: 2000px
+  background-color: #3D9970
+  color: #111
+  padding-top: 150px
+  
+main p 
+  border: 3px solid #fff
+  margin: 10px 20px 20px 20px
+  padding: 10px 12px
+  color: #fff
+  background-color: #111
+  
+  
+.smaller
+  height: 100px
+  justify-content: flex-end
+  font-size: 1em
+  
+////////////////////////////////////////////////////////////////////////
+
+                                  JS
+
+////////////////////////////////////////////////////////////////////////
+function init() {
+  window.addEventListener('scroll', function(e) {
+    var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+        shrinkOn  = 25,
+        header    = document.querySelector('header'),
+        headerNav = document.querySelector('header nav');    
+    if (distanceY > shrinkOn) {
+      header.setAttribute('class', 'smaller');
+      headerNav.setAttribute('class', 'smaller');
+    } else {
+      header.removeAttribute('class');
+      headerNav.removeAttribute('class', 'smaller');
+    }
+  
+  
+  });
+}
+
+window.onload = init();

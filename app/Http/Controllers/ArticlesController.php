@@ -2,48 +2,59 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ArticleCreateRequest;
-use App\Http\Requests\ArticleUpdateRequest;
 use App\Models\Article;
-use App\Models\Keyword;
+use App\Services\ImageService;
+use League\Flysystem\Exception;
+use App\Services\KeywordService;
 use App\Services\ArticleService;
 use Illuminate\Database\QueryException;
-use Illuminate\Http\Request;
+use App\Http\Requests\ArticleCreateRequest;
+use App\Http\Requests\ArticleUpdateRequest;
 
-use League\Flysystem\Exception;
-use Datatables;
 
 class ArticlesController extends Controller
 {
     /**
      * @var ArticleService
+     * @var KeywordService
+     * @var ImageService
      */
     private $articleService;
+    private $keywordService;
+    private $imageService;
 
     /**
      * ArticlesController constructor.
      * @param ArticleService $articleService
+     * @param KeywordService $keywordService
+     * @param ImageService $imageService
      */
-    public function __construct( ArticleService $articleService )
+    public function __construct( ArticleService $articleService, KeywordService $keywordService, ImageService $imageService )
     {
         $this->articleService = $articleService;
+        $this->keywordService = $keywordService;
+        $this->imageService = $imageService;
     }
 
     /**
-     * @param Article $article
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
-        $newKeyword = Keyword::create(['name' => 'keyword 3']);
-        $article = Article::find(1);
-        $article->keywords()->attach($newKeyword->id);
-        $article->keywords()->detach(1);
-        $keywords = $article->keywords;
-        $images = $article->images;
-        dd($keywords);
+        $articles = $this->articleService->all();
 
-        return view('sections.articles.index');
+        return view('sections.articles.index', compact('articles'));
+    }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function show( $title )
+    {
+        $article = $this->articleService->findBySlug($title);
+
+        return view('sections.articles.show', compact('article'));
     }
 
     /**
@@ -51,16 +62,38 @@ class ArticlesController extends Controller
      */
     public function create()
     {
-        return view('sections.articles.create');
+        $keywords = $this->keywordService->all();
+
+        return view('sections.articles.create', compact('keywords'));
     }
 
     /**
      * @param ArticleCreateRequest $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store( ArticleCreateRequest $request )
     {
         try {
-            $this->articleService->create($request->all());
+
+            //store the needed $request files in $data without mutating the $request object
+            $data = $request->except('cover_image', 'body');
+            $data['cover_image'] = $this->articleService->coverImage($request->file('cover_image'));
+            $data['slug'] = $this->articleService->slug($request->input('name'));
+
+            if ($request->file('images')){
+                foreach ( $request->file('images') as $photo ) {
+                    $image = $this->imageService->storeAndCreate($photo);
+                    $images[] = $image->id;
+                }
+
+                $data['images_id'] = $images;
+            }
+            $data['body'] = (isset($images) ? $this->articleService->imgReplace($images, $request->input('body')) : $request->input('body'));
+            //creation of the article
+            $article = $this->articleService->create($data);
+
+            return redirect()->route('articles_show', $article->slug);
+
         } catch ( QueryException $e ) {
             dd($e);
         } catch ( Exception $e ) {
@@ -72,9 +105,11 @@ class ArticlesController extends Controller
      * @param Article $article
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function edit( Article $article )
+    public function edit( $id )
     {
-        return view('sections.articles.edit');
+        $article = $this->articleService->find($id);
+        $keywords = $this->keywordService->all();
+        return view('sections.articles.edit', compact('article', 'keywords'));
     }
 
     /**
@@ -88,6 +123,17 @@ class ArticlesController extends Controller
         } catch ( QueryException $e ) {
             dd($e);
         } catch ( Exception $e ) {
+            dd($e);
+        }
+
+        return redirect()->route('articles_show', $id);
+    }
+
+    public function delete($id)
+    {
+        try{
+            $this->articleService->delete($id);
+        }catch (Exception $e){
             dd($e);
         }
     }

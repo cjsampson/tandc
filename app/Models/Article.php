@@ -10,7 +10,7 @@ class Article extends Model implements Transformable
 {
     use TransformableTrait;
 
-    protected $fillable = ['name', 'body'];
+    protected $fillable = ['name', 'body', 'author', 'description', 'cover_image', 'slug'];
 
     /**
      * get all keywords related to an article
@@ -29,7 +29,7 @@ class Article extends Model implements Transformable
      */
     public function images()
     {
-     return $this->belongsToMany('App\Models\Image');
+        return $this->belongsToMany('App\Models\Image');
     }
 
 }

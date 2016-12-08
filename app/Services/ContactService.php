@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\User;
 use DB;
 use Mail;
 use App\Repositories\ContactRepository;
@@ -14,27 +15,43 @@ class ContactService
      * @var ContactRepository
      */
     protected $contactRepository;
+    protected $userService;
 
 
-    public function __construct( ContactRepository $contactRepository )
+    /**
+     * ContactService constructor.
+     * @param ContactRepository $contactRepository
+     */
+    public function __construct( ContactRepository $contactRepository, UserService $userService )
     {
         $this->contactRepository = $contactRepository;
+        $this->userService = $userService;
     }
 
+    /**
+     * @param array $attributes
+     */
     private function create( array $attributes )
     {
         $this->contactRepository->create($attributes);
     }
 
+    /**
+     * @param array $attributes
+     */
     private function sendEmail( array $attributes )
     {
-        Mail::send('sections.contact.email', ['body' => $attributes['message']], function ( $message ) use ( $attributes ) {
+        $adminsEmail = $this->userService->adminsEmail();
+        Mail::send('sections.contact.email', ['body' => $attributes['message']], function ( $message ) use ( $attributes, $adminsEmail) {
             $message->from($attributes['email'])
                 ->subject($attributes['title'])
-                ->to('tleffew1994@gmail.com', 'test@test.com');
+                ->to($adminsEmail);
         });
     }
 
+    /**
+     * @param array $attributes
+     */
     public function createAndSend( array $attributes )
     {
         DB::transaction(function () use ( $attributes ) {

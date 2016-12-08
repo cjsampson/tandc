@@ -1,0 +1,29 @@
+.image-figure {
+  margin-top: 20px; }
+
+.subscription-box {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-top: 2px solid whitesmoke;
+  padding-top: 30px;
+  padding-bottom: 30px; }
+
+.subscription-box:nth-child(1) {
+  border-top: none; }
+
+.card-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center; }
+
+.paragraph-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center; }
+
+.resources-image {
+  border-radius: 5px; }
+
+/*# sourceMappingURL=resources.css.map */

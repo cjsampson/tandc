@@ -1,42 +1,40 @@
 @extends('welcome')
 
 @section('styles')
-
-<style>
-
-    .video-grid {
-        
-    }
-    .video-box { 
-        border: 1px solid black;
-        margin-bottom: 20px;
-        max-width: 300px;
-        min-height: 400px;
-    }
-</style>
-
+    <link rel="stylesheet" href="/css/videos.css">
+    <link rel="stylesheet" href="/css/content_box_component.css">
 @stop
 
 
 @section('content')
 
-<div class="video-grid">
-    <h1>Video Index</h1>
+        
+        <div class="video--section">
 
-    @foreach($videos as $video)
-        <div class="video-box">
-            <h4>{{ $video->title}}</h4>
-            <p>{{ $video->category }}</p>
-            <div class="im-a-video-box">
-                Video goes here
-            </div>
-            <iframe 
-                title="youtube video player" src="https://www.youtube.com/embed/{{ $video->url }}" frameborder="0" allowfullscreen>
-            </iframe>
-            
-        </div>
-    @endforeach
-</div>
+            <h2 class="video--title">Video Section</h2>
+                @foreach($videos as $video)
+
+                    <div class="content--box">
+
+                        <div class="image--box">
+                            <img src="/images/video_cover_images/{{ $video->cover_image }}" 
+                                 alt="video cover image"
+                                 class="content--image"
+                            >
+                        </div>
+                
+                        <div class="description--container">
+                            <a href="{{ route('video_show', $video->slug ) }}"><h2 class="cb--title">{{ $video->title }}</h2></a>
+                            <p class="cb--description">{{ $video->description }}</p>
+                            <p class="cb--date">{{ $video->updated_at }}</p>
+                            <p class="cb--author">Author: <a href="#">{{ $video->author }}</a></p>
+                        </div>
+
+                    </div>
+
+                @endforeach
+
+        </div> {{-- .video--section --}}
 
 
 @stop

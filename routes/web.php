@@ -25,22 +25,24 @@ $routes = [
     'articles',
     'contact',
     'videos',
-    'settings',
+    'dashboard',
+    'errors'
 ];
 
 /*
  * does a foreach though our routes and calls the method _include with the route name
  */
-foreach ($routes as $route){
+foreach ( $routes as $route ) {
     _include($route);
 }
 
 /*
  * generates the route
  */
-function _include($partial){
+function _include( $partial )
+{
     $file = __DIR__ . "/route/{$partial}.php";
-    if (!file_exists($file)){
+    if ( ! file_exists($file) ) {
         throw new FileNotFoundException("Route partial [{$partial}] not found.");
     }
     require_once $file;
@@ -49,11 +51,31 @@ function _include($partial){
 /*
  * homepage
  */
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [
+    'uses' => 'HomeController@index',
+    'as'   => 'home',
+]);
+
+
+Route::get('/practice', function () {
+    return view('practice');
 });
 
 
+Auth::routes();
+Route::get('/logout', [
+    'uses' => 'Auth\LoginController@logout',
+    'as'   => 'logout',
+]);
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
 
+Route::get('/about', function () {
+    return view('about');
+});
 
+Route::get('/resources', function () {
+    return view('resources');
+});

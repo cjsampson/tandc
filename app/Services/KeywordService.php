@@ -2,9 +2,8 @@
 
 namespace App\Services;
 
-use App;
-use App\Repositories\KeywordRepository;
 use DB;
+use App\Repositories\KeywordRepository;
 
 
 class KeywordService
@@ -53,8 +52,21 @@ class KeywordService
             $this->keywordRepository->update($attributes, $id);
         });
     }
-    public function find($id)
+
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function find( $id )
     {
         return $this->keywordRepository->find($id);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function all()
+    {
+        return $this->keywordRepository->all();
     }
 }

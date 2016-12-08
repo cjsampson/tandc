@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
 class KeywordCreateRequest extends FormRequest
@@ -13,7 +14,11 @@ class KeywordCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        if (Auth::user()->role === 'admin'){
+            return true;
+        }
+
+        return false;
     }
 
     /**

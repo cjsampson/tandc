@@ -1,0 +1,188 @@
+//
+// Dummy content box for the video page
+
+<div class="content--box">
+
+    <div class="image--box">
+        <img src="https://media.licdn.com/mpr/mpr/shrinknp_800_800/AAEAAQAAAAAAAAJ9AAAAJGYxOTExNjUxLWIyYTQtNDMzYi05OGZlLTMyYjM2MWM4ZDZlYQ.png" 
+        alt="lorem pixel" class="content--image">
+    </div>
+
+    <div class="description--container">
+        <h2 class="cb--title">PHP Basics</h2>
+        <p class="cb--description">Learn how to do the basics in PHP for the first part of this video series.</p>
+        <p class="cb--date">Date: 10-03-2016</p>
+        <p class="cb--author">Author: <a href="#">CJ Sampson</a></p>
+    </div>
+
+</div> 
+
+//
+// Stuff inside the side bar
+
+<div class="box box1">
+    <h3>Some text for a box</h3>
+</div>
+
+<div class="box box2">
+    <h3>Some text for a box</h3>
+</div>
+
+<div class="box box3">
+    <h3>Some text for a box</h3>
+</div>
+
+//
+// Mckenzie Child Border
+$main:        #34314c;
+$secondary:   #9592ad;
+$border:      #d9dee9;
+$highlight_1: #001f3f;
+$highlight_2: #2ECC40;
+$highlight_3: #FF4136;
+$highlight_4: #FF851B;
+
+body {
+  font-family: 'Helvetica', sans-serif;
+}
+
+
+.border {
+  height: 6px;
+  border: 0;
+  background-color: $highlight_1;
+  background-image:
+    linear-gradient(
+      to right,
+      $highlight_1,
+      $highlight_1 25%,
+      $highlight_2 25%,
+      $highlight_2 50%,
+      $highlight_3 50%,
+      $highlight_3 75%,
+      $highlight_4 75%,
+      $highlight_4 100%,
+      $highlight_4 100%
+    );
+  background-size: 50% 100%;
+}
+
+//
+// header work
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+  <header class="header">
+    <nav>
+      <li>Hello</li>
+      <li>About</li>
+      <li>Contact</li>
+      <li>Resources</li>
+    </nav>
+  </header>
+  
+  <main>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque eum cupiditate unde, deserunt dignissimos nostrum voluptatum molestias aspernatur eius! Asperiores consectetur qui necessitatibus porro, blanditiis, iure quibusdam natus provident incidunt!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed distinctio soluta cum, est neque explicabo! Dignissimos laudantium sapiente adipisci perferendis praesentium, neque, vel eaque a accusantium, odio error modi recusandae?
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora doloremque facilis totam corporis rem perferendis adipisci cupiditate consequatur, accusamus cumque. Commodi cupiditate sunt rem animi obcaecati doloribus error minima eligendi.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur similique facilis, fuga provident corrupti doloribus blanditiis reiciendis iure. Error quibusdam ut voluptatum nemo ad nostrum earum cumque deleniti, nesciunt nihil.
+    </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque eum cupiditate unde, deserunt dignissimos nostrum voluptatum molestias aspernatur eius! Asperiores consectetur qui necessitatibus porro, blanditiis, iure quibusdam natus provident incidunt!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed distinctio soluta cum, est neque explicabo! Dignissimos laudantium sapiente adipisci perferendis praesentium, neque, vel eaque a accusantium, odio error modi recusandae?
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora doloremque facilis totam corporis rem perferendis adipisci cupiditate consequatur, accusamus cumque. Commodi cupiditate sunt rem animi obcaecati doloribus error minima eligendi.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur similique facilis, fuga provident corrupti doloribus blanditiis reiciendis iure. Error quibusdam ut voluptatum nemo ad nostrum earum cumque deleniti, nesciunt nihil.
+    </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque eum cupiditate unde, deserunt dignissimos nostrum voluptatum molestias aspernatur eius! Asperiores consectetur qui necessitatibus porro, blanditiis, iure quibusdam natus provident incidunt!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed distinctio soluta cum, est neque explicabo! Dignissimos laudantium sapiente adipisci perferendis praesentium, neque, vel eaque a accusantium, odio error modi recusandae?
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora doloremque facilis totam corporis rem perferendis adipisci cupiditate consequatur, accusamus cumque. Commodi cupiditate sunt rem animi obcaecati doloribus error minima eligendi.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur similique facilis, fuga provident corrupti doloribus blanditiis reiciendis iure. Error quibusdam ut voluptatum nemo ad nostrum earum cumque deleniti, nesciunt nihil.
+    </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque eum cupiditate unde, deserunt dignissimos nostrum voluptatum molestias aspernatur eius! Asperiores consectetur qui necessitatibus porro, blanditiis, iure quibusdam natus provident incidunt!
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed distinctio soluta cum, est neque explicabo! Dignissimos laudantium sapiente adipisci perferendis praesentium, neque, vel eaque a accusantium, odio error modi recusandae?
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora doloremque facilis totam corporis rem perferendis adipisci cupiditate consequatur, accusamus cumque. Commodi cupiditate sunt rem animi obcaecati doloribus error minima eligendi.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur similique facilis, fuga provident corrupti doloribus blanditiis reiciendis iure. Error quibusdam ut voluptatum nemo ad nostrum earum cumque deleniti, nesciunt nihil.
+    </p>
+  </main>
+  
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+</body>
+</html>
+
+body {
+  font-family: 'Helvetica';
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  margin: 0px;
+}
+
+main {
+  height: 2000px;
+  margin-top: 200px;
+}
+
+p {
+  padding: 30px 40px;
+  border: 2px solid indianred;
+  background-color: sandybrown;
+  line-height: 2em;
+  text-indent: 2em;
+}
+
+header {
+  position: fixed;
+  background-color: lime;
+  height: 200px;
+  width: 100%;
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: 15px;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+}
+
+header nav li {
+  line-height: 2em;
+  list-style-type: none;
+  background-color: gainsboro;
+  padding-left: 20px;
+  border-radius: 2px;
+}
+
+header {
+  display: flex;
+  flex-basis: 150px;
+}
+
+.small {
+  height: 100px;
+  transition: height 0.25s ease-in 0.0s;
+}
+
+header {
+  transition: height 0.2s ease-out 0.0s;
+}
+
+$(document).scroll(function() {
+  navbarScroll();
+});
+
+function navbarScroll() {
+  var y = window.scrollY;
+  if (y > 10)
+    $('.header').addClass('small');
+  else if(y < 10) {
+    $('.header').removeClass('small');
+  }
+}

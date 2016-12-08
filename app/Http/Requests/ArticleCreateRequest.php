@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ArticleCreateRequest extends FormRequest
@@ -13,6 +14,10 @@ class ArticleCreateRequest extends FormRequest
      */
     public function authorize()
     {
+        if (Auth::user()->role === 'admin'){
+            return true;
+        }
+
         return false;
     }
 
@@ -24,7 +29,12 @@ class ArticleCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'        => 'required',
+            'body'        => 'required',
+            'author'      => 'required',
+            'description' => 'required',
+            'cover_image' => 'required',
+            'keywords'    => 'required',
         ];
     }
 }
